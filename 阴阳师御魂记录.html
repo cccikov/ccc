@@ -37,29 +37,36 @@
         text-align: center;
         box-shadow: 0px 0px 2px rgba(120, 120, 120, 0.3);
     }
-    [data-state='warning']{
-    	border-color:#ff8c8c;
+
+    [data-state='warning'] {
+        border-color: #ff8c8c;
     }
-    [data-state='normal']{
-    	border-color:#ffff7a;
+
+    [data-state='normal'] {
+        border-color: #ffff7a;
     }
-    [data-state='well']{
-    	border-color:#75e275;
+
+    [data-state='well'] {
+        border-color: #75e275;
     }
-    [data-state='zero'] input{
-        background:#940404;
+
+    [data-state='zero'] input {
+        background: #940404;
     }
-    [data-state='warning'] input{
-    	background:#ff8c8c;
-    	border-color:#ff8c8c;
+
+    [data-state='warning'] input {
+        background: #ff8c8c;
+        border-color: #ff8c8c;
     }
-    [data-state='normal'] input{
-    	background:#ffff7a;
-    	border-color:#ffff7a;
+
+    [data-state='normal'] input {
+        background: #ffff7a;
+        border-color: #ffff7a;
     }
-    [data-state='well'] input{
-    	background:#75e275;
-    	border-color:#75e275;
+
+    [data-state='well'] input {
+        background: #75e275;
+        border-color: #75e275;
     }
 
     #wrap input:focus {
@@ -67,9 +74,9 @@
         background: none;
     }
 
-    textarea{
+    textarea {
         width: 90%;
-        height:10em;
+        height: 10em;
     }
     </style>
     <script type="text/javascript" src="ccc.js"></script>
@@ -101,15 +108,14 @@
                 ele.find('input').each(function(item, key) {
                     var data = json[i].detail[item];
                     var parent = $(key).parent();
-                    if(data <= 0){
-                        parent.attr("data-state","zero");
-                    }
-                    else if (data < 3) {
-                        parent.attr("data-state","warning");
+                    if (data <= 0) {
+                        parent.attr("data-state", "zero");
+                    } else if (data < 3) {
+                        parent.attr("data-state", "warning");
                     } else if (data < 8) {
-                        parent.attr("data-state","normal");
+                        parent.attr("data-state", "normal");
                     } else {
-                        parent.attr("data-state","well");
+                        parent.attr("data-state", "well");
                     }
                     $(key).val(data);
                 });
@@ -130,15 +136,14 @@
             var title = parents.find("h5").html();
 
             console.log(val);
-            if(val <= 0){
-                label.attr("data-state","zero");
-            }
-            else if (val < 3) {
-                label.attr("data-state","warning");
+            if (val <= 0) {
+                label.attr("data-state", "zero");
+            } else if (val < 3) {
+                label.attr("data-state", "warning");
             } else if (val < 8) {
-                label.attr("data-state","normal");
+                label.attr("data-state", "normal");
             } else {
-                label.attr("data-state","well");
+                label.attr("data-state", "well");
             }
 
             if (!json[id]) {
@@ -161,8 +166,8 @@
         // console.log(json.zhennv.detail[1]+json.sanwei.detail[1]+json.wangqie.detail[1]+json.poshi.detail[1]);
         // console.log(json.zhennv.detail[3]+json.sanwei.detail[3]+json.wangqie.detail[3]+json.poshi.detail[3]);
         // console.log(json.zhennv.detail[5]+json.sanwei.detail[5]+json.wangqie.detail[5]+json.poshi.detail[5]);
-        var attack = [json.yinmoluo,json.fuyi,json.lunrudao,json.zheng,json.mingwu,json.xinyan];
-        var Crit = [json.zhennv,json.sanwei,json.wangqie,json.poshi];
+        var attack = [json.yinmoluo, json.fuyi, json.lunrudao, json.zheng, json.mingwu, json.xinyan];
+        var Crit = [json.zhennv, json.sanwei, json.wangqie, json.poshi];
     });
 
     /*json格式化*/
@@ -846,8 +851,8 @@
         </div>
     </div>
     <textarea id="json">
-        {"bangjing":{"title":"蚌精","detail":[8,8,8,3,7,9]},"meiyao":{"title":"魅妖","detail":[6,3,8,2,6,3]},"zhennv":{"title":"针女","detail":[9,5,8,2,4,6]},"xueyouhun":{"title":"雪幽魂","detail":[10,8,9,2,9,7]},"mingwu":{"title":"鸣屋","detail":[6,4,8,1,8,4]},"yinmoluo":{"title":"阴摩罗","detail":[11,3,6,6,8,4]},"zhongling":{"title":"钟灵","detail":[6,3,5,2,5,2]},"zheng":{"title":"狰","detail":[8,1,6,6,6,2]},"poshi":{"title":"破势","detail":[10,3,12,2,8,4]},"dizangfo":{"title":"地藏佛","detail":[11,3,10,4,9,7]},"fuyi":{"title":"蝠翼","detail":[9,2,8,3,8,2]},"niepanzhihuo":{"title":"涅盘之火","detail":[8,7,8,5,7,4]},"sanwei":{"title":"三味","detail":[7,8,10,4,12,5]},"wangliangzhixia":{"title":"魍魉之匣","detail":[7,7,6,10,6,9]},"beifu":{"title":"被服","detail":[7,4,6,4,8,2]},"zhaocaimao":{"title":"招财猫","detail":[11,14,6,4,6,4]},"fanzhen":{"title":"反枕","detail":[6,3,8,3,7,4]},"lunrudao":{"title":"轮入道","detail":[6,2,8,5,5,3]},"rinvsishi":{"title":"日女巳时","detail":[8,6,8,2,6,2]},"jingji":{"title":"镜姬","detail":[9,4,7,3,8,1]},"huoling":{"title":"火灵","detail":[9,11,7,9,2,11]},"xinyan":{"title":"心眼","detail":[7,4,5,4,8,8]},"shuyao":{"title":"树妖","detail":[12,2,11,5,7,7]},"wangqie":{"title":"网切","detail":[10,8,9,6,11,6]}}
-   </textarea>
+        {"bangjing":{"title":"蚌精","detail":[8,8,8,4,7,9]},"meiyao":{"title":"魅妖","detail":[6,3,8,4,6,4]},"zhennv":{"title":"针女","detail":[10,5,8,5,7,8]},"xueyouhun":{"title":"雪幽魂","detail":[10,8,9,2,9,7]},"mingwu":{"title":"鸣屋","detail":[8,5,9,1,9,5]},"yinmoluo":{"title":"阴摩罗","detail":[11,4,6,7,9,4]},"zhongling":{"title":"钟灵","detail":[7,4,5,3,6,2]},"zheng":{"title":"狰","detail":[9,2,6,7,6,3]},"poshi":{"title":"破势","detail":[10,3,12,2,8,5]},"dizangfo":{"title":"地藏佛","detail":[11,3,10,4,9,7]},"fuyi":{"title":"蝠翼","detail":[9,2,8,3,8,2]},"niepanzhihuo":{"title":"涅盘之火","detail":[8,7,8,5,7,4]},"sanwei":{"title":"三味","detail":[7,8,10,4,12,5]},"wangliangzhixia":{"title":"魍魉之匣","detail":[7,7,6,10,6,9]},"beifu":{"title":"被服","detail":[7,4,6,4,8,2]},"zhaocaimao":{"title":"招财猫","detail":[11,14,6,4,6,4]},"fanzhen":{"title":"反枕","detail":[6,3,8,3,7,4]},"lunrudao":{"title":"轮入道","detail":[6,2,8,5,5,3]},"rinvsishi":{"title":"日女巳时","detail":[8,6,9,2,6,3]},"jingji":{"title":"镜姬","detail":[9,6,7,4,8,1]},"huoling":{"title":"火灵","detail":[10,11,7,9,2,11]},"xinyan":{"title":"心眼","detail":[8,5,5,4,8,8]},"shuyao":{"title":"树妖","detail":[12,4,11,6,7,8]},"wangqie":{"title":"网切","detail":[12,9,9,8,11,6]}}
+    </textarea>
 </body>
 
 </html>
