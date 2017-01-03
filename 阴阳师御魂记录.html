@@ -38,18 +38,6 @@
         box-shadow: 0px 0px 2px rgba(120, 120, 120, 0.3);
     }
 
-    [data-state='warning'] {
-        border-color: #ff8c8c;
-    }
-
-    [data-state='normal'] {
-        border-color: #ffff7a;
-    }
-
-    [data-state='well'] {
-        border-color: #75e275;
-    }
-
     [data-state='zero'] input {
         background: #940404;
     }
@@ -69,9 +57,16 @@
         border-color: #75e275;
     }
 
+    [data-state='black'] input {
+        background: #000;
+        border-color: #000;
+        color: #fff;
+    }
+
     #wrap input:focus {
         /*outline: none;*/
         background: none;
+        color:#000;
     }
 
     textarea {
@@ -110,12 +105,14 @@
                     var parent = $(key).parent();
                     if (data <= 0) {
                         parent.attr("data-state", "zero");
-                    } else if (data < 3) {
+                    } else if (data <= 2) {
                         parent.attr("data-state", "warning");
-                    } else if (data < 8) {
+                    } else if (data <= 4) {
                         parent.attr("data-state", "normal");
-                    } else {
+                    } else if (data == 5) {
                         parent.attr("data-state", "well");
+                    } else {
+                        parent.attr("data-state", "black");
                     }
                     $(key).val(data);
                 });
@@ -138,12 +135,14 @@
             console.log(val);
             if (val <= 0) {
                 label.attr("data-state", "zero");
-            } else if (val < 3) {
+            } else if (val <= 2) {
                 label.attr("data-state", "warning");
-            } else if (val < 8) {
+            } else if (val <= 4) {
                 label.attr("data-state", "normal");
-            } else {
+            } else if (val == 5) {
                 label.attr("data-state", "well");
+            } else {
+                label.attr("data-state", "black");
             }
 
             if (!json[id]) {
@@ -223,6 +222,7 @@
                 6
                 <input type="number">
             </label>
+            <p>(生命,效果命中)</p>
         </div>
         <div id="meiyao" class="item">
             <h5>魅妖</h5>
@@ -851,7 +851,7 @@
         </div>
     </div>
     <textarea id="json">
-        {"bangjing":{"title":"蚌精","detail":[8,9,8,4,7,11]},"meiyao":{"title":"魅妖","detail":[6,5,8,4,6,6]},"zhennv":{"title":"针女","detail":[10,5,9,6,9,9]},"xueyouhun":{"title":"雪幽魂","detail":[13,8,10,2,9,8]},"mingwu":{"title":"鸣屋","detail":[8,6,9,1,10,5]},"yinmoluo":{"title":"阴摩罗","detail":[11,5,7,9,10,5]},"zhongling":{"title":"钟灵","detail":[7,4,6,5,6,5]},"zheng":{"title":"狰","detail":[10,2,6,7,6,4]},"poshi":{"title":"破势","detail":[10,4,13,2,8,5]},"dizangfo":{"title":"地藏佛","detail":[12,5,11,6,9,7]},"fuyi":{"title":"蝠翼","detail":[9,2,8,3,8,2]},"niepanzhihuo":{"title":"涅盘之火","detail":[8,7,8,8,8,6]},"sanwei":{"title":"三味","detail":[7,8,10,4,12,5]},"wangliangzhixia":{"title":"魍魉之匣","detail":[7,7,7,10,6,9]},"beifu":{"title":"被服","detail":[10,4,6,4,8,2]},"zhaocaimao":{"title":"招财猫","detail":[11,14,6,4,6,4]},"fanzhen":{"title":"反枕","detail":[6,4,8,3,7,4]},"lunrudao":{"title":"轮入道","detail":[6,2,8,6,5,3]},"rinvsishi":{"title":"日女巳时","detail":[8,7,9,2,9,4]},"jingji":{"title":"镜姬","detail":[9,8,7,5,8,3]},"huoling":{"title":"火灵","detail":[10,11,7,9,6,11]},"xinyan":{"title":"心眼","detail":[8,6,5,4,9,8]},"shuyao":{"title":"树妖","detail":[12,4,11,6,7,8]},"wangqie":{"title":"网切","detail":[13,11,9,10,12,8]}}
+        {"bangjing":{"title":"蚌精","detail":[5,2,5,2,5,5]},"meiyao":{"title":"魅妖","detail":[5,5,4,4,5,5]},"zhennv":{"title":"针女","detail":[10,5,9,6,7,9]},"xueyouhun":{"title":"雪幽魂","detail":[5,5,5,3,5,5]},"mingwu":{"title":"鸣屋","detail":[8,6,9,1,10,5]},"yinmoluo":{"title":"阴摩罗","detail":[11,5,7,9,10,5]},"zhongling":{"title":"钟灵","detail":[7,4,6,5,6,5]},"zheng":{"title":"狰","detail":[10,2,6,7,6,4]},"poshi":{"title":"破势","detail":[10,4,13,2,8,5]},"dizangfo":{"title":"地藏佛","detail":[12,5,11,6,9,7]},"fuyi":{"title":"蝠翼","detail":[9,2,8,3,8,4]},"niepanzhihuo":{"title":"涅盘之火","detail":[5,5,5,5,5,5]},"sanwei":{"title":"三味","detail":[7,8,10,4,12,5]},"wangliangzhixia":{"title":"魍魉之匣","detail":[5,5,5,5,5,5]},"beifu":{"title":"被服","detail":[10,4,6,4,8,2]},"zhaocaimao":{"title":"招财猫","detail":[11,14,6,4,6,4]},"fanzhen":{"title":"反枕","detail":[5,4,5,3,5,4]},"lunrudao":{"title":"轮入道","detail":[6,2,8,6,5,3]},"rinvsishi":{"title":"日女巳时","detail":[8,7,9,2,9,4]},"jingji":{"title":"镜姬","detail":[9,8,7,5,8,3]},"huoling":{"title":"火灵","detail":[10,11,7,9,6,11]},"xinyan":{"title":"心眼","detail":[8,6,5,4,9,8]},"shuyao":{"title":"树妖","detail":[12,4,11,6,7,8]},"wangqie":{"title":"网切","detail":[13,11,9,10,12,8]}}
     </textarea>
 </body>
 
