@@ -1,0 +1,77 @@
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  list-style: none;
+}
+html body {
+  margin: 0;
+  color: #666;
+  font: 12px/1.5em "微软雅黑";
+}
+#wrap {
+  padding: 20px;
+}
+#wrap .item h5 {
+  margin: 15px 0;
+  font-size: 14px;
+}
+#wrap .item .Mitama {
+  min-width: 1200px;
+}
+#wrap .item .Mitama:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#wrap .item .Mitama li {
+  float: left;
+  width: 170px;
+  position: relative;
+  padding: 0 0 0 30px;
+}
+#wrap .item .Mitama li > span {
+  position: absolute;
+  left: 15px;
+  top: 3px;
+  font-size: 14px;
+  line-height: 30px;
+}
+#wrap .item .Mitama li .type label {
+  display: block;
+}
+#wrap .item .Mitama li .type label:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#wrap .item .Mitama li .type label span {
+  float: left;
+}
+#wrap .item .Mitama li .type label input {
+  float: left;
+  width: 3em;
+}
+.item input {
+  box-sizing: content-box;
+  padding: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 3px 0;
+  text-align: center;
+  color: inherit;
+}
+.item li:nth-of-type(2n+1) input {
+  width: 3em;
+}
+.item li:nth-of-type(2n) input {
+  width: 160px;
+}
