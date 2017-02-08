@@ -59,6 +59,7 @@ html body {
 #wrap .item .Mitama li .type label input {
   float: left;
   width: 3em;
+  margin-left: 5px;
 }
 .item input {
   box-sizing: content-box;
