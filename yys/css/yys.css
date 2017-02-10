@@ -15,7 +15,7 @@ ul li {
 }
 input:focus {
   outline: none;
-  box-shadow: 0 0 2px #8CAEE5,0 0 2px #8CAEE5,0 0 2px #8CAEE5,0 0 3px #A4C6FD,0 0 3px #A4C6FD,0 0 3px #A4C6FD,0 0 3px #A4C6FD;
+  box-shadow: 0 0 2px #8CAEE5, 0 0 2px #8CAEE5, 0 0 2px #8CAEE5, 0 0 3px #A4C6FD, 0 0 3px #A4C6FD, 0 0 3px #A4C6FD, 0 0 3px #A4C6FD;
 }
 html body {
   margin: 0;
@@ -23,6 +23,8 @@ html body {
   font: 12px/1.5em "微软雅黑";
 }
 #wrap {
+  width: 1290px;
+  margin: 0 auto;
   padding: 20px;
 }
 #wrap .mitama h5 {
@@ -30,7 +32,7 @@ html body {
   font-size: 14px;
 }
 #wrap .mitama .list {
-  min-width: 1200px;
+  min-width: 1290px;
 }
 #wrap .mitama .list:after {
   content: '';
@@ -42,16 +44,14 @@ html body {
   width: 170px;
   position: relative;
   padding: 0 0 0 30px;
+  margin: 0 15px 0 0;
 }
-#wrap .mitama .list li:nth-of-type(2n+1) input {
-  width: 3em;
-}
-#wrap .mitama .list li:nth-of-type(2n) input {
-  width: 160px;
+#wrap .mitama .list li input {
+  width: 163px;
 }
 #wrap .mitama .list li input {
   box-sizing: content-box;
-  padding: 5px 0;
+  line-height: 24px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 3px 0;
@@ -61,7 +61,7 @@ html body {
 #wrap .mitama .list li > span {
   position: absolute;
   left: 15px;
-  top: 3px;
+  top: 2px;
   font-size: 14px;
   line-height: 30px;
 }
@@ -75,6 +75,8 @@ html body {
 }
 #wrap .mitama .list li .type label span {
   float: left;
+  line-height: 26px;
+  margin: 3px 0;
 }
 #wrap .mitama .list li .type label input {
   float: left;

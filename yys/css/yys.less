@@ -1,11 +1,14 @@
 /* reset */
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
 ul {
     padding: 0;
     margin: 0;
@@ -13,10 +16,11 @@ ul {
         list-style: none;
     }
 }
+
 input {
     &:focus {
         outline: none;
-        box-shadow: 0 0 2px #8CAEE5,0 0 2px #8CAEE5,0 0 2px #8CAEE5,0 0 3px #A4C6FD,0 0 3px #A4C6FD,0 0 3px #A4C6FD,0 0 3px #A4C6FD;
+        box-shadow: 0 0 2px #8CAEE5, 0 0 2px #8CAEE5, 0 0 2px #8CAEE5, 0 0 3px #A4C6FD, 0 0 3px #A4C6FD, 0 0 3px #A4C6FD, 0 0 3px #A4C6FD;
     }
 }
 
@@ -29,8 +33,6 @@ input {
     }
 }
 
-
-
 html {
     body {
         margin: 0;
@@ -40,6 +42,8 @@ html {
 }
 
 #wrap {
+    width: 1290px;
+    margin:0 auto;
     padding: 20px;
     .mitama {
         h5 {
@@ -47,22 +51,20 @@ html {
             font-size: 14px;
         }
         .list {
-            min-width: 1200px;
+            min-width: 1290px;
             .clearfix();
             li {
                 float: left;
                 width: 170px;
                 position: relative;
                 padding: 0 0 0 30px;
-                &:nth-of-type(2n+1) input {
-                    width: 3em;
+                margin: 0 15px 0 0;
+                input {
+                    width: 163px;
                 }
-                &:nth-of-type(2n) input {
-                    width: 160px;
-                }
-                input{
+                input {
                     box-sizing: content-box;
-                    padding: 5px 0;
+                    line-height: 24px;
                     border: 1px solid #ccc;
                     border-radius: 5px;
                     margin: 3px 0;
@@ -72,7 +74,7 @@ html {
                 >span {
                     position: absolute;
                     left: 15px;
-                    top: 3px;
+                    top: 2px;
                     font-size: 14px;
                     line-height: 30px;
                 }
@@ -82,6 +84,8 @@ html {
                         .clearfix();
                         span {
                             float: left;
+                            line-height: 26px;
+                            margin: 3px 0;
                         }
                         input {
                             float: left;
@@ -94,9 +98,10 @@ html {
         }
     }
 }
-#result{
-    width:100%;
-    height:400px;
-    line-height:1.5em;
-    resize:none;
+
+#result {
+    width: 100%;
+    height: 400px;
+    line-height: 1.5em;
+    resize: none;
 }
