@@ -1,10 +1,23 @@
+/* reset */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-
 input[type="number"] {
     -moz-appearance: textfield;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    li {
+        list-style: none;
+    }
+}
+input {
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 2px #8CAEE5,0 0 2px #8CAEE5,0 0 2px #8CAEE5,0 0 3px #A4C6FD,0 0 3px #A4C6FD,0 0 3px #A4C6FD,0 0 3px #A4C6FD;
+    }
 }
 
 // 清除浮动
@@ -16,13 +29,7 @@ input[type="number"] {
     }
 }
 
-ul {
-    padding: 0;
-    margin: 0;
-    li {
-        list-style: none;
-    }
-}
+
 
 html {
     body {
@@ -33,20 +40,35 @@ html {
 }
 
 #wrap {
-    padding:20px;
-    .item {
+    padding: 20px;
+    .mitama {
         h5 {
             margin: 15px 0;
             font-size: 14px;
         }
-        .Mitama {
-            min-width:1200px;
+        .list {
+            min-width: 1200px;
             .clearfix();
             li {
                 float: left;
-                width:170px;
+                width: 170px;
                 position: relative;
                 padding: 0 0 0 30px;
+                &:nth-of-type(2n+1) input {
+                    width: 3em;
+                }
+                &:nth-of-type(2n) input {
+                    width: 160px;
+                }
+                input{
+                    box-sizing: content-box;
+                    padding: 5px 0;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    margin: 3px 0;
+                    text-align: center;
+                    color: inherit;
+                }
                 >span {
                     position: absolute;
                     left: 15px;
@@ -72,21 +94,9 @@ html {
         }
     }
 }
-
-.item {
-    input {
-        box-sizing: content-box;
-        padding: 5px 0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 3px 0;
-        text-align: center;
-        color: inherit;
-    }
-    & li:nth-of-type(2n+1) input{
-        width:3em;
-    }
-    & li:nth-of-type(2n) input{
-        width:160px;
-    }
+#result{
+    width:100%;
+    height:400px;
+    line-height:1.5em;
+    resize:none;
 }

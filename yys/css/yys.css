@@ -1,3 +1,4 @@
+/* reset */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -12,6 +13,10 @@ ul {
 ul li {
   list-style: none;
 }
+input:focus {
+  outline: none;
+  box-shadow: 0 0 2px #8CAEE5,0 0 2px #8CAEE5,0 0 2px #8CAEE5,0 0 3px #A4C6FD,0 0 3px #A4C6FD,0 0 3px #A4C6FD,0 0 3px #A4C6FD;
+}
 html body {
   margin: 0;
   color: #666;
@@ -20,48 +25,31 @@ html body {
 #wrap {
   padding: 20px;
 }
-#wrap .item h5 {
+#wrap .mitama h5 {
   margin: 15px 0;
   font-size: 14px;
 }
-#wrap .item .Mitama {
+#wrap .mitama .list {
   min-width: 1200px;
 }
-#wrap .item .Mitama:after {
+#wrap .mitama .list:after {
   content: '';
   display: block;
   clear: both;
 }
-#wrap .item .Mitama li {
+#wrap .mitama .list li {
   float: left;
   width: 170px;
   position: relative;
   padding: 0 0 0 30px;
 }
-#wrap .item .Mitama li > span {
-  position: absolute;
-  left: 15px;
-  top: 3px;
-  font-size: 14px;
-  line-height: 30px;
-}
-#wrap .item .Mitama li .type label {
-  display: block;
-}
-#wrap .item .Mitama li .type label:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-#wrap .item .Mitama li .type label span {
-  float: left;
-}
-#wrap .item .Mitama li .type label input {
-  float: left;
+#wrap .mitama .list li:nth-of-type(2n+1) input {
   width: 3em;
-  margin-left: 5px;
 }
-.item input {
+#wrap .mitama .list li:nth-of-type(2n) input {
+  width: 160px;
+}
+#wrap .mitama .list li input {
   box-sizing: content-box;
   padding: 5px 0;
   border: 1px solid #ccc;
@@ -70,9 +58,32 @@ html body {
   text-align: center;
   color: inherit;
 }
-.item li:nth-of-type(2n+1) input {
-  width: 3em;
+#wrap .mitama .list li > span {
+  position: absolute;
+  left: 15px;
+  top: 3px;
+  font-size: 14px;
+  line-height: 30px;
 }
-.item li:nth-of-type(2n) input {
-  width: 160px;
+#wrap .mitama .list li .type label {
+  display: block;
+}
+#wrap .mitama .list li .type label:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#wrap .mitama .list li .type label span {
+  float: left;
+}
+#wrap .mitama .list li .type label input {
+  float: left;
+  width: 3em;
+  margin-left: 5px;
+}
+#result {
+  width: 100%;
+  height: 400px;
+  line-height: 1.5em;
+  resize: none;
 }
