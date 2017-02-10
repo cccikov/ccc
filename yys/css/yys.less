@@ -20,7 +20,7 @@ ul {
 input {
     &:focus {
         outline: none;
-        box-shadow: 0 0 2px #8CAEE5, 0 0 2px #8CAEE5, 0 0 2px #8CAEE5, 0 0 3px #A4C6FD, 0 0 3px #A4C6FD, 0 0 3px #A4C6FD, 0 0 3px #A4C6FD;
+        box-shadow: 0 0 2px #8CAEE5, 0 0 2px #8CAEE5, 0 0 2px #8CAEE5, 0 0 3px #A4C6FD, 0 0 3px #A4C6FD, 0 0 3px #A4C6FD, 0 0 3px #A4C6FD !important;
     }
 }
 
@@ -91,6 +91,17 @@ html {
                             float: left;
                             width: 3em;
                             margin-left: 5px;
+                            &:nth-of-type(1){
+                                border-color:#CA64E3;
+                            }
+                            &:nth-of-type(2){
+                                border-color:#eacf6c;
+                                box-shadow:0px 0px 1px #eacf6c;
+                            }
+                            &:nth-of-type(3){
+                                border-color:#eacf6c;
+                                box-shadow:0px 0px 2px #eacf6c;
+                            }
                         }
                     }
                 }

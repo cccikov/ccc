@@ -2,11 +2,9 @@ $(function() {
     var data = {};
 
     if (theSameDay()) { //同一天
-        console.log("是同一天");
         data = ccc.getStorage("yys") != undefined ? ccc.getStorage("yys") : ccc.strToJson($("#result").val());
         $("#result").val(syntaxHighlight(data));
-    } else {
-        console.log("不是同一天");
+    } else {//不是同一天
         var json = ccc.strToJson($("#result").val());
         ccc.setStorage("yys", json);
         ccc.setStorage("time", (new Date()).getTime());
