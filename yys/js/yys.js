@@ -2,13 +2,17 @@ $(function() {
     var data = {};
 
     if (theSameDay()) { //同一天
+        console.log("同一天");
         data = ccc.getStorage("yys") != undefined ? ccc.getStorage("yys") : ccc.strToJson($("#result").val());
         $("#result").val(syntaxHighlight(data));
     } else {//不是同一天
-        var json = ccc.strToJson($("#result").val());
-        ccc.setStorage("yys", json);
+        console.log("不是同一天");
+        data =  ccc.strToJson($("#result").val());
+        ccc.setStorage("yys", data);
         ccc.setStorage("time", (new Date()).getTime());
     }
+
+    console.log(data);
 
     // 载入数据
     for (var i in data) {
