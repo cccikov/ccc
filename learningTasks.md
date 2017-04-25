@@ -3,6 +3,7 @@
 * 微信小程序
 * ECMAScript6
 * nodeJs
-* vue & react
+* (vue2 & react) | angular2
 * gulp & webpack
 * 建网
+* Koa Express
