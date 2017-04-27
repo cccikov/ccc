@@ -1,5 +1,6 @@
 # Learning Tasks
 
+#### 学习任务
 * 微信小程序
 * ECMAScript6
 * nodeJs
@@ -7,3 +8,8 @@
 * gulp & webpack
 * 建网
 * Koa Express
+
+
+
+##### 其他
+1. js设计模式
