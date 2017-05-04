@@ -10,9 +10,9 @@
 * Koa Express
 
 ##### 可选
-* Websockt
-
-
+* WebSocket
+* socket.io
+* Ajax(http请求)
 
 ##### 其他
 1. js设计模式

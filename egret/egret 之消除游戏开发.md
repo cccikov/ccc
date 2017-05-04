@@ -1,5 +1,9 @@
 #egret 之消除游戏开发
 
+目的:为了了解egret开发流程,以及需要掌握的知识
+    * 需要用到哪些api,怎么用
+    *
+
 ### 基本介绍
 
 时间限制,消除限制,步数限制,过关条件-消除数量
@@ -55,4 +59,17 @@ Typescript
 ### Egret 之消除游戏开发 - 游戏元素数据设计与对象池应用
 元素数据池
 [{"type":"xxx","id":"0","location":0},{"type":"xxx","id":1,"location":0}]
-项目配置文件egretProperties.json
+
+1. 修改项目配置文件egretProperties.json
+2. src > +data > +eLement > +baseElment.ts(基本数据) & + gameElement.ts 以及分别创建类
+    gameElement 继承 baseElment
+
+### Egret 之消除游戏开发 - 游戏关卡数据结构设计
+关卡数据设置
+关卡元素LevelRequireElement两个属性type ,number(消除数量)
+创建一个LevelRequireElement类 继承 baseElement 添加属性
+在data文件创建一个LevelRequire类
+
+### Egret 之消除游戏开发 - 游戏基础数据封装
+
+
