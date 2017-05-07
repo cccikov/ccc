@@ -4,7 +4,9 @@
 
 两个略有些不一样
 
-		sudo apt-get update 或者 sudo apt-get upgrade
+	sudo apt-get update 或者 sudo apt-get upgrade
+
+如果有软件在软件中心安装或者更新，sudo apt-get update有可能会失败
 
 ### 第三方deb
 
@@ -14,9 +16,9 @@ gdebi 安装第三方deb 2017/5/7更新后发现不用安装gdebi都可以安装
 
 1. 临时设置
 
-	xset m 1  
+   设置鼠标灵敏度 可以设置其他数值以及 default
 
-设置鼠标灵敏度 可以设置其他数值以及 default
+		xset m 1  
 
 ### 安装git
 
@@ -50,9 +52,9 @@ gdebi 安装第三方deb 2017/5/7更新后发现不用安装gdebi都可以安装
 	                                                             Left
 	                                                             Right
 
-### 如果有软件在软件中心安装或者更新，sudo apt-get update有可能会失败
+### 查看连接设备
 
-xinput --list
+	xinput --list
 
 ### 安装flash
 
