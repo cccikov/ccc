@@ -30,9 +30,32 @@ gdebi 安装第三方deb 2017/5/7更新后发现不用安装gdebi都可以安装
 
 ### 安装nodejs
 
-	sudo apt install nodejs-legacy ubuntu
+1. 简单
 
-输入node时，系统提示 ; 安装的版本时4.2.6 未安装npm
+		sudo apt install nodejs-legacy ubuntu
+
+	输入node时，系统提示 ; 安装的版本时4.2.6 未安装npm
+
+2. 最新
+
+	解压，也可以直接解压
+
+		xz -d node-v6.10.3-linux-x64.tar.xz
+		tar -xvf node-v6.10.3-linux-x64.tar
+
+	移到通用的软件安装目录 /opt/
+
+		sudo mv node-v6.10.3-linux-x64 /opt/
+
+	安装 npm 和 node 命令到系统命令 (不用切换目录)
+
+		sudo ln -s /opt/node-v6.10.3-linux-x64/bin/node /usr/local/bin/node
+		sudo ln -s /opt/node-v6.10.3-linux-x64/bin/npm /usr/local/bin/npm
+
+	测试
+
+		node -v
+		npm -v
 
 ### chromium
 
