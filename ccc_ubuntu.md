@@ -63,5 +63,7 @@ gdebi 安装第三方deb 2017/5/7更新后发现不用安装gdebi都可以安装
 ### openvpn
 
 	sudo apt-get install -y network-manager-openvpn network-manager-openvpn-gnome
-	“终端”里运行以下命令重启网络。
+
+“终端”里运行以下命令重启网络。
+
 	sudo /etc/init.d/network-manager restart
