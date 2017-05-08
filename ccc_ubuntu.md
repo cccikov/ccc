@@ -1,5 +1,10 @@
 # ubuntu使用 & linux命令
 
+### 打开终端
+
+<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>
+
+
 ### 更新软件源
 
 两个略有些不一样
@@ -56,6 +61,18 @@ gdebi 安装第三方deb 2017/5/7更新后发现不用安装gdebi都可以安装
 
 		node -v
 		npm -v
+
+### python 问题
+
+	python
+
+显示的是2.7.12版本
+
+	python3
+
+显示的是3.5.2版本
+
+这是由于桌面版的是 python2 ，服务器的是 python3
 
 ### chromium
 
