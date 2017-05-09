@@ -9,3 +9,4 @@
 |   ctrl+shift+l     | 无默认                   | 选中多行再加这个快捷键，会在多行行尾插入光标来进行多好行编辑 |         无        |
 |  ctrl+k,↑/↓/←/→    | 新组                     | 类似ctrl+k,ctrl+↑ 或者 alt+shift+1..                    |         无        |
 |  alt+shift+1..     | 无默认                   | 分栏                                                    |         无        |
+|  ctrl+shift+m      | markdown预览             | 选中封闭模块内容                                         |         无        |
