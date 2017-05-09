@@ -16,3 +16,8 @@
 
 ##### 其他
 1. js设计模式
+
+
+#### 公司任务
+1. egret 、数据传输问题（websokect）
+2. easyui等类似管理系统类ui[可参照](http://www.cnblogs.com/mfc-itblog/p/5785070.html)
