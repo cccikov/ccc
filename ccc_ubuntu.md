@@ -52,7 +52,7 @@ gdebi 安装第三方deb 2017/5/7更新后发现不用安装gdebi都可以安装
 
 		sudo mv node-v6.10.3-linux-x64 /opt/
 
-	安装 npm 和 node 命令到系统命令 (不用切换目录)
+	安装 npm 和 node 命令到系统命令 (不用切换目录)(从 软件安装目录 /opt/　安装到．．．)
 
 		sudo ln -s /opt/node-v6.10.3-linux-x64/bin/node /usr/local/bin/node
 		sudo ln -s /opt/node-v6.10.3-linux-x64/bin/npm /usr/local/bin/npm
@@ -61,6 +61,26 @@ gdebi 安装第三方deb 2017/5/7更新后发现不用安装gdebi都可以安装
 
 		node -v
 		npm -v
+
+*node-v6.10.3-linux-x64* 为当前版本node的目录名
+
+### 安装　cnpm
+
+下载 cnpm
+
+	npm install cnpm -g --registry=https://registry.npm.taobao.org
+
+或者 用下面这个下载 cnpm
+
+	sudo npm -g install cnpm
+
+下载好后，会在/opt/node-v6.10.3-linux-x64目录下有cnpm
+
+安装 cnpm
+
+	sudo ln -s /opt/node-v6.10.3-linux-x64/bin/cnpm /usr/local/bin/
+
+*node-v6.10.3-linux-x64* 为当前版本node的目录名
 
 ### python 问题
 
