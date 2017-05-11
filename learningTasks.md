@@ -7,7 +7,7 @@
 * vue2,react / angular2
 * gulp,webpack
 * 建网
-* Koa Express
+* Koa,Express
 
 ##### 可选
 * WebSocket
