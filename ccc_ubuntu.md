@@ -89,7 +89,9 @@ gdebi 安装第三方deb 2017/5/7更新后发现不用安装gdebi都可以安装
 	npm install [-g] [--save-dev] <name>
 	cnpm install [-g] [--save-dev] <name>
 
-	sudo ln -s /opt/node-v6.10.3-linux-x64/bin/<name> /usr/local/bin/
+	sudo ln -s /opt/node-v6.10.3-linux-x64/bin/<> /usr/local/bin/
+
+
 
 
 ### python 问题
@@ -113,7 +115,10 @@ gdebi 安装第三方deb 2017/5/7更新后发现不用安装gdebi都可以安装
 	sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
 	sudo apt-get update
 	sudo apt-get install indicator-sysmonitor
-	indicator-sysmonitor & 终端执行
+
+终端执行
+
+	indicator-sysmonitor &
 
 ### 任务栏位置
 
