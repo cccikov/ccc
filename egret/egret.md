@@ -82,11 +82,12 @@
                   "name": "md5",
                   "path": "../md5"
                 }
-                /**
-                 * 因为部分ide的问题，请将第三方库放到项目外面。
-                 * libs/modules 下的文件均为自动生成进去的
-                 * 使用egret build -e 会清理 libs/modules 下面的文件
-                 */
+
+                因为部分ide的问题，请将第三方库放到项目外面。
+
+                libs/modules 下的文件均为自动生成进去的，所以不用手动拷贝到 libs/modules 下。
+
+                使用egret build -e 会清理 libs/modules 下面的文件。
 
     2. publish
 
