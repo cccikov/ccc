@@ -82,6 +82,16 @@ gdebi 安装第三方deb 2017/5/7更新后发现不用安装gdebi都可以安装
 
 *node-v6.10.3-linux-x64* 为当前版本node的目录名
 
+**其实全部的npm插件在linux里面都要再次移到/usr/local/bin/**
+
+插件安装方法
+
+	npm install [-g] [--save-dev] <name>
+	cnpm install [-g] [--save-dev] <name>
+
+	sudo ln -s /opt/node-v6.10.3-linux-x64/bin/<name> /usr/local/bin/
+
+
 ### python 问题
 
 	python

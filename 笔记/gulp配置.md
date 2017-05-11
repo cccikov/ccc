@@ -30,10 +30,10 @@
 
 * 指定项目安装 Browsersync
 
-		cnpm install --save-dev browser-sync
+		cnpm install --save-dev browser-sync *
 
 * 调用 Browsersync
 
 		browser-sync start --server --files "**/*.css,**/*.js,**/*.html"
 
-	browser-sync start --server --files 后面加需要响应改动的文件
+	`**`表示任意目录 `browser-sync start --server --files ` 后面加需要响应改动的文件
