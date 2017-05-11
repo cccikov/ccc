@@ -3,7 +3,7 @@
 ## 学习内容
 1. typescript回家学
 2. Egret 之消除游戏开发 -- 从而了解egret开发需要掌握哪些知识
-
+3. 开发思路，类之间如果引用
 
 ### 相关网址
 
@@ -11,6 +11,7 @@
 * [介绍文档](http://developer.egret.com/cn/github/egret-docs/Engine2D/getStarted/getStarted/index.html)
 * [api文档](http://developer.egret.com/cn/apidoc/)
 * [教学代码](http://developer.egret.com/cn/example/page/index#010-disp-basic)
+* [视频](http://developer.egret.com/cn/list/video/id/175)
 
 ### 新项目目录
 
@@ -192,3 +193,53 @@
 
 
 
+### 显示核心类
+
+* DisplayObject
+
+    显示对象基类，所有显示对象均继承自此类
+
+    1. DisplayObjectContainer
+
+        显示对象容器接口，所有显示对象容器均实现此接口
+
+        1. Sprite
+
+            带有矢量绘制功能的显示容器
+
+        2. Stage
+
+            舞台类
+
+    2. Bitmap
+
+        位图，用来显示图片
+
+    3. Shape
+
+        用来显示矢量图，可以使用其中的方法绘制矢量图形（个人感觉有点类似canvas的绘制）
+
+    4. TextField
+
+        文本类
+
+    5. BitmapText
+
+        位图文本类
+
+
+DisplayObject属性
+
+* alpha：透明度
+* width：宽度
+* height：高度
+* rotation：旋转角度
+* scaleX：横向缩放
+* scaleY：纵向缩放
+* skewX：横向斜切
+* skewY：纵向斜切
+* visible：是否可见
+* x：X轴坐标值
+* y：Y轴坐标值
+* anchorOffsetX：对象绝对锚点X
+* anchorOffsetY：对象绝对锚点Y
