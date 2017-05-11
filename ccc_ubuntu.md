@@ -91,7 +91,7 @@ gdebi 安装第三方deb 2017/5/7更新后发现不用安装gdebi都可以安装
 
 	sudo ln -s /opt/node-v6.10.3-linux-x64/bin/<> /usr/local/bin/
 
-
+**如果安装时候加上了sudo 调用的时候也要在前面加上sudo**
 
 
 ### python 问题
