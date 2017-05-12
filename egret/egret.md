@@ -10,6 +10,7 @@
 * [开发者中心](http://developer.egret.com/cn/)
 * [介绍文档](http://developer.egret.com/cn/github/egret-docs/Engine2D/getStarted/getStarted/index.html)
 * [api文档](http://developer.egret.com/cn/apidoc/)
+* [getStarted](http://developer.egret.com/cn/github/egret-docs/Engine2D/getStarted/getStarted/index.html)
 * [教学代码](http://developer.egret.com/cn/example/page/index#010-disp-basic)
 * [视频](http://developer.egret.com/cn/list/video/id/175)
 
