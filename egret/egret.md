@@ -343,3 +343,33 @@ DisplayObject属性
 #### 绘制圆形
 
     shp.graphics.drawCircle( 0, 0, 50 );// x,y,半径
+
+#### 绘制直线
+
+    shp.graphics.moveTo( 10,10 );
+    shp.graphics.lineTo( 100, 20 );
+
+#### 曲线-二级贝塞尔曲线
+
+    shp.graphics.moveTo( 50, 50);
+    shp.graphics.curveTo( 100,100, 200,50);// 控制点 终点
+
+#### 圆弧
+
+    shp.graphics.drawArc(200,200,100,0,Math.PI,true);
+    //圆心 半径 初始角度 最终角度 true为逆时针绘制圆形.
+
+#### 遮罩
+
+设置显示对象的`mask`属性
+
+    // 方形遮罩
+    shp.mask = new egret.Rectangle(20,20,30,50);
+
+    //其他形状遮罩,将maskSprite设置为mySprite的遮罩
+    mySprite.mask = maskSprite;
+
+
+
+碰撞检测
+----------------------------
