@@ -149,8 +149,8 @@
     4. 配置
 
         * data-entry-class：文件类名称。 egretProperties.json 不再需要配置这个。
-        * data-orientation：旋转模式。
-        * data-scale-mode：适配模式。
+        * data-orientation：[旋转模式](http://developer.egret.com/cn/apidoc/index/name/egret.OrientationMode#AUTO)。
+        * data-scale-mode：[适配模式](http://developer.egret.com/cn/apidoc/index/name/egret.StageScaleMode)。
         * data-frame-rate：帧频数。
         * data-content-width：游戏内stage宽。
         * data-content-height：游戏stage高。
@@ -244,3 +244,102 @@ DisplayObject属性
 * y：Y轴坐标值
 * anchorOffsetX：对象绝对锚点X
 * anchorOffsetY：对象绝对锚点Y
+
+
+
+显示容器的概念与实现
+----------------------------------------
+
+所有的容器全部继承自 `DisplayObjectContainer` 类，这个名称为 `DisplayObjectContainer` 的类又继承自 `DisplayObject` 。也就是说，在Egret中，所有的容器其实也继承自 `DisplayObject`.
+
+
+#### Sprite
+
+在Egret中，我们还有一个其他的容器：`Sprite`。
+
+如果你查看Sprite类的内容,你会发现，`Sprite`仅仅是继承 `DisplayObjectContainer`。同时添加了一个Graphics功能。
+
+#### 自定义容器
+
+    class GridSprite extends egret.Sprite
+    {
+        public constructor()
+        {
+            super();
+            this.drawGrid();
+        }
+        private drawGrid()
+        {
+            this.graphics.beginFill( 0x0000ff );
+            this.graphics.drawRect( 0, 0, 50,50 );
+            this.graphics.endFill();
+            this.graphics.beginFill( 0x0000ff );
+            this.graphics.drawRect( 50, 50, 50, 50);
+            this.graphics.endFill();
+            this.graphics.beginFill( 0xff0000 );
+            this.graphics.drawRect( 50, 0, 50,50 );
+            this.graphics.endFill();
+            this.graphics.beginFill( 0xff0000 );
+            this.graphics.drawRect( 0, 50, 50,50 );
+            this.graphics.endFill();
+        }
+    }
+
+#### 添加与删除显示对象
+
+`addChild`
+
+    this.addChild( spr );
+
+`removeChild `
+
+    this.removeChild( spr );
+
+*this一般是继承于DisplayObjectContainer的对象,可以替换为其他对象,不一定是this*
+
+由于如果删除对象时,父级不正确会报错,建议使用下面判断来删除显示对象.
+
+    if( spr.parent ) {
+        spr.parent.removeChild( spr );
+    }
+
+#### 深度管理
+
+`容器.numChildren` 获取当前容器的子对象数量
+
+`addChild`默认是放在最上面,`容器.addChildAt( 显示对象, 深度值 )`来指定深度.`removeChildAt(深度值)`来将某个深度的显示对象删除.
+
+最大深度为`numChildren-1`,我们可以通过这个来遍历操作删除全部显示对象.
+
+`容器.swapChildren( 显示对象, 显示对象)` `容器.swapChildrenAt( 深度值, 深度值 )` 交换深度
+
+`容器.setChildIndex( 显示对象, 新的深度值 );`设置深度
+
+#### 访问容器子对象
+
+`容器.getChildAt( 深度值 );`通过子对象深度值来访问子对象
+
+`容器.getChildByName(子对象.name)`通过子对象的`name`属性来访问子对象,要先给子对象设置`name`属性
+
+
+
+
+矢量绘图
+--------------------
+**Shape**对象
+
+
+#### 绘制矩形
+
+    shp.graphics.beginFill( 0xff0000, 1);// 颜色 透明度
+    shp.graphics.drawRect( 0, 0, 100, 200 );
+    shp.graphics.lineStyle( 10, 0x00ff00 ); // 边框宽度,边框颜色
+    shp.graphics.endFill();
+
+#### 清空绘图
+
+    shp.graphics.clear();
+
+#### 绘制圆形
+
+    shp.graphics.drawCircle( 0, 0, 50 );// x,y,半径
