@@ -373,3 +373,68 @@ DisplayObject属性
 
 碰撞检测
 ----------------------------
+
+`hitTestPoint(10,10)`
+
+
+
+文本
+----------------------------
+
+`egret.TextField` 文本类
+
+`text` 文本的文字内容属性,egret.TextField对象会根据内容计算对象尺寸
+
+`size` 文字字体大小
+
+`egret.TextField.default_size` 设置全局默认字体大小
+
+`textColor` 文字颜色
+
+`egret.TextField.default_textColor` 全局默认颜色
+
+`fontFamily` 字体系列
+
+|中文名称    |    font-family   |
+|------------|------------------|
+|宋体        |    SimSun        |
+|黑体        |    SimHei        |
+|微软雅黑    | Microsoft YaHei  |
+|微软正黑体  |Microsoft JhengHei|
+|新宋体      |    NSimSun       |
+|新细明体    |    PMingLiU      |
+|细明体      |    MingLiU       |
+|标楷体      |    DFKai-SB      |
+|仿宋        |    FangSong      |
+|楷体        |    KaiTi         |
+|仿宋_GB2312 |  FangSong_GB2312 |
+|楷体_GB2312 |    KaiTi_GB2312  |
+
+横向布局
+
+    label.textAlign = egret.HorizontalAlign.LEFT;
+    label.textAlign = egret.HorizontalAlign.RIGHT;
+    label.textAlign = egret.HorizontalAlign.CENTER;
+
+纵向布局
+
+    label.verticalAlign = egret.VerticalAlign.TOP;
+    label.verticalAlign = egret.VerticalAlign.BOTTOM;
+    label.verticalAlign = egret.VerticalAlign.MIDDLE;
+
+描边
+
+    label.strokeColor = 0x0000ff;
+    label.stroke = 2;
+
+斜体加粗
+
+    label.bold = true;
+    label.italic = true;
+
+多种样式文字
+
+    tx.textFlow = <Array<egret.ITextElement>>[
+        { text:"文字", style:{"textColor":0xFF0000, "size":30}},
+        {text: "彩", style: {"italic": true, "textColor": 0x00ff00}}
+    ];
