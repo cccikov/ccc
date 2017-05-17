@@ -17,51 +17,6 @@
     <script type="text/javascript" src="../../jquery.easyui.mobile.js"></script>
     <link rel="stylesheet" type="text/css" href="../../themes/mobile.css">
 
-
-#### 说明
-
-以拖拽为例子讲解一下easyui的基本用法
-
-* 方法一:纯标签
-
-        <div class="easyui-draggable">
-            ccc
-        </div>
-
-* 方法二:标签加css
-
-        <div class="ccc">
-            ccc-js
-        </div>
-
-        <script type="text/javascript">
-            $(".ccc").draggable();
-        </script>
-
-====
-
-    <div id="dd" style="width:100px;height:100px;">
-        <div id="title" style="background:#ccc;">title</div>
-    </div>
-    <script type="text/javascript">
-    var opt = $('#dd').draggable({
-        handle: '#title'
-    }).draggable("options");
-    opt.cursor = "pointer";
-    </script>
-
-
-可以直接通过改options来修改配置,至少要用js代码初始化一次才可以使用`options`方法,`options`就是获取属性,由于js里面对象都是引用内存地址,所以我们一旦修改,就相当直接修改这个对象。
-
-    var opt = $('#dd').draggable({}).draggable("options")
-
-
-
-
-
-
-
-
 ## EasyUI每个组件的属性，方法和事件。用户可以很容易地扩展他们。
 
 #### 属性
@@ -132,3 +87,99 @@
                 onSelect:function(record){
                     alert(record.text)
                 }" />
+
+
+
+#### 例子
+
+以**拖拽 draggable**为例子讲解一下easyui的基本用法
+
+* 方法一:纯标签
+
+        <div class="easyui-draggable">
+            ccc
+        </div>
+
+* 方法二:标签加css
+
+        <div class="ccc">
+            ccc-js
+        </div>
+
+        <script type="text/javascript">
+            $(".ccc").draggable();
+        </script>
+
+添加属性，事件
+
+* 标签
+
+        <div class="easyui-draggable wrap"
+            data-options="handle:'.content',
+                        cursor:'pointer',
+                        onDrag:function(e){
+                            console.log(e.data);
+                        }">
+            <span class="content">title</span>
+        </div>
+
+    传的参数全部写在标签的` data-options `里面；` easyui-draggable `代表就是这个是 *拖拽* 功能
+
+* 标签+js
+
+        <div class="easyui-draggable wrap">
+            <span class="content">title</span>
+        </div>
+
+        <script type="text/javascript">
+            $(".wrap").draggable({
+                "handle":".content",
+                "cursor":"pointer",
+                "onDrag":function(e){
+                    console.log(e.data);
+                }
+            });
+        </script>
+
+    调用jq方法` draggable() ` 代表 *拖拽* 功能；参数以js对象格式传入那个` draggable() `里面
+
+方法只能通过js调用
+
+* 标签
+
+        <div class="easyui-draggable wrap"
+            data-options="handle:'.content',
+                        cursor:'pointer',
+                        onDrag:function(e){
+                            console.log(e.data);
+                        }">
+            <span class="content">title</span>
+        </div>
+
+        <script type="text/javascript">
+            $(".wrap").draggable("disable");
+        </script>
+
+* 标签+js
+
+        <div class="wrap">
+            <span class="content">title</span>
+        </div>
+
+        <script type="text/javascript">
+            $(".wrap").draggable({
+                "handle":".content",
+                "cursor":"pointer",
+                "onDrag":function(e){
+                    console.log(e.data);
+                }
+            }).draggable("disable");
+
+            var opt = $(".wrap").draggable("options");
+            console.log(opt);
+            opt.cursor = "move";
+        </script>
+
+可以直接通过改options来修改配置,至少要用js代码初始化一次才可以使用`options`方法,`options`就是获取属性,由于js里面对象都是引用内存地址,所以我们一旦修改,就相当直接修改这个对象。
+
+    var opt = $('#dd').draggable().draggable("options")
