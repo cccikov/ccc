@@ -7,7 +7,7 @@
     <script type="text/javascript" src="../../jquery.min.js"></script>
     <script type="text/javascript" src="../../jquery.easyui.min.js"></script>
 
-*`icon.css`必须在`easyui.css`下面*
+*`icon.css`必须在`easyui.css`后面*
 
 * 一个样式css 在`/themes/`里面有几个,这里选择的是`/themes/default/easyui.css`,`/themes/default/`里面也有好多不同组件的css,`easyui.css`包含其他全部,但是如果不用使用全部的组件,又不怕麻烦可以单独引用。
 * 图片css `/themes/icon.css`
