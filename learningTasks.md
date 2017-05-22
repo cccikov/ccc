@@ -13,6 +13,7 @@
 * WebSocket
 * socket.io
 * Ajax(http请求)
+* shadow dom
 
 ##### 其他
 1. js设计模式
