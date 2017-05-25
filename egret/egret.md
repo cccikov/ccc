@@ -5,6 +5,13 @@
 2. Egret 之消除游戏开发 -- 从而了解egret开发需要掌握哪些知识
 3. 开发思路，类之间如果引用
 
+* 注意:不知道为什么,如果用sublime编写代码,然后再编译,index.html文件有可能会被删除 *
+
+###### 网页的渲染方式
+* DOM(文档,文本布局)
+* Canvas(2D)
+* WebGL(3D)
+
 ### 相关网址
 
 * [开发者中心](http://developer.egret.com/cn/)
@@ -186,11 +193,36 @@
 
 ### 构建
 
-项目 - 构建/编译 或者使用命令行
+* 项目 - 构建/编译 或者使用命令行
 
-    egret build
+        egret build
 
-[编译顺序说明](http://developer.egret.com/cn/github/egret-docs/Engine2D/projectConfig/compileOrder/index.html)
+        egret build [project_name] [-e] [--runtime native]
+
+
+    |关键字      |描述                                    |
+    |------------|----------------------------------------|
+    |project_name|项目名称，按照操作系统的命名规范命名    |
+    |-e          |编译指定项目的同时编译引擎目录          |
+    |--runtime   |如果有native工程，则会将文件拷贝到工程里|
+
+    [编译顺序说明](http://developer.egret.com/cn/github/egret-docs/Engine2D/projectConfig/compileOrder/index.html)
+
+* 启动HttpServer,并在默认浏览器中打开指定项目
+
+        egret startserver --port 5000
+
+        egret startserver [project_name] [--port 3000] [-ip] [-serveronly]
+
+        egret startserver --port 5000 -a
+
+    |关键字      |描述                                    |
+    |------------|----------------------------------------|
+    |project_name|项目名称，按照操作系统的命名规范命名    |
+    |--port      |指定端口号                              |
+    |-ip         |是否使用本机IP                          |
+    |-serveronly |是否只运行服务器                        |
+    |-a          |auto 自动编译,修改后直接刷新浏览器即可  |
 
 
 
