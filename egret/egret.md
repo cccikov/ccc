@@ -157,7 +157,14 @@
 
         * data-entry-class：文件类名称。 egretProperties.json 不再需要配置这个。
         * data-orientation：[旋转模式](http://developer.egret.com/cn/apidoc/index/name/egret.OrientationMode#AUTO)。
+
+            ![图片](egret_orientation_mode.png)
+
+
         * data-scale-mode：[适配模式](http://developer.egret.com/cn/apidoc/index/name/egret.StageScaleMode)。
+
+            ![图片](egret_scale_mode.jpg)
+
         * data-frame-rate：帧频数。
         * data-content-width：游戏内stage宽。
         * data-content-height：游戏stage高。
