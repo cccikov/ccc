@@ -477,3 +477,7 @@ DisplayObject属性
         { text:"文字", style:{"textColor":0xFF0000, "size":30}},
         {text: "彩", style: {"italic": true, "textColor": 0x00ff00}}
     ];
+
+
+对象继承关系
+egret.DisplayObjectContainer  (Inheritance →) egret.DisplayObject (Inheritance →) egret.EventDispatcher (Inheritance →) egret.HashObject
