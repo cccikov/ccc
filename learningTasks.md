@@ -8,11 +8,13 @@
 * gulp,webpack
 * 建网
 * Koa,Express
+* 脚手架
 
 ##### 可选
 * WebSocket
 * socket.io
 * Ajax(http请求)
+* shadow dom
 
 ##### 其他
 1. js设计模式

@@ -5,6 +5,13 @@
 2. Egret 之消除游戏开发 -- 从而了解egret开发需要掌握哪些知识
 3. 开发思路，类之间如果引用
 
+* 注意:不知道为什么,如果用sublime编写代码,然后再编译,index.html文件有可能会被删除 *
+
+###### 网页的渲染方式
+* DOM(文档,文本布局)
+* Canvas(2D)
+* WebGL(3D)
+
 ### 相关网址
 
 * [开发者中心](http://developer.egret.com/cn/)
@@ -149,8 +156,15 @@
     4. 配置
 
         * data-entry-class：文件类名称。 egretProperties.json 不再需要配置这个。
-        * data-orientation：旋转模式。
-        * data-scale-mode：适配模式。
+        * data-orientation：[旋转模式](http://developer.egret.com/cn/apidoc/index/name/egret.OrientationMode#AUTO)。
+
+            ![图片](egret_orientation_mode.png)
+
+
+        * data-scale-mode：[适配模式](http://developer.egret.com/cn/apidoc/index/name/egret.StageScaleMode)。
+
+            ![图片](egret_scale_mode.jpg)
+
         * data-frame-rate：帧频数。
         * data-content-width：游戏内stage宽。
         * data-content-height：游戏stage高。
@@ -186,11 +200,36 @@
 
 ### 构建
 
-项目 - 构建/编译 或者使用命令行
+* 项目 - 构建/编译 或者使用命令行
 
-    egret build
+        egret build
 
-[编译顺序说明](http://developer.egret.com/cn/github/egret-docs/Engine2D/projectConfig/compileOrder/index.html)
+        egret build [project_name] [-e] [--runtime native]
+
+
+    |关键字      |描述                                    |
+    |------------|----------------------------------------|
+    |project_name|项目名称，按照操作系统的命名规范命名    |
+    |-e          |编译指定项目的同时编译引擎目录          |
+    |--runtime   |如果有native工程，则会将文件拷贝到工程里|
+
+    [编译顺序说明](http://developer.egret.com/cn/github/egret-docs/Engine2D/projectConfig/compileOrder/index.html)
+
+* 启动HttpServer,并在默认浏览器中打开指定项目
+
+        egret startserver --port 5000
+
+        egret startserver [project_name] [--port 3000] [-ip] [-serveronly]
+
+        egret startserver --port 5000 -a
+
+    |关键字      |描述                                    |
+    |------------|----------------------------------------|
+    |project_name|项目名称，按照操作系统的命名规范命名    |
+    |--port      |指定端口号                              |
+    |-ip         |是否使用本机IP                          |
+    |-serveronly |是否只运行服务器                        |
+    |-a          |auto 自动编译,修改后直接刷新浏览器即可  |
 
 
 
@@ -244,3 +283,201 @@ DisplayObject属性
 * y：Y轴坐标值
 * anchorOffsetX：对象绝对锚点X
 * anchorOffsetY：对象绝对锚点Y
+
+
+
+显示容器的概念与实现
+----------------------------------------
+
+所有的容器全部继承自 `DisplayObjectContainer` 类，这个名称为 `DisplayObjectContainer` 的类又继承自 `DisplayObject` 。也就是说，在Egret中，所有的容器其实也继承自 `DisplayObject`.
+
+
+#### Sprite
+
+在Egret中，我们还有一个其他的容器：`Sprite`。
+
+如果你查看Sprite类的内容,你会发现，`Sprite`仅仅是继承 `DisplayObjectContainer`。同时添加了一个Graphics功能。
+
+#### 自定义容器
+
+    class GridSprite extends egret.Sprite
+    {
+        public constructor()
+        {
+            super();
+            this.drawGrid();
+        }
+        private drawGrid()
+        {
+            this.graphics.beginFill( 0x0000ff );
+            this.graphics.drawRect( 0, 0, 50,50 );
+            this.graphics.endFill();
+            this.graphics.beginFill( 0x0000ff );
+            this.graphics.drawRect( 50, 50, 50, 50);
+            this.graphics.endFill();
+            this.graphics.beginFill( 0xff0000 );
+            this.graphics.drawRect( 50, 0, 50,50 );
+            this.graphics.endFill();
+            this.graphics.beginFill( 0xff0000 );
+            this.graphics.drawRect( 0, 50, 50,50 );
+            this.graphics.endFill();
+        }
+    }
+
+#### 添加与删除显示对象
+
+`addChild`
+
+    this.addChild( spr );
+
+`removeChild `
+
+    this.removeChild( spr );
+
+*this一般是继承于DisplayObjectContainer的对象,可以替换为其他对象,不一定是this*
+
+由于如果删除对象时,父级不正确会报错,建议使用下面判断来删除显示对象.
+
+    if( spr.parent ) {
+        spr.parent.removeChild( spr );
+    }
+
+#### 深度管理
+
+`容器.numChildren` 获取当前容器的子对象数量
+
+`addChild`默认是放在最上面,`容器.addChildAt( 显示对象, 深度值 )`来指定深度.`removeChildAt(深度值)`来将某个深度的显示对象删除.
+
+最大深度为`numChildren-1`,我们可以通过这个来遍历操作删除全部显示对象.
+
+`容器.swapChildren( 显示对象, 显示对象)` `容器.swapChildrenAt( 深度值, 深度值 )` 交换深度
+
+`容器.setChildIndex( 显示对象, 新的深度值 );`设置深度
+
+#### 访问容器子对象
+
+`容器.getChildAt( 深度值 );`通过子对象深度值来访问子对象
+
+`容器.getChildByName(子对象.name)`通过子对象的`name`属性来访问子对象,要先给子对象设置`name`属性
+
+
+
+
+矢量绘图
+--------------------
+**Shape**对象
+
+
+#### 绘制矩形
+
+    shp.graphics.beginFill( 0xff0000, 1);// 颜色 透明度
+    shp.graphics.drawRect( 0, 0, 100, 200 );
+    shp.graphics.lineStyle( 10, 0x00ff00 ); // 边框宽度,边框颜色
+    shp.graphics.endFill();
+
+#### 清空绘图
+
+    shp.graphics.clear();
+
+#### 绘制圆形
+
+    shp.graphics.drawCircle( 0, 0, 50 );// x,y,半径
+
+#### 绘制直线
+
+    shp.graphics.moveTo( 10,10 );
+    shp.graphics.lineTo( 100, 20 );
+
+#### 曲线-二级贝塞尔曲线
+
+    shp.graphics.moveTo( 50, 50);
+    shp.graphics.curveTo( 100,100, 200,50);// 控制点 终点
+
+#### 圆弧
+
+    shp.graphics.drawArc(200,200,100,0,Math.PI,true);
+    //圆心 半径 初始角度 最终角度 true为逆时针绘制圆形.
+
+#### 遮罩
+
+设置显示对象的`mask`属性
+
+    // 方形遮罩
+    shp.mask = new egret.Rectangle(20,20,30,50);
+
+    //其他形状遮罩,将maskSprite设置为mySprite的遮罩
+    mySprite.mask = maskSprite;
+
+
+
+碰撞检测
+----------------------------
+
+`hitTestPoint(10,10)`
+
+
+
+文本
+----------------------------
+
+`egret.TextField` 文本类
+
+`text` 文本的文字内容属性,egret.TextField对象会根据内容计算对象尺寸
+
+`size` 文字字体大小
+
+`egret.TextField.default_size` 设置全局默认字体大小
+
+`textColor` 文字颜色
+
+`egret.TextField.default_textColor` 全局默认颜色
+
+`fontFamily` 字体系列
+
+|中文名称    |    font-family   |
+|------------|------------------|
+|宋体        |    SimSun        |
+|黑体        |    SimHei        |
+|微软雅黑    | Microsoft YaHei  |
+|微软正黑体  |Microsoft JhengHei|
+|新宋体      |    NSimSun       |
+|新细明体    |    PMingLiU      |
+|细明体      |    MingLiU       |
+|标楷体      |    DFKai-SB      |
+|仿宋        |    FangSong      |
+|楷体        |    KaiTi         |
+|仿宋_GB2312 |  FangSong_GB2312 |
+|楷体_GB2312 |    KaiTi_GB2312  |
+
+横向布局
+
+    label.textAlign = egret.HorizontalAlign.LEFT;
+    label.textAlign = egret.HorizontalAlign.RIGHT;
+    label.textAlign = egret.HorizontalAlign.CENTER;
+
+纵向布局
+
+    label.verticalAlign = egret.VerticalAlign.TOP;
+    label.verticalAlign = egret.VerticalAlign.BOTTOM;
+    label.verticalAlign = egret.VerticalAlign.MIDDLE;
+
+描边
+
+    label.strokeColor = 0x0000ff;
+    label.stroke = 2;
+
+斜体加粗
+
+    label.bold = true;
+    label.italic = true;
+
+多种样式文字
+
+    tx.textFlow = <Array<egret.ITextElement>>[
+        { text:"文字", style:{"textColor":0xFF0000, "size":30}},
+        {text: "彩", style: {"italic": true, "textColor": 0x00ff00}}
+    ];
+
+
+对象继承关系
+egret.DisplayObjectContainer  (Inheritance →) egret.DisplayObject (Inheritance →) egret.EventDispatcher (Inheritance →) egret.HashObject
