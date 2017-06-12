@@ -113,3 +113,22 @@ JavaScript内部，字符以UTF-16的格式储存
     function is32Bit(s){
         return s.codePointAt(0) > 0xffff;
     }
+
+
+## 6.数组的扩展
+
+#### Array.from() 将类数组对象转化为数组
+
+#### Array.of() 将一堆数值转化为数组
+
+#### arr.copyWithin(目标索引, [源开始索引], [结束源索引(不包括)]) 从开始到结束(不包括结束)
+
+#### find()遍历返回符合条件的第一个成员,findIndex()遍历返回符合条件的第一个位置
+
+#### fill()方法使用给定值，填充一个数组
+
+#### ES6提供三个新的方法——entries()，keys()和values()——用于遍历数组。详见《Iterator》
+
+#### includes方法返回一个布尔值，表示某个数组是否包含给定的值.
+
+#### 数组的空位

@@ -5,7 +5,7 @@
 * ECMAScript6
 * nodeJs
 * vue2,react / angular2
-* gulp,webpack
+* gulp,webpack,babel(es6装换为es5工具)
 * 建网
 * Koa,Express
 * 脚手架
