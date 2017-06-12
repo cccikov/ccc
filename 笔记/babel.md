@@ -33,13 +33,13 @@ It currently includes:
 
 ### 安装
 
-由于墙的关系 , 全部 ` npm ` 实际使用时全部改为 ` cnpm `
+由于墙的关系 , 全部 `npm` 实际使用时全部改为 `cnpm`
 
 全局安装 babel-cli babel-preset-env
 
     npm install --g babel-cli babel-preset-env
 
-移到项目文件夹 ` npm init ` , 创建package.json
+移到项目文件夹 `npm init` , 创建package.json
 
 1. 安装
 
@@ -87,9 +87,9 @@ It currently includes:
 
     但是只会是复制一个副本而不是转换
 
-3. 配置 ` .babelrc ` 配置文件
+3. 配置 `.babelrc` 配置文件
 
-    虽然已经配置了 babel 但是并不能进行转换 , 在的项目根目录中创建一个 ` .babelrc ` 配置并启用一些插件。
+    虽然已经配置了 babel 但是并不能进行转换 , 在的项目根目录中创建一个 `.babelrc` 配置并启用一些插件。
 
     先安装 `preset-env`
 
