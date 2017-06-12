@@ -37,71 +37,73 @@ It currently includes:
 
 全局安装 babel-cli babel-preset-env
 
-	npm install --g babel-cli babel-preset-env
+    npm install --g babel-cli babel-preset-env
 
 移到项目文件夹 ` npm init ` , 创建package.json
 
 1. 安装
 
-	虽然您可以在您的机器上全局安装Babel CLI，但更好的是按项目在本地安装项目。
+    虽然您可以在您的机器上全局安装Babel CLI，但更好的是按项目在本地安装项目。
 
-	这主要有两个原因:
+    这主要有两个原因:
 
-	1. 同一台机器上的不同项目可能依赖于不同版本的Babel，允许您一次更新一个。
-	2. 这意味着您没有对您正在工作的环境有隐含的依赖性。使您的项目更加便携，更易于设置。
+    1. 同一台机器上的不同项目可能依赖于不同版本的Babel，允许您一次更新一个。
+    2. 这意味着您没有对您正在工作的环境有隐含的依赖性。使您的项目更加便携，更易于设置。
 
-	在项目
+    在项目
 
-		npm install --save-dev babel-cli
+        npm install --save-dev babel-cli
 
-	package.json中 会出现
+    package.json中 会出现
 
-		{
-		  	"name": "my-project",
-		  	"version": "1.0.0",
-		  	"devDependencies": {
-		    	"babel-cli": "^6.0.0"
-		  	}
-		}
+        {
+            "name": "my-project",
+            "version": "1.0.0",
+            "devDependencies": {
+                "babel-cli": "^6.0.0"
+            }
+        }
 
 2. 使用
 
-	只需添加一个`"scripts"`字段`package.json`，并将babel命令放在里面`build`。[详情cli语法](https://babeljs.io/docs/usage/cli/)
+    只需添加一个`"scripts"`字段`package.json`，并将babel命令放在里面`build`。[详情cli语法](https://babeljs.io/docs/usage/cli/)
 
-		{
-		    "name": "my-project",
-		    "version": "1.0.0",
-		+   "scripts": {
-		+     	"build": "babel src -d lib"
-		+   },
-		    "devDependencies": {
-		      	"babel-cli": "^6.0.0"
-		    }
-		}
+        {
+            "name": "my-project",
+            "version": "1.0.0",
 
-	现在从我们的终端我们可以运行 , 就会把src的js文件转换es5放在lib文件夹(一定要有src文件夹)
+            "scripts": {
+                "build": "babel src -d lib"
+            },
 
-		npm run build
+            "devDependencies": {
+                "babel-cli": "^6.0.0"
+            }
+        }
 
-	但是只会是复制一个副本而不是转换
+    现在从我们的终端我们可以运行 , 就会把src的js文件转换es5放在lib文件夹(一定要有src文件夹)
+
+        npm run build
+
+    但是只会是复制一个副本而不是转换
 
 3. 配置 ` .babelrc ` 配置文件
 
-	虽然已经配置了 babel 但是并不能进行转换 , 在的项目根目录中创建一个 ` .babelrc ` 配置并启用一些插件。
+    虽然已经配置了 babel 但是并不能进行转换 , 在的项目根目录中创建一个 ` .babelrc ` 配置并启用一些插件。
 
-	先安装 `preset-env`
+    先安装 `preset-env`
 
-		npm install babel-preset-env --save-dev
+        npm install babel-preset-env --save-dev
 
-	为了启用 preset-env，必须在`.babelrc`文件中定义它，如下所示：
+    为了启用 preset-env，必须在`.babelrc`文件中定义它，如下所示：
 
-		{
-		  	"presets": ["env"]
-		}
+        {
+            "presets": ["env"]
+        }
 
 4. 转换
 
-	现在再次运行`build`就可以了
+    现在再次运行`build`就可以了
 
-		npm run build
+        npm run build
 
