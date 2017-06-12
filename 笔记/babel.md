@@ -66,7 +66,7 @@ It currently includes:
 
 2. 使用
 
-    只需添加一个`"scripts"`字段`package.json`，并将babel命令放在里面`build`。[详情cli语法](https://babeljs.io/docs/usage/cli/)
+    只需在`package.json`添加一个`"scripts"`字段，并将babel命令放在里面`build`。[详情cli语法](https://babeljs.io/docs/usage/cli/)
 
         {
             "name": "my-project",
