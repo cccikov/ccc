@@ -119,7 +119,7 @@ gulp 命令行语法 **调用任务**
 
 * [gulp.watch](#gulpwatch)
 
-#### gulp.task
+### gulp.task
 
     gulp.task(name[, deps], fn)
 
@@ -152,7 +152,7 @@ e.g. :
         });
 
 
-#### gulp.src
+### gulp.src
 
     gulp.src(globs[, options])
 
@@ -189,7 +189,7 @@ e.g. :
 
         读取文件路径可拆分为  base + 中间路径 + 文件 第一个例子中 *中间路径*为`somedir/` 第二个例子给定了base *中间路径*为 `js/somedir/` ;然后写入路径又会根据读取路径计算的 path + 中间路径 + 文件;所以第一个写地址`'build/'+'somedir/'+'somefile.js'` 第二个写入地址 `'build/'+'js/somedir/'+'somefile.js'`
 
-#### gulp.dest
+### gulp.dest
 
     gulp.dest(path[, options])
 
@@ -244,7 +244,7 @@ gulp.src('index.html')
 
 > 简单来说gulp.src(path)就是返回一个stream流 , 我们把文件比作装水的桶，而水就是文件里的内容 , 流过每个pipe()管 , 执行管内操作 , 流过可以继续流过别的管 , 进行再一步修改文件内容
 
-#### gulp.watch
+### gulp.watch
 
     gulp.watch(glob [, opts], tasks) 或 gulp.watch(glob [, opts, cb])
 
