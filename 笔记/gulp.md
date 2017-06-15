@@ -152,6 +152,7 @@ e.g. :
         });
 
 
+
 ### gulp.src
 
     gulp.src(globs[, options])
@@ -189,6 +190,8 @@ e.g. :
 
         读取文件路径可拆分为  base + 中间路径 + 文件 第一个例子中 *中间路径*为`somedir/` 第二个例子给定了base *中间路径*为 `js/somedir/` ;然后写入路径又会根据读取路径计算的 path + 中间路径 + 文件;所以第一个写地址`'build/'+'somedir/'+'somefile.js'` 第二个写入地址 `'build/'+'js/somedir/'+'somefile.js'`
 
+
+
 ### gulp.dest
 
     gulp.dest(path[, options])
@@ -217,6 +220,12 @@ e.g. :
 
 写入地址路径即为 **path + 中间路径 + 文件**
 
+如果解释后的写入地址为读取文件地址,会覆盖源文件
+
+
+
+### `gulp.src()` 与 `gulp.dest()` 都是组合着使用的
+
 ```javascript
 gulp.src('client/templates/*.jade')
   .pipe(jade()) //对流进行了jade操作
@@ -237,9 +246,6 @@ gulp.src('index.html')
     .pipe(gulp.dest('new/new'))
     .pipe(gulp.dest('./'));
 ```
-
-如果解释后的写入地址为读取文件地址,会覆盖源文件
-
 
 
 > 简单来说gulp.src(path)就是返回一个stream流 , 我们把文件比作装水的桶，而水就是文件里的内容 , 流过每个pipe()管 , 执行管内操作 , 流过可以继续流过别的管 , 进行再一步修改文件内容
