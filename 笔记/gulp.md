@@ -232,10 +232,13 @@ gulp.src('./client/templates/*.jade')
 ```
 ```javascript
 // 一个简单的复制文件
-gulp.src('index.html').pipe(gulp.dest('new')).pipe(gulp.dest('new/new')).pipe(gulp.dest('./'))
+gulp.src('index.html')
+    .pipe(gulp.dest('new'))
+    .pipe(gulp.dest('new/new'))
+    .pipe(gulp.dest('./'));
 ```
 
-如果path的地址为读取文件地址,会覆盖源文件
+如果解释后的写入地址为读取文件地址,会覆盖源文件
 
 
 
