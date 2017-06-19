@@ -159,7 +159,7 @@ e.g. :
 
 输出（Emits）符合所提供的匹配模式（glob）或者匹配模式的数组（array of globs）的文件。 将返回一个 Vinyl files 的 stream 它可以被 piped(即用到 **Node.js** 的 `readable.pipe(destination[, options])`方法) 到别的插件中。
 
-* `globs` 类型： String 或 Array 所要读取的 glob 或者包含 globs 的数组。
+* `globs` 类型： String 或 Array 所要读取的 glob 或者包含 globs 的数组。也可以直接写文件的路径。
 
     glob 请参考 node-glob 语法
 
@@ -175,7 +175,7 @@ e.g. :
 
         如果该项被设置为 false，那么将会以 stream 方式返回 file.contents 而不是文件 buffer 的形式。这在处理一些大文件的时候将会很有用。**注意：**插件可能并不会实现对 stream 的支持。
 
-    3. `options.base` 类型： String 默认值： 将会加在 glob 之前
+    3. `options.base` 类型： String 默认值： glob 之前的字符串
 
 
         ```javascript
