@@ -58,8 +58,8 @@
                 nowX = e.originalEvent.touches[0].clientX;
                 var deltaX = nowX - oriX;
                 var deltaY = nowY - oriY;
-                tar.h += deltaX / winW * (360 / 3); //  满屏就是(360 / 3) 比例乘以(360 / 3)
-                tar.l += -deltaY / winH * 50; // 满屏就是50 比例乘以50
+                tar.h += deltaX / winW * (360 / 10); //  满屏就是(360 / 10) 比例乘以(360 / 10)
+                tar.l += -deltaY / winH * 10; // 满屏就是10 比例乘以10
 
                 if (tar.l >= 100) {
                     tar.l = 100;
@@ -74,6 +74,7 @@
                 if (tar.h < 0) {
                     tar.h = 360;
                 }
+                console.log(tar);
                 _that.css(tar.name, "hsl(" + parseInt(tar.h) + ", 100%, " + parseInt(tar.l) + "%)");
 
                 if (deltaX > 10 || deltaX < -10 || deltaY > 10 || deltaY < -10) {
