@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>阴阳屏检测</title>
+    <style type="text/css">
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    #wrap {
+        height: 100%;
+        overflow: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    </style>
+    <script type="text/javascript" src="../yys/js/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var bg_color = {
+            name: "background",
+            h: 0,
+            l: 10
+        }
+        var font_color = {
+            name: "color",
+            h: 0,
+            l: 10
+        }
+        var _flag = 0;
+        var tar = bg_color;
+        var winH = $(window).height();
+        var winW = $(window).width();
+
+
+        $("#wrap").on("touchstart", function(e) {
+
+            var _that = $(this);
+            var oriTime = new Date().getTime();
+            var oriY = e.originalEvent.touches[0].clientY,
+                nowY = oriY;
+            var oriX = e.originalEvent.touches[0].clientX,
+                nowX = oriX;
+            var moveFlag = false;
+
+
+            _that.on("touchmove", function(e) {
+                e.preventDefault();
+                nowY = e.originalEvent.touches[0].clientY;
+                nowX = e.originalEvent.touches[0].clientX;
+                var deltaX = nowX - oriX;
+                var deltaY = nowY - oriY;
+                tar.h += deltaX / winW * (360 / 3); //  满屏就是(360 / 3) 比例乘以(360 / 3)
+                tar.l += -deltaY / winH * 50; // 满屏就是50 比例乘以50
+
+                if (tar.l >= 100) {
+                    tar.l = 100;
+                }
+                if (tar.l <= 0) {
+                    tar.l = 0;
+                }
+
+                if (tar.h >= 360) {
+                    tar.h = 0;
+                }
+                if (tar.h < 0) {
+                    tar.h = 360;
+                }
+                _that.css(tar.name, "hsl(" + parseInt(tar.h) + ", 100%, " + parseInt(tar.l) + "%)");
+
+                if (deltaX > 10 || deltaX < -10 || deltaY > 10 || deltaY < -10) {
+                    moveFlag = true;
+                }
+
+                oriY = nowY;
+                oriX = nowX;
+            });
+
+            _that.on("touchend", function() {
+                var nowTime = new Date().getTime();
+                var deltaTime = nowTime - oriTime;
+                if (deltaTime < 300 && !moveFlag) {
+                    if (_flag == 0) {
+                        _flag = 1;
+                        tar = font_color;
+                    } else {
+                        _flag = 0;
+                        tar = bg_color;
+                    }
+                }
+                _that.off("touchend").off("touchmove");
+            });
+        }).css(tar.name, "hsl(" + parseInt(tar.h) + ", 100%, " + parseInt(tar.l) + "%)");;
+
+    });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et non quidem animi eos dicta molestiae ea, ab ad explicabo perspiciatis eum eligendi laudantium dolorum impedit velit tenetur ipsum. Maiores incidunt pariatur nobis culpa nam sint sapiente, quos, atque illum, modi inventore. Iste quis, id, in nostrum debitis ullam cum dolore repudiandae illum modi ut itaque ex necessitatibus, voluptates fuga, ipsam. Cupiditate culpa voluptate ab illum optio hic nesciunt et, explicabo! Praesentium nemo aperiam deleniti non, suscipit saepe quia numquam quos soluta similique cumque doloremque neque expedita, animi harum autem placeat ipsa minima facilis dolore iure dolor officiis dolorum. Nesciunt non ipsum dolorem ad natus soluta amet libero, ea fuga maxime blanditiis expedita dicta nihil minus, eaque velit voluptates in eos! Accusantium explicabo eius possimus rerum, voluptate voluptatum itaque? Eos libero est doloribus voluptatum fuga velit perferendis eveniet corporis ipsum atque dolorum, non iste reiciendis repellat dignissimos in aspernatur quas dicta perspiciatis nostrum nesciunt suscipit ipsam laudantium cumque? Aut eum velit quis quam, voluptas autem, voluptate doloremque quaerat, eveniet impedit esse fugit ipsam voluptatem repellendus doloribus aspernatur? Accusantium, eligendi aperiam error, asperiores perferendis nulla eveniet cumque veritatis assumenda quod, nostrum saepe impedit, distinctio nisi facere quam! Cumque quam, natus tempore, nesciunt voluptates maxime voluptas est, fugiat nam quo error harum illo magni! Nemo rem beatae voluptates praesentium necessitatibus nesciunt, error omnis, perferendis, voluptate qui harum deserunt eveniet corrupti alias facilis! Doloribus vel accusantium velit officia ea temporibus iure! Quasi magnam accusamus laboriosam quidem consequatur reprehenderit aut quas assumenda sit aliquid saepe, cum voluptatum ipsa optio quisquam magni odio minus. Iste nam sed quas repudiandae beatae nobis modi dicta ad natus est, nemo et id hic aspernatur dolore veritatis, iure ipsam, distinctio rem accusantium. Labore quaerat a, eaque enim ea, ad, ratione, optio est provident adipisci fugit laboriosam illum esse. Vitae, dolorem.
+    </div>
+</body>
+
+</html>

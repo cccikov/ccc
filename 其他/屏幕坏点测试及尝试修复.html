@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>屏幕坏点测试及尝试修复</title>
+    <style type="text/css">
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: #000;
+    }
+
+    #wrap {
+        height: 100%;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    </style>
+    <script type="text/javascript" src="../yys/js/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var _index = 0;
+        var color = ["#000", "#fff", "#f00", "#f0f", "#00f", "#0ff", "#0f0", "#ff0"];
+        var cancelAnimationFrame = false;
+        var _frameId = 0;
+        var _timeoutId = 0;
+
+
+        function circle(fn, fast) {
+            window.clearTimeout(_timeoutId);
+            window.cancelAnimationFrame(_frameId);
+            console.log()
+
+            if (fast) {
+                var AnimationFrameFn = function() {
+                    if (!cancelAnimationFrame) {
+                        _frameId = window.requestAnimationFrame(AnimationFrameFn);
+                    } else {
+                        window.cancelAnimationFrame(_frameId);
+                    }
+                    fn();
+                }
+                _frameId = window.requestAnimationFrame(AnimationFrameFn);
+            } else {
+                var AnimationFrameFn = function() {
+                    if (!cancelAnimationFrame) {
+                        _timeoutId = window.setTimeout(AnimationFrameFn, 500);
+                    } else {
+                        window.clearTimeout(_timeoutId);
+                    }
+                    fn();
+                }
+                _timeoutId = window.setTimeout(AnimationFrameFn, 500);
+            }
+
+        }
+
+        function tap() {
+            cancelAnimationFrame = true;
+            _index++;
+            if (_index >= color.length) {
+                _index = 0;
+            }
+            $("html").add("body").css("background", color[_index]);
+        }
+
+
+        function up() {
+            cancelAnimationFrame = false;
+            circle(function() {
+                _index++;
+                if (_index < 2) {
+                    _index = 2;
+                }
+                if (_index >= color.length) {
+                    _index = 2;
+                }
+                $("html").add("body").css("background", color[_index]);
+            }, true);
+
+        }
+
+        function down() {
+            cancelAnimationFrame = false;
+            circle(function() {
+                _index++;
+                if (_index < 2) {
+                    _index = 2;
+                }
+                if (_index >= color.length) {
+                    _index = 2;
+                }
+                $("html").add("body").css("background", color[_index]);
+            });
+        }
+
+        function left() {
+            cancelAnimationFrame = true;
+            _index++;
+            if (_index < 2) {
+                _index = 2;
+            }
+            if (_index >= color.length) {
+                _index = 2;
+            }
+            $("html").add("body").css("background", color[_index]);
+        }
+
+        function right() {
+            cancelAnimationFrame = true;
+            _index--;
+            if (_index < 2) {
+                _index = color.length - 1;
+            }
+            $("html").add("body").css("background", color[_index]);
+        }
+
+        $("#wrap").on("touchstart", function(e) {
+
+            var oriTime = new Date().getTime();
+            var _that = $(this);
+            var oriY = e.originalEvent.touches[0].clientY;
+            var oriX = e.originalEvent.touches[0].clientX;
+            var moveFlag = false;
+
+            _that.on("touchmove", function(e) {
+                var nowTime = new Date().getTime();
+                var deltaTime = nowTime - oriTime;
+                e.preventDefault();
+                if (!moveFlag && deltaTime < 1000) {
+                    var nowY = e.originalEvent.touches[0].clientY;
+                    var nowX = e.originalEvent.touches[0].clientX;
+                    var deltaX = nowX - oriX;
+                    var deltaY = nowY - oriY;
+
+                    if (deltaY < -50) {
+                        console.log("上滑");
+                        up();
+                        moveFlag = true;
+                    }
+                    if (deltaY > 50) {
+                        console.log("下滑");
+                        down();
+                        moveFlag = true;
+                    }
+                    if (deltaX < -50) {
+                        console.log("左滑");
+                        left();
+                        moveFlag = true;
+                    }
+                    if (deltaX > 50) {
+                        console.log("右滑");
+                        right();
+                        moveFlag = true;
+                    }
+                }
+
+
+            });
+
+            _that.on("touchend", function() {
+                var nowTime = new Date().getTime();
+                var deltaTime = nowTime - oriTime;
+                if (deltaTime < 300 && !moveFlag) {
+                    tap();
+                }
+                _that.off("touchend").off("touchmove");
+            });
+        });
+
+    });
+    </script>
+</head>
+
+<body>
+    <div id="wrap"></div>
+</body>
+
+</html>
