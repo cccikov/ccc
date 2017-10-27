@@ -284,7 +284,7 @@ gulp.src('index.html')
 
 返回的 EventEmitter 来发射（emit） change 事件,会被传入一个名为 event 的对象
 
- * `event.type` 类型： String
+* `event.type` 类型： String
 
     发生的变动的类型：added, changed 或者 deleted。
 
@@ -301,5 +301,31 @@ gulp.src('index.html')
     每次变动需要执行的 callback。相当于上面的on(change,function(event){})的回调函数
 
 
+```
+gulp.task("changeFile", function () {
+    // 用来检测对新建文件的反应
+    gulp.watch(["./web/*.html", "./web/js/*.js", "./web/css/*.css", "./web/less/*.less"], function (e) {
+        console.log("方式1", e.path, "文件改变");
+    });
+
+    gulp.watch(["web/*.html", "web/js/*.js", "web/css/*.css", "web/less/*.less"], function (e) {
+        console.log("方式2", e.path, "文件改变");
+    });
+
+    gulp.watch(["./web/**/*.html", "./web/js/**/*.js", "./web/css/**/*.css", "./web/less/**/*.less"], function (e) {
+        console.log("方式3", e.path, "文件改变");
+    });
+
+    gulp.watch(["web/**/*.html", "web/js/**/*.js", "web/css/**/*.css", "web/less/**/*.less"], function (e) {
+        console.log("方式4", e.path, "文件改变");
+    });
+
+    // 经过发现 方式2 和 方式4 是对新建文件有反应的 , 所以想要对新文件有反应 , 不要路径上不要加上 ./
+    // 还发现如果 , 如果文件里面一个对应类型的文件都不曾有过(比如 web/css 里面没有一个css文件) , 那么新建的该类型文件是没有反应的(在该文件新建的第一个css是没有反应的)
+});
+```
+
+经过发现 方式2 和 方式4 是对新建文件有反应的 , 所以想要对新文件有反应 , 不要路径上不要加上 `./`
+还发现如果 , 如果文件里面一个对应类型的文件都不曾有过(比如 `web/css` 里面没有一个css文件) , 那么新建的该类型文件是没有反应的(在该文件新建的第一个css是没有反应的)
 
 
