@@ -1,0 +1,6 @@
+由于想用一下自定义指令，并且vee-validate没有ajax验证功能，写了一个vue-cc-validate.js
+
+难题：
+    1. swiper 流畅
+    2. 保存位置，手机端返回，回到之前的位置
+    3.
