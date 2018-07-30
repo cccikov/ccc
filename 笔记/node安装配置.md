@@ -25,15 +25,21 @@ node命令
 
 * 使用npm安装插件：命令提示符执行
 
-        npm install <name> [-g] [--save-dev]
+        npm install <name> [-g|-global] [-P|--save-prod|-D|--save-dev|]
 
     `-g`：全局安装。将会安装在C:\Users\Administrator\AppData\Roaming\npm，并且写入系统环境变量；  非全局安装：将会安装在当前定位目录；  全局安装可以通过命令行在任何地方调用它，本地安装将安装在定位目录的`node_modules`文件夹下，通过`require()`调用；
 
-    `--save`：将保存配置信息至 `package.json`（`package.json`是`nodejs`项目配置文件）
+    `-P`、`--save-prod`：将保存配置信息至 `package.json`（`package.json`是`nodejs`项目配置文件）中的的dependencies节点。除非-D或-O存在，否则这是默认值。prod即production，表示产品。
 
-    `-dev`：保存至 `package.json`的devDependencies节点，不指定-dev将保存至dependencies节点
+    `-D`、`--save-dev`：将保存配置信息至 `package.json`的devDependencies节点。dev即Development，表示开发中需要引用的插件
 
-* 为什么要保存至 `package.json` ？因为node插件包相对来说非常庞大，所以不加入版本管理，将配置信息写入 `package.json` 并将其加入版本管理，其他开发者对应下载即可（命令提示符执行 `npm install` ，则会根据 `package.json` 下载所有需要的包）。
+    所以一般插件安装使用的是 `npm install <name>` 或 `npm install <name> -P` 或 `npm install <name> --save-prod`
+
+    单纯开发时插件使用的是 `npm install <name> --save-dev`
+
+    全局插件使用的是 `npm install <name> -g`
+
+* 为什么要保存至 `package.json` ？因为node插件包（node_modules文件夹）相对来说非常庞大（而且文件小且琐碎），所以不加入版本管理，将配置信息写入 `package.json` 并将其加入版本管理，其他开发者对应下载即可（命令提示符执行 `npm install` ，则会根据 `package.json` 下载所有需要的包）。
 
         npm install
         //或者
