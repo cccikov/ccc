@@ -91,3 +91,6 @@ fn1() || fn2() && fn3() * fn4() 实际组合是这样fn1() || (fn2() && (fn3() *
 
 
     fn1()*fn2()*(fn3()+fn4())
+
+
+    JavaScript中运算符优先级的问题 https://www.zhihu.com/question/52116922/answer/129171248
