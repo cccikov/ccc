@@ -6,6 +6,62 @@
 - [迭代操作](#迭代或者遍历)
 - [构造函数对象的方法](#构造函数对象的方法)
 
+``` javascript
+    // 合并数组
+    arr.concat([value1[, value2[, ...[, valueN]]]]);
+
+    // 转为字符串
+    arr.join([separator]);
+
+    // 排序
+    arr.sort();
+
+    // 颠倒顺序
+    arr.reverse();
+
+    // 尾部添加
+    arr.push(element1, ..., elementN);
+
+    // 尾部删除
+    arr.pop();
+
+    // 头部添加
+    arr.unshift(element1, ..., elementN)
+
+    // 头部删除
+    arr.shift();
+
+    // 指定位置添加/删除
+    array.splice(start[, deleteCount[, item1[, item2[, ...]]]]);
+
+    // 复制
+    arr.slice([begin[,end]]);
+
+    // 检索
+    arr.indexOf(searchElement[, fromIndex = 0]);
+
+    // 尾部检索
+    arr.lastIndexOf(searchElement[, fromIndex = 0])
+
+    // 遍历一次
+    arr.forEach(callback[, thisArg]);
+
+    // 遍历一次，返回结果
+    arr.map(callback[, thisArg]);
+
+    // 遍历一次，返回检测结果
+    arr.filter(callback[, thisArg]);
+
+    // 遍历一次，返回是否全部通过
+    arr.every(callback[, thisArg]);
+
+    // 遍历一次，返回是否有任意通过
+    arr.some(callback[, thisArg]);
+
+    // 判断是否是数组
+    Array.isArray(obj)
+```
+
 ## Array
 
 * **arr.concat**
@@ -25,7 +81,7 @@
     配合 `arr.splice` 可用于拼接字符串
 
     ``` javascript
-        str = arr.join(separator)
+        arr.join([separator])
         // separator ，字符间分隔符，默认为","；为""空字符的时候，返回的字符串之间就没有分隔符了。
     ```
 
@@ -103,7 +159,7 @@
 
     * start​
 
-        指定修改的开始位置（从0计数）。如果超出了数组的长度，则从数组末尾开始添加内容；如果是负值，则表示从数组末位开始的第几位（从-1计数）；如果负数的绝对值大于数组的长度，则表示开始位置为第0位。
+        指定修改的开始位置（从0计数）。如果超出了数组的长度，则从数组末尾开始添加内容；如果是负值，则表示从数组末位开始的第几位（从-1计数，如果是负数的话，可以看成是arr.length+start）；如果负数的绝对值大于数组的长度，则表示开始位置为第0位。
 
     * deleteCount 可选
 
@@ -137,7 +193,7 @@
 
 * **arr.slice**
 
-    返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象。且原始数组不会被修改。(不会修改原数组，可以是负数)
+    返回一个从原数组选择的开始到结束（不包括结束）位置那部分元素浅拷贝得到的新数组。且原始数组不会被修改。(不会修改原数组，可以是负数)
 
     ``` javascript
         arr.slice([begin[,end]]);
@@ -154,15 +210,15 @@
 
     * begin 可选
 
-        从该索引处开始提取原数组中的元素（从0开始）。开始位置
+        从该索引处开始提取原数组中的元素（从0开始）。开始位置，默认值为0。
 
         如果该参数为负数，则表示从原数组中的倒数第几个元素开始提取，slice(-2)表示提取原数组中的倒数第二个元素到最后一个元素（包含最后一个元素）。
 
         如果省略 begin，则 slice 从索引 0 开始。
 
-    * end可选
+    * end 可选
 
-        在该索引处结束提取原数组元素（从0开始）。slice会提取原数组中索引从 begin 到 end 的所有元素（包含begin，但不包含end）。结束位置
+        在该索引处结束提取原数组元素（从0开始）。slice会提取原数组中索引从 begin 到 end 的所有元素（包含begin，但不包含end）。结束位置，默认值为数组长度。
 
         slice(1,4) 提取原数组中的第二个元素开始直到第四个元素的所有元素 （索引为 1, 2, 3的元素）。
 
@@ -176,7 +232,7 @@
 
 * **arr.indexOf**
 
-    在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1
+    在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。从 fromIndex 处开始搜索。
 
     可用于判断数组是否有这个值，返回值为大于等于0就代表数组有这个值，返回值为-1（或者小于0）就代表数组中没有这个值。
 
