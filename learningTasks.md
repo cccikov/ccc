@@ -10,7 +10,7 @@
 * .vue vue单文件组件
 * vue-router
 * vuex
-* 尝试使用别的脚手架来构建vue框架，或者使用webpack搭建自己的脚手架
+* 尝试使用别的脚手架来构建vue框架，或者使用webpack搭建自己的脚手架 Yeoman
 
 
 #### 学习任务
@@ -29,6 +29,7 @@
 * socket.io
 * Ajax(http请求)
 * shadow dom
+* Dynamics.js 物理运动动画效果
 
 ##### 其他
 1. js设计模式
