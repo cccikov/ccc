@@ -101,7 +101,7 @@ build 的时候这两个命令错误`cordova platform add android` `cordova buil
 `cordova requirements` 报错
 
 ``` bash
- UnhandledPromiseRejectionWarning: CordovaError: No platforms added to this project. Please use `cordova platform add <platform>`.
+ UnhandledPromiseRejectionWarning: CordovaError: No platforms added to this project. Please use "cordova platform add <platform>".
 ```
 
 `cordova platform` 可知道可以添加的平台
