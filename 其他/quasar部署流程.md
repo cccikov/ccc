@@ -76,3 +76,16 @@ app:spawn Running "cordova build --release android" +0ms
 build 的时候这两个命令错误`cordova platform add android` `cordova build --release android`
 
 `/src-cordova/`目录下面并没有`platforms`文件夹
+
+
+### 研究cordova
+
+创建项目`cordova create myApp com.myCompany.myApp myApp` 立即报错
+
+``` bash
+Creating a new cordova project.
+(node:8308) UnhandledPromiseRejectionWarning: Error: Unhandled "error" event. (  Error from Cordova Fetch: Error: cmd: Command failed with exit code 1 Error output:
+npm ERR! code ENOLOCAL
+npm ERR! Could not install from "..\AppData\Roaming\npm\node_modules\cordova\node_modules\_cordova-app-hello-world@3.12.0@cordova-app-hello-world\index.js" as it does not contain a package.json file.
+
+```
