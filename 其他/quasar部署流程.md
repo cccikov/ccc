@@ -48,6 +48,21 @@ npm ERR!     C:\Users\Administrator\AppData\Roaming\npm-cache\_logs\2018-09-17T0
 
 ```
 
+解决方式：用`npm`代替`cnpm`安装cordova
+
+
+`cd src-cordova`
+
+`cordova requirements` 报错
+
+``` bash
+ UnhandledPromiseRejectionWarning: CordovaError: No platforms added to this project. Please use `cordova platform add <platform>`.
+```
+
+`cordova platform` 可知道可以添加的平台
+
+`cordova platform add android`
+
 
 ### 在quasar_mszm项目中尝试
 
@@ -78,6 +93,26 @@ build 的时候这两个命令错误`cordova platform add android` `cordova buil
 `/src-cordova/`目录下面并没有`platforms`文件夹
 
 
+解决方式：用`npm`代替`cnpm`安装cordova
+
+
+`cd src-cordova`
+
+`cordova requirements` 报错
+
+``` bash
+ UnhandledPromiseRejectionWarning: CordovaError: No platforms added to this project. Please use `cordova platform add <platform>`.
+```
+
+`cordova platform` 可知道可以添加的平台
+
+`cordova platform add android`
+
+`cd ../`回到项目目录
+
+`quasar build -m cordova -T android`
+
+
 ### 研究cordova
 
 创建项目`cordova create myApp com.myCompany.myApp myApp` 立即报错
@@ -89,3 +124,5 @@ npm ERR! code ENOLOCAL
 npm ERR! Could not install from "..\AppData\Roaming\npm\node_modules\cordova\node_modules\_cordova-app-hello-world@3.12.0@cordova-app-hello-world\index.js" as it does not contain a package.json file.
 
 ```
+
+解决方式：用`npm`代替`cnpm`安装cordova
