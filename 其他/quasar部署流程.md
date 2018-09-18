@@ -291,6 +291,8 @@ debug 版本的的打包过程一般由开发工具（比如 Android Studio）�
 
     一旦有了 keystore 文件，下次打包就可以很快了。你可以在 cordova build 中指定所有参数来快速打包。这会直接生成一个 android-release.apk 给你。
 
+    将`release-key.keystore`文件放在`src-cordova`目录下
+
     `cordova build android --release -- --keystore="release-key.keystore" --alias=cordova-demo --storePassword=testccc --password=testccc`
 
 5. build.json
@@ -319,3 +321,7 @@ debug 版本的的打包过程一般由开发工具（比如 Android Studio）�
     `quasar clean` 清空以前构建的文件
 
     `quasar build -m cordova -T android`
+
+7. 让正式项目也可以直接打包
+
+    将 `release-key.keystore` 和 `build.json` 复制到正式项目中
