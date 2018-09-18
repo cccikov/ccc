@@ -126,3 +126,94 @@ npm ERR! Could not install from "..\AppData\Roaming\npm\node_modules\cordova\nod
 ```
 
 解决方式：用`npm`代替`cnpm`安装cordova
+
+
+------------------------------
+
+### 从头开始一个新项目
+
+* `quasar init quasar_test`
+
+* `cd quasar_test`
+
+* `quasar dev` 运行成功
+
+* `quasar info` 查看quasar 依赖包信息
+
+    ``` bash
+    Operating System                Windows_NT(10.0.14393) - win32/x64
+    NodeJs                          8.12.0
+
+    Global packages
+      NPM                           6.4.1
+      yarn                          Not installed
+      quasar-cli                    0.17.18
+      vue-cli                       2.9.6
+      cordova                       8.0.0
+
+    Important local packages
+      quasar-cli                    0.17.18 (Quasar Framework CLI)
+      quasar-framework              0.17.15 (Build responsive SPA, SSR, PWA, Hybrid Mobile Apps and Electron apps, all simultaneously using the same codebase)
+      quasar-extras                 2.0.6   (Quasar Framework fonts, icons and animations)
+      vue                           2.5.17  (Reactive, component-oriented view layer for modern web interfaces.)
+      vue-router                    3.0.1   (Official router for Vue.js 2)
+      vuex                          3.0.1   (state management for Vue.js)
+      electron                      Not installed
+      electron-packager             Not installed
+      electron-builder              Not installed
+      @babel/core                   7.0.0-beta.54   (Babel compiler core.)
+      webpack                       4.18.1  (Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.)
+      webpack-dev-server            3.1.8   (Serves a webpack app. Updates the browser on changes.)
+      workbox-webpack-plugin        3.5.0   (A plugin for your Webpack build process, helping you generate a manifest of local files that workbox-sw should precache.)
+      register-service-worker       1.5.2   (Script for registering service worker, with hooks)
+
+    Networking
+      Host                          CMFQ8D6A8MCO7EJ
+      以太网                        192.168.0.172
+
+    ```
+
+* `quasar mode -a cordova` 添加 cordova
+
+* `cd src-cordova`
+
+* `cordova platform` 查看可以添加的平台
+
+    ``` bash
+    Installed platforms:
+      android 7.0.0
+    Available platforms:
+      browser ~5.0.1
+      ios ~4.5.4
+      osx ~4.0.1
+      windows ~5.0.0
+      www ^3.12.0
+    ```
+
+* `cordova platform add android` 增加android平台
+
+* `cordova requirements` 验证cordova环境
+
+    ``` bash
+    Android Studio project detected
+
+    Requirements check results for android:
+    Java JDK: installed 1.8.0
+    Android SDK: installed true
+    Android target: installed android-28,android-27,android-26,android-25,android-24,android-23,android-22,android-21,android-19,android-18,android-17,android-16,android-15,android-14
+    Gradle: installed C:\Program Files\Android\Android Studio\gradle\gradle-4.1\bin\gradle
+    ```
+
+* `cd ../`回到项目目录
+
+* `quasar build -m cordova -T android` 成功打包 release目录中
+
+apk虽然打包出来了，但是安装不了
+
+直接进入目录
+
+* `cordova build` 直接使用cordova命令构建app apk是在debug目录 打包的是debug版本
+
+* `cordova build android --release` 打包发行版 发现也是不行
+
+研究cordova打包发行版
