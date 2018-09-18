@@ -128,6 +128,12 @@ npm ERR! Could not install from "..\AppData\Roaming\npm\node_modules\cordova\nod
 解决方式：用`npm`代替`cnpm`安装cordova
 
 
+`cd myApp/`
+
+`cordova platform add android`
+
+`cordova build`
+
 ------------------------------
 
 ### 从头开始一个新项目
