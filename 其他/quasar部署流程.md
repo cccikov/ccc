@@ -200,7 +200,7 @@ npm ERR! Could not install from "..\AppData\Roaming\npm\node_modules\cordova\nod
     Requirements check results for android:
     Java JDK: installed 1.8.0
     Android SDK: installed true
-    Android target: installed android-28,android-27,android-26,android-25,android-24,android-23,android-22,android-21,android-19,android-18,android-17,android-16,android-15,android-14
+    Android target: installed android-28,android-27,android-26,android-25,android-24,android-23,android-22,android-21,android-19,android-18,android-17,android-16,android-15,android-14·
     Gradle: installed C:\Program Files\Android\Android Studio\gradle\gradle-4.1\bin\gradle
     ```
 
@@ -217,3 +217,56 @@ apk虽然打包出来了，但是安装不了
 * `cordova build android --release` 打包发行版 发现也是不行
 
 研究cordova打包发行版
+
+Android APK 手动打包流程
+
+Android app 的打包流程大致分为 build , sign , align 三部分。
+
+build是构建 APK 的过程，分为 debug 和 release 两种。release 是发布到应用商店的版本。
+
+sign是为 APK 签名。不管是哪一种 APK 都必须经过数字签名后才能安装到设备上，签名需要对应的证书（keystore），大部分情况下 APK 都采用的自签名证书，就是自己生成证书然后给应用签名。
+
+align是压缩和优化的步骤，优化后会减少 app 运行时的内存开销。
+
+debug 版本的的打包过程一般由开发工具（比如 Android Studio）自动完成的。开发工具在构建时会自动生成证书然后签名，不需要我们操心。而 release 版本则需要开发者自己生成证书文件。Cordova 作为 hybrid app 的框架不像纯 Android 开发那么自动化，所以第一次打 release 包我们需要了解一下手动打包的过程。
+
+
+1. Build
+
+    首先，我们生成一个 release APK 。这点在 cordova build 命令后加一个 --release 参数局可以。如果成功，你可以在 android-apk 目录下看到一个 android-release-unsigned.apk 文件。
+
+    `cordova build android --release`
+
+2. Sign
+
+    我们需要先生成一个数字签名文件（keystore）。这个文件只需要生成一次。以后每次 sign 都用它。
+
+    `keytool -genkey -v -keystore release-key.keystore -alias cordova-demo -keyalg RSA -keysize 2048 -validity 10000`
+
+    上面的命令意思是，生成一个 release-key.keystore 的文件，别名（alias）为 cordova-demo 。
+
+    报错 
+
+    ``` bash
+    'keytool' 不是内部或外部命令，也不是可运行的程序或批处理文件。
+    ```
+
+    keytool是在java的bin里面 C:\Program Files\Java\jdk1.8.0_181\bin
+
+    使用命令行跳转到`C:\Program Files\Java\jdk1.8.0_181\bin`
+
+    运行（使用cmd 不要使用git bash）
+
+    `keytool -genkey -v -keystore release-key.keystore -alias cordova-demo -keyalg RSA -keysize 2048 -validity 10000`
+
+    发现也是会报错 `java.io.FileNotFoundException: android.keystore` 据说是由于c盘该目录权限问题
+
+    `keytool -genkey -v -keystore E:/release-key.keystore -alias cordova-demo -keyalg RSA -keysize 2048 -validity 10000`
+
+
+
+    `jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore E:/release-key.keystore C:/ccc_code/quasar_test/src-cordova/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk cordova-demo`
+
+    签名成功
+
+    添加系统变量`C:\Program Files\Java\jdk1.8.0_181\bin`
