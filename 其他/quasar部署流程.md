@@ -210,7 +210,7 @@ npm ERR! Could not install from "..\AppData\Roaming\npm\node_modules\cordova\nod
 
 apk虽然打包出来了，但是安装不了
 
-直接进入目录
+直接进入目录`src-cordova` ，由于该目录是cordova的目录，可以直接使用cordova的命令，可以直接把它当成cordova的项目
 
 * `cordova build` 直接使用cordova命令构建app apk是在debug目录 打包的是debug版本
 
@@ -263,10 +263,53 @@ debug 版本的的打包过程一般由开发工具（比如 Android Studio）�
 
     `keytool -genkey -v -keystore E:/release-key.keystore -alias cordova-demo -keyalg RSA -keysize 2048 -validity 10000`
 
-
+    对 APK 签名
 
     `jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore E:/release-key.keystore C:/ccc_code/quasar_test/src-cordova/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk cordova-demo`
 
     签名成功
 
     添加系统变量`C:\Program Files\Java\jdk1.8.0_181\bin`
+
+    为了方便使用keytool，给系统变量加上java就可以了
+
+    增加`classpath` `.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar 2`
+    增加`JAVA_HOME` `C:\Program Files\Java\jdk1.8.0_181`
+    `Path` 增加`C:\Program Files\Java\jdk1.8.0_181\bin`
+
+3. 添加系统变量后，
+
+    `cd src-cordova`
+
+    `cordova build android --release` 生成出来的是安装不了的
+
+    利用已有的签名文件对apk进行签名
+
+    `jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore release-key.keystore ./platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk cordova-demo`
+
+4. 自动打包
+
+    一旦有了 keystore 文件，下次打包就可以很快了。你可以在 cordova build 中指定所有参数来快速打包。这会直接生成一个 android-release.apk 给你。
+
+    `cordova build android --release -- --keystore="release-key.keystore" --alias=cordova-demo --storePassword=testccc --password=testccc`
+
+5. build.json
+    
+    虽然使用上面的命令可以快速打包出来，但是太多参数，而且我们使用的quasar打包
+
+    新建`build.json`
+
+    ``` json
+    {
+      "android": {
+        "release": {
+          "keystore": "release-key.keystore",
+          "alias": "cordova-demo",
+          "storePassword": "testccc",
+          "password": "testccc"
+        }
+      }
+    }
+    ```
+
+    直接运行命令`cordova build --release`就可以了，不需要再打参数
