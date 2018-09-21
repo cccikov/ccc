@@ -331,3 +331,23 @@ debug 版本的的打包过程一般由开发工具（比如 Android Studio）�
 7. 让正式项目也可以直接打包
 
     将 `release-key.keystore` 和 `build.json` 复制到正式项目中
+
+### 增加权限
+
+除了要增加插件`cordova plugin add cordova-plugin-android-permissions`外
+
+还要在配置文件`config.xml` 声明需要什么权限
+
+``` xml
+<config-file parent="/*" target="AndroidManifest.xml">
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.BATTERY_STATS" />
+</config-file>
+```
+
+在`<widget>`也要加上这句话
+
+```
+ xmlns:android="http://schemas.android.com/apk/res/android"
+```
