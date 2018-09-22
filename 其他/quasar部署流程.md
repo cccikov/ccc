@@ -331,3 +331,49 @@ debug 版本的的打包过程一般由开发工具（比如 Android Studio）�
 7. 让正式项目也可以直接打包
 
     将 `release-key.keystore` 和 `build.json` 复制到正式项目中
+
+### 增加权限
+
+除了要增加插件`cordova plugin add cordova-plugin-android-permissions`外
+
+还要在配置文件`config.xml` 声明需要什么权限
+
+``` xml
+<config-file parent="/*" target="AndroidManifest.xml">
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.BATTERY_STATS" />
+</config-file>
+```
+
+在`<widget>`也要加上这句话
+
+```
+ xmlns:android="http://schemas.android.com/apk/res/android"
+```
+
+
+
+## quasar学习
+
+QPage必须由QPageContainer封装，而QPageContainer又必须是QLayout的子节点。
+
+```
+<q-layout>
+  ...
+  <q-page-container>
+    <q-page>
+      <!-- 页面内容 -->
+    </q-page>
+  </q-page-container>
+</q-layout>
+```
+
+QLayout 布局是包装页面内容的元素，如导航栏或侧滑菜单。是一个组件，用于一个页面有共用（一般在切换页面的时候不变）的头部、底部、侧栏。显示的内容就在页面的中间切换，中间的内容就是q-page，切换的也是q-page。
+
+使用 QLayout 布局一般是用在单页应用的第一级，一般二级页面再往下就没有头部底部了。如果二级页面需要侧栏也可以再次使用隐藏了头部底部的QLayout。
+
+由于 q-page 要在q-layout里面使用，所以当一个页面不需要用到q-layout的时候也不要再用q-page了
+
+
+
