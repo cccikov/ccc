@@ -1,5 +1,25 @@
 # flex布局
 
+## 属性概览
+
+``` css
+/* 容器属性 */
+flex-direction: row | row-reverse | column | column-reverse; /* default row */
+flex-wrap: nowrap | wrap | wrap-reverse; /* default nowrap */
+flex-flow: <flex-direction> || <flex-wrap>; /* default row nowrap */
+justify-content: flex-start | flex-end | center | space-between | space-around;
+align-items: flex-start | flex-end | center | baseline | stretch;
+align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+
+/* 项目(弹性元素)属性*/
+order: <integer>; /* default 0 */
+flex-grow: <number>; /* default 0 */
+flex-shrink: <number>; /* default 1 */
+flex-basis: <length> | auto; /* default auto */
+flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]; /* default 0 1 auto */
+align-self: auto | flex-start | flex-end | center | baseline | stretch; /* default auto */
+```
+
 ## 为什么是 弹性盒子?
 
 长久以来，唯一可用的且有稳定的跨浏览器兼容性的能用来构建 CSS 布局的工具只有 floats 和 positioning。它们是即可行，表现也不错的布局方案，但是在某些布局方面它们就有限制，并且难以实现。
@@ -25,26 +45,6 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 * 元素被拉伸来填充交叉轴大小。
 * flex-basis 属性为 auto。
 * flex-wrap 属性为 nowrap。
-
-#### 属性概览
-
-``` css
-/* 容器属性 */
-flex-direction: row | row-reverse | column | column-reverse; /* default row */
-flex-wrap: nowrap | wrap | wrap-reverse; /* default nowrap */
-flex-flow: <flex-direction> || <flex-wrap>; /* default row nowrap */
-justify-content: flex-start | flex-end | center | space-between | space-around;
-align-items: flex-start | flex-end | center | baseline | stretch;
-align-content: flex-start | flex-end | center | space-between | space-around | stretch;
-
-/* 项目(弹性元素)属性*/
-order: <integer>; /* default 0 */
-flex-grow: <number>; /* default 0 */
-flex-shrink: <number>; /* default 1 */
-flex-basis: <length> | auto; /* default auto */
-flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
-align-self: auto | flex-start | flex-end | center | baseline | stretch;
-```
 
 ### 容器属性
 
