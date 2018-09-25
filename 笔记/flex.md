@@ -7,9 +7,9 @@
 flex-direction: row | row-reverse | column | column-reverse; /* default row */
 flex-wrap: nowrap | wrap | wrap-reverse; /* default nowrap */
 flex-flow: <flex-direction> || <flex-wrap>; /* default row nowrap */
-justify-content: flex-start | flex-end | center | space-between | space-around;
-align-items: flex-start | flex-end | center | baseline | stretch;
-align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+justify-content: flex-start | flex-end | center | space-between | space-around; /* default flex-start */
+align-items: flex-start | flex-end | center | baseline | stretch; /* default stretch */
+align-content: flex-start | flex-end | center | space-between | space-around | stretch; /* default stretch */
 
 /* 项目(弹性元素)属性*/
 order: <integer>; /* default 0 */
@@ -29,6 +29,8 @@ align-self: auto | flex-start | flex-end | center | baseline | stretch; /* defau
 * 使容器的所有子项占用等量的可用宽度/高度，而不管有多少宽度/高度可用。
 * 使多列布局中的所有列采用相同的高度，即使它们包含的内容量不同。
 
+注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。
+
 ------------------
 
 ## flex布局
@@ -45,6 +47,7 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 * 元素被拉伸来填充交叉轴大小。
 * flex-basis 属性为 auto。
 * flex-wrap 属性为 nowrap。
+* 弹性元素的默认宽高由其内容决定
 
 ### 容器属性
 
