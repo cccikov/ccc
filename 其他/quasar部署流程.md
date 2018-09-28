@@ -352,6 +352,10 @@ debug 版本的的打包过程一般由开发工具（比如 Android Studio）�
  xmlns:android="http://schemas.android.com/apk/res/android"
 ```
 
+`/src-cordova/platforms` 和 `/src-cordova/plugins` 也有可能出现错误，删除这两个文件夹后
+
+再根据`package.json` 里面的 `codrova` 属性里面的 `platform` 和 `plugin` 来添加平台和插件
+
 
 
 ## quasar学习
@@ -371,9 +375,12 @@ QPage必须由QPageContainer封装，而QPageContainer又必须是QLayout的子�
 
 QLayout 布局是包装页面内容的元素，如导航栏或侧滑菜单。是一个组件，用于一个页面有共用（一般在切换页面的时候不变）的头部、底部、侧栏。显示的内容就在页面的中间切换，中间的内容就是q-page，切换的也是q-page。
 
-使用 QLayout 布局一般是用在单页应用的第一级，一般二级页面再往下就没有头部底部了。如果二级页面需要侧栏也可以再次使用隐藏了头部底部的QLayout。
+使用 QLayout 布局一般是用在单页应用的第一级，一般二级页面再往下就没有头部底部了，所以就一般不在需要用到 Qlayout 。如果二级页面需要侧栏也可以再次使用隐藏了头部底部的QLayout。
 
 由于 q-page 要在q-layout里面使用，所以当一个页面不需要用到q-layout的时候也不要再用q-page了
+
+
+
 
 
 
