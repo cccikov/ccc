@@ -114,7 +114,7 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 
 6. align-content
 
-    align-content属性定义了多根轴线（主轴）的对齐方式。如果项目只有一根轴线，该属性不起作用。
+    `align-content` 属性定义了多根轴线（主轴）的对齐方式。如果项目只有一根轴线，该属性不起作用。
 
     ``` css
     align-content: flex-start | flex-end | center | space-between | space-around | stretch;
@@ -132,7 +132,7 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 
 5. flex
 
-	flex规定了弹性元素如何伸长或缩短以适应flex容器中的可用空间。这是一个简写属性，用来设置flex-grow, flex-shrink与flex-basis。
+	`flex` 规定了弹性元素如何伸长或缩短以适应flex容器中的可用空间。这是一个简写属性，用来设置`flex-grow`, `flex-shrink`与`flex-basis`。
 
 	``` css
 	flex: none | auto | initial | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ];
