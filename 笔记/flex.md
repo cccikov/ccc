@@ -126,3 +126,62 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
     * space-between：主轴间以交叉轴两端对齐，主轴之间的间隔平均分布。
     * space-around：每根主轴两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
     * stretch（默认值）：多根主轴占满整个交叉轴，主轴之间没有间隔占满交叉轴。拉伸所有轴来填满剩余空间。剩余空间平均的分配给每根轴
+
+
+### 元素属性
+
+5. flex
+
+	flex规定了弹性元素如何伸长或缩短以适应flex容器中的可用空间。这是一个简写属性，用来设置flex-grow, flex-shrink与flex-basis。
+
+	``` css
+	flex: none | auto | initial | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ];
+	```
+
+	特殊值：
+
+	* `auto`
+
+		元素会根据自身的宽度与高度来确定尺寸，但是会自行伸长以吸收flex容器中额外的自由空间，也会缩短至自身最小尺寸以适应容器。这相当于将属性设置为 `flex: 1 1 auto`.
+
+	* `initial`
+
+		属性默认值， 元素会根据自身宽高设置尺寸。它会缩短自身以适应容器，但不会伸长并吸收flex容器中的额外自由空间来适应容器 。相当于将属性设置为 `flex: 0 1 auto`。
+
+	* `none`
+
+		元素会根据自身宽高来设置尺寸。它是完全非弹性的：既不会缩短，也不会伸长来适应flex容器。相当于将属性设置为 `flex: 0 0 auto`。
+
+
+	flex 属性可以指定1个，2个或3个值。
+
+	* 单值语法: 值必须为以下其中之一:
+
+		* 一个无单位数(`<number>`): 它会被当作`<flex-grow>`的值。例如：`flex:1`
+		* 一个有效的宽度(width)值: 它会被当作 `<flex-basis>`的值。例如：`flex:100px`  `flex:50%`
+		* 关键字`none`, `auto`,或`initial`.
+
+	* 双值语法: 第一个值必须为一个无单位数，并且它会被当作`<flex-grow>`的值。第二个值必须为以下之一：
+
+		* 一个无单位数：它会被当作`<flex-shrink>`的值。例如：`flex: 1 1`
+		* 一个有效的宽度值: 它会被当作`<flex-basis>`的值。例如：`flex: 1 50%`
+
+ 	* 三值语法:
+
+		* 第一个值必须为一个无单位数，并且它会被当作<flex-grow>的值。
+		* 第二个值必须为一个无单位数，并且它会被当作 <flex-shrink>的值。
+		* 第三个值必须为一个有效的宽度值， 并且它会被当作<flex-basis>的值。
+
+	默认值问题：
+
+	* flex元素的flex样式默认值是`0 1 auto`，即 flex-grow 的默认值为 0，flex-shrink 默认值为1 ，flex-basis的默认值为auto。
+	* 但是设置flex时，flex会自动给予`<'flex-grow'>`和`<'flex-basis'>`设一个另外一个值作为取值的默认值
+	* flex取值：
+		1. `<'flex-grow'>`
+		定义 flex 元素的 flex-grow 属性，详见 <number>。默认值为 1，负值无效。
+		2. `<'flex-shrink'>`
+		定义 flex 元素的 flex-shrink 属性，详见 <number>。默认值为 1，负值无效。
+		3. `<'flex-basis'>`
+		定义 flex 元素的 flex-basis 属性。任何可用于 width 和 height 的值都可接受。若值为0，则必须加上单位，以免被视作伸缩性。 默认值为0%。
+	* 即当一个使用有效的宽度时，flex-grow会从0变为1，`flex: 50%` 相当于 `flex: 1 1 50%`
+	* 当使用一个或两个无单位数时, flex-basis会从auto变为0，`flex: 1 1`  相当于 `flex: 1 1 0%`.
