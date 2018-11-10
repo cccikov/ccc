@@ -93,7 +93,8 @@ build 的时候这两个命令错误`cordova platform add android` `cordova buil
 `/src-cordova/`目录下面并没有`platforms`文件夹
 
 
-解决方式：用`npm`代替`cnpm`安装cordova
+解决方式：用`npm`代替`cnpm`安装cordova , 实际是因为那个文件夹不是完整的cordova文件夹 ，删除`/src-cordova/`文件夹，在quasar项目目录执行`quasar mode -a cordova`再次创建`/src-cordova/`
+
 
 
 `cd src-cordova`
@@ -384,3 +385,37 @@ QLayout 布局是包装页面内容的元素，如导航栏或侧滑菜单。是
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## ios mac 打包
+
+ios命令行需要 sudo 像 linux 一样
+
+ios-deploy not installed
+cocopods no installed
+
+`sudo npm install -g ios-deploy`安装报错，改用下面
+`sudo npm install -g ios-deploy --unsafe-perm=true`
+
+`sudo gem install cocoapods`
+
+`Resurces/config/xxxinfo.plist`设置权限
