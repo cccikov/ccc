@@ -358,6 +358,15 @@ debug 版本的的打包过程一般由开发工具（比如 Android Studio）�
 再根据`package.json` 里面的 `codrova` 属性里面的 `platform` 和 `plugin` 来添加平台和插件
 
 
+### 其他
+
+项目转移后。在 cordova 项目目录中，`npm i` 可以将配置在 `package.json` 里面的 `plugins` 也添加，然后执行`cordova run` 或者 `cordova build` 会将 `platforms` 添加上
+
+`quasar dev -m cordova -T android` 可以真机调试
+
+`cordova\platforms\android` 目录是安卓项目目录，可以用 android studio 打开
+
+
 
 ## quasar学习
 
@@ -418,4 +427,19 @@ cocopods no installed
 
 `sudo gem install cocoapods`
 
-`Resurces/config/xxxinfo.plist`设置权限
+xcode项目目录`Resurces/config/xxxinfo.plist` 设置权限 其实在打包好的目录info.plist里面也有
+
+对打包好（build成功）的app进行签名（validate App）前，需要在 apple developer 网站上里面的 `app store connect` 里面添加即将需要上传的app。
+
+1. 需要套装id（应该就是Bundle identifier）是自己定义的
+
+总打包流程
+1. 在quasar项目中执行 `quasar build -m cordova -T ios` 进行打包
+2. 在`⁨quasar_mszm⁩ ▸ ⁨src-cordova⁩ ▸ ⁨platforms⁩ ▸ ⁨ios⁩` 目录中找到 `.xcodeproj` 文件
+3. 打开后，点击该项目可以配置信息，可以配置名字，Bundle identifier，版本号。打包前一定要配置Bundle identifier
+4. 测试（Development）和发布（Distribution）都需要 Provisioning Profiles , 好容易申请，可以下载
+5. 在xcode最上面的顶栏那里，有一个可以选择设备的，测试时选择链接macbook的设备；打包时选择Generic iOS Device 通用设备
+6. 在菜单栏 Product -> Archive 进行打包成 `.ipa` 苹果安装包
+7. build successed 之后，可以选择 `Distribute App` 发布App，和 `Validate App` 对app进行签名。
+8.  `Validate App` 一直done next 就好了。又要给选择证书的时候选择下载下来的 发布版（Distribution）的 `Provisioning Profiles` 是 `.mobileprovision` 后缀的
+9. 签名成功后就可以 `Distribute App` 了 就可以上传到 自己的 app store connect 等待发布
