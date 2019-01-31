@@ -443,3 +443,36 @@ xcode项目目录`Resurces/config/xxxinfo.plist` 设置权限 其实在打包好
 7. build successed 之后，可以选择 `Distribute App` 发布App，和 `Validate App` 对app进行签名。
 8.  `Validate App` 一直done next 就好了。又要给选择证书的时候选择下载下来的 发布版（Distribution）的 `Provisioning Profiles` 是 `.mobileprovision` 后缀的
 9. 签名成功后就可以 `Distribute App` 了 就可以上传到 自己的 app store connect 等待发布
+
+
+
+苹果开发者
+
+Certificate,IDs & Profiles -- certificates 开发者证书制作
+
+* About Creating a Certificate Signing Request (CSR) 关于创建证书签名请求（CSR）
+
+    
+    >要手动生成证书，您需要Mac上的证书签名请求（CSR）文件。要创建CSR文件，请按照以下说明使用Keychain Access创建一个。
+
+    >创建CSR文件。
+    在Mac上的Applications文件夹中，打开Utilities文件夹并启动Keychain Access(可以直接搜索)。
+  
+    >在Keychain Access下拉菜单中，选择Keychain Access（钥匙串访问）> Certificate Assistant（证书助理）>从证书颁发机构请求证书。
+
+    >在“证书信息”窗口中，输入以下信息：
+    >在用户电子邮件地址字段中，输入您的电子邮件地址。
+    >在Common Name字段中，为您的私钥创建一个名称（例如，John Doe Dev Key）。
+    >CA电子邮件地址字段应保留为空。
+    >在“请求是”组中，选择“保存到磁盘”选项。
+    >单击Keychain Access中的Continue以完成CSR生成过程。
+
+    **有些时候可能会报 ‘no signing certificate "ios development" found’ ,这时我们可以下载生成csr，在mac中双击打开**
+
+* 添加设备 Devices Registering a New Device or Multiple Devices （注册新设备或多个设备）
+
+* ios Provisioning Profiles （iOS配置文件）
+    
+    这个下载后也双击一下吧
+ 
+
