@@ -456,12 +456,12 @@ Certificate,IDs & Profiles -- certificates 开发者证书制作
     >要手动生成证书，您需要Mac上的证书签名请求（CSR）文件。要创建CSR文件，请按照以下说明使用Keychain Access创建一个。
 
     >创建CSR文件。
-    在Mac上的Applications文件夹中，打开Utilities文件夹并启动Keychain Access(可以直接搜索)。
+    在Mac上的Applications（应用程序）文件夹中，打开Utilities文件夹并启动Keychain Access(可以直接搜索)。
   
     >在Keychain Access下拉菜单中，选择Keychain Access（钥匙串访问）> Certificate Assistant（证书助理）>从证书颁发机构请求证书。
 
     >在“证书信息”窗口中，输入以下信息：
-    >在用户电子邮件地址字段中，输入您的电子邮件地址。
+    >在用户电子邮件地址字段中，输入您的电子邮件地址（开发者账户的）。
     >在Common Name字段中，为您的私钥创建一个名称（例如，John Doe Dev Key）。
     >CA电子邮件地址字段应保留为空。
     >在“请求是”组中，选择“保存到磁盘”选项。
@@ -476,3 +476,34 @@ Certificate,IDs & Profiles -- certificates 开发者证书制作
     这个下载后也双击一下吧
  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Quasar应用程序流程
+
+[http://www.quasarchs.com/guide/app-plugins.html](http://www.quasarchs.com/guide/app-plugins.html)
+
+为了更好地理解插件的功能和用途，您需要了解您的网站/应用程序是如何启动的：
+
+Quasar初始化（组件，指令，插件，Quasar i18n，Quasar图标集）
+Quasar Extras被导入（Roboto字体 - 如果使用，图标，动画…）
+Quasar CSS和您的应用程序的全局CSS已导入
+App.vue被加载（尚未被使用）
+Store被导入（如果在src/store中使用Vuex存储）
+应用程序插件已导入
+除了应用程序Boot插件外，应用程序插件会执行其默认导出功能
+7.（如果在Electron模式下）Electron 被导入并注入Vue原型
+8.（如果在Cordova模式下）收听“deviceready”事件，然后继续执行以下步骤
+9.（如果应用程序Boot插件存在）执行应用程序Boot插件
+10.（如果不存在应用程序Boot插件）使用根组件实例化Vue并附加到DOM
