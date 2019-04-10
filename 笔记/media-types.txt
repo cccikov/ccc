@@ -1,7 +1,7 @@
                                                                      Media Types
 
    Last Updated
-           2018-07-25
+           2019-03-28
 
    Registration Procedure(s)
 
@@ -9,7 +9,7 @@
 
    Expert(s)
 
- Ned Freed (primary), Murray Kucherawy (secondary)
+ Ned Freed, Murray Kucherawy
 
    Reference
            [RFC6838][RFC4855]
@@ -65,12 +65,11 @@ application
            [IMG]
            CSV
 
-                                  Name                                                                         Template                                                                           Reference
+                                  Name                                                                         Template                                                                              Reference
 1d-interleaved-parityfec                                                 application/1d-interleaved-parityfec                                                 [RFC6015]
 3gpdash-qoe-report+xml                                                   application/3gpdash-qoe-report+xml                                                   [_3GPP][Ozgur_Oyman]
 3gpp-ims+xml                                                             application/3gpp-ims+xml                                                             [John_M_Meredith]
 A2L                                                                      application/A2L                                                                      [ASAM][Thomas_Thomsen]
-activemessage                                                            application/activemessage                                                            [Ehud_Shapiro]
 activemessage                                                            application/activemessage                                                            [Ehud_Shapiro]
 activity+json                                                            application/activity+json                                                            [W3C][Benjamin_Goering]
 alto-costmap+json                                                        application/alto-costmap+json                                                        [RFC7285]
@@ -93,6 +92,9 @@ atomcat+xml                                                              applica
 atomdeleted+xml                                                          application/atomdeleted+xml                                                          [RFC6721]
 atomicmail                                                               application/atomicmail                                                               [Nathaniel_Borenstein]
 atomsvc+xml                                                              application/atomsvc+xml                                                              [RFC5023]
+atsc-dwd+xml                                                             application/atsc-dwd+xml                                                             [ATSC]
+atsc-held+xml                                                            application/atsc-held+xml                                                            [ATSC]
+atsc-rsat+xml                                                            application/atsc-rsat+xml                                                            [ATSC]
 ATXML                                                                    application/ATXML                                                                    [ASAM][Thomas_Thomsen]
 auth-policy+xml                                                          application/auth-policy+xml                                                          [RFC4745]
 bacnet-xdd+zip                                                           application/bacnet-xdd+zip                                                           [ASHRAE][Dave_Robin]
@@ -148,6 +150,7 @@ DII                                                                      applica
 DIT                                                                      application/DIT                                                                      [ASAM][Thomas_Thomsen]
 dns                                                                      application/dns                                                                      [RFC4027]
 dns+json                                                                 application/dns+json                                                                 [RFC8427]
+dns-message                                                              application/dns-message                                                              [RFC8484]
 dskpp+xml                                                                application/dskpp+xml                                                                [RFC6063]
 dssc+der                                                                 application/dssc+der                                                                 [RFC5698]
 dssc+xml                                                                 application/dssc+xml                                                                 [RFC5698]
@@ -165,8 +168,7 @@ EmergencyCallData.ProviderInfo+xml                                       applica
 EmergencyCallData.ServiceInfo+xml                                        application/EmergencyCallData.ServiceInfo+xml                                        [RFC7852]
 EmergencyCallData.SubscriberInfo+xml                                     application/EmergencyCallData.SubscriberInfo+xml                                     [RFC7852]
 EmergencyCallData.VEDS+xml                                               application/EmergencyCallData.VEDS+xml                                               [RFC8148]
-emma+xml                                                                                                                                                      [W3C][http://www.w3.org/TR/2007/CR-emma-20071211/#media-type-registration][ISO-IEC
-                                                                                                                                                              JTC1]
+emma+xml                                                                                                                                                      [W3C][http://www.w3.org/TR/2007/CR-emma-20071211/#media-type-registration][ISO-IEC_JTC1]
 emotionml+xml                                                            application/emotionml+xml                                                            [W3C][Kazuyuki_Ashimura]
 encaprtp                                                                 application/encaprtp                                                                 [RFC6849]
 epp+xml                                                                  application/epp+xml                                                                  [RFC5730]
@@ -174,18 +176,20 @@ epub+zip                                                                 applica
 eshop                                                                    application/eshop                                                                    [Steve_Katz]
 example                                                                  application/example                                                                  [RFC4735]
 exi                                                                                                                                                           [W3C][http://www.w3.org/TR/2009/CR-exi-20091208/#mediaTypeRegistration]
+expect-ct-report+json                                                    application/expect-ct-report+json                                                    [RFC-ietf-httpbis-expect-ct-08]
 fastinfoset                                                              application/fastinfoset                                                              [ITU-T_ASN.1_Rapporteur]
 fastsoap                                                                 application/fastsoap                                                                 [ITU-T_ASN.1_Rapporteur]
 fdt+xml                                                                  application/fdt+xml                                                                  [RFC6726]
 fhir+json                                                                application/fhir+json                                                                [HL7][Grahame_Grieve]
 fhir+xml                                                                 application/fhir+xml                                                                 [HL7][Grahame_Grieve]
 fits                                                                     application/fits                                                                     [RFC4047]
-font-sfnt - DEPRECATED in favor of font/sfnt                             application/font-sfnt                                                                [Levantovsky][ISO-IEC JTC1][RFC8081]
+font-sfnt - DEPRECATED in favor of font/sfnt                             application/font-sfnt                                                                [Levantovsky][ISO-IEC_JTC1][RFC8081]
 font-tdpfr                                                               application/font-tdpfr                                                               [RFC3073]
 font-woff - DEPRECATED in favor of font/woff                             application/font-woff                                                                [W3C][RFC8081]
 framework-attributes+xml                                                 application/framework-attributes+xml                                                 [RFC6230]
 geo+json                                                                 application/geo+json                                                                 [RFC7946]
 geo+json-seq                                                             application/geo+json-seq                                                             [RFC8142]
+geopackage+sqlite3                                                       application/geopackage+sqlite3                                                       [OGC][Scott_Simmons]
 geoxacml+xml                                                             application/geoxacml+xml                                                             [OGC][Scott_Simmons]
 gltf-buffer                                                              application/gltf-buffer                                                              [Khronos][Saurabh_Bhatia]
 gml+xml                                                                  application/gml+xml                                                                  [OGC][Clemens_Portele]
@@ -205,7 +209,7 @@ index.obj                                                                applica
 index.response                                                           application/index.response                                                           [RFC2652]
 index.vnd                                                                application/index.vnd                                                                [RFC2652]
 inkml+xml                                                                application/inkml+xml                                                                [Kazuyuki_Ashimura]
-iotp                                                                     application/iotp                                                                     [RFC2935]
+IOTP                                                                     application/IOTP                                                                     [RFC2935]
 ipfix                                                                    application/ipfix                                                                    [RFC5655]
 ipp                                                                      application/ipp                                                                      [RFC8010]
 isup                                                                     application/isup                                                                     [RFC3204]
@@ -259,6 +263,7 @@ metalink4+xml                                                            applica
 mets+xml                                                                 application/mets+xml                                                                 [RFC6207]
 MF4                                                                      application/MF4                                                                      [ASAM][Thomas_Thomsen]
 mikey                                                                    application/mikey                                                                    [RFC3830]
+mmt-aei+xml                                                              application/mmt-aei+xml                                                              [ATSC]
 mmt-usd+xml                                                              application/mmt-usd+xml                                                              [ATSC]
 mods+xml                                                                 application/mods+xml                                                                 [RFC6207]
 moss-keys                                                                application/moss-keys                                                                [RFC1848]
@@ -275,7 +280,7 @@ mrb-publish+xml                                                          applica
 msc-ivr+xml                                                              application/msc-ivr+xml                                                              [RFC6231]
 msc-mixer+xml                                                            application/msc-mixer+xml                                                            [RFC6505]
 msword                                                                   application/msword                                                                   [Paul_Lindner]
-mud+json                                                                 application/mud+json                                                                 [RFC-ietf-opsawg-mud-25]
+mud+json                                                                 application/mud+json                                                                 [RFC8520]
 mxf                                                                      application/mxf                                                                      [RFC4539]
 n-quads                                                                  application/n-quads                                                                  [W3C][Eric_Prudhommeaux]
 n-triples                                                                application/n-triples                                                                [W3C][Eric_Prudhommeaux]
@@ -289,10 +294,12 @@ nss                                                                      applica
 ocsp-request                                                             application/ocsp-request                                                             [RFC6960]
 ocsp-response                                                            application/ocsp-response                                                            [RFC6960]
 octet-stream                                                             application/octet-stream                                                             [RFC2045][RFC2046]
-oda                                                                      application/oda                                                                      [RFC2045][RFC2046]
+ODA                                                                      application/ODA                                                                      [RFC1494]
+odm+xml                                                                  application/odm+xml                                                                  [CDISC][Sam_Hume]
 ODX                                                                      application/ODX                                                                      [ASAM][Thomas_Thomsen]
 oebps-package+xml                                                        application/oebps-package+xml                                                        [RFC4839]
 ogg                                                                      application/ogg                                                                      [RFC5334][RFC7845]
+oscore                                                                   application/oscore                                                                   [RFC-ietf-core-object-security-16]
 oxps                                                                     application/oxps                                                                     [Ecma_International_Helpdesk]
 p2p-overlay+xml                                                          application/p2p-overlay+xml                                                          [RFC6940]
 parityfec                                                                                                                                                     [RFC5109]
@@ -300,14 +307,15 @@ passport                                                                 applica
 patch-ops-error+xml                                                      application/patch-ops-error+xml                                                      [RFC5261]
 pdf                                                                      application/pdf                                                                      [RFC8118]
 PDX                                                                      application/PDX                                                                      [ASAM][Thomas_Thomsen]
+pem-certificate-chain                                                    application/pem-certificate-chain                                                    [RFC8555]
 pgp-encrypted                                                            application/pgp-encrypted                                                            [RFC3156]
 pgp-keys                                                                                                                                                      [RFC3156]
 pgp-signature                                                            application/pgp-signature                                                            [RFC3156]
 pidf-diff+xml                                                            application/pidf-diff+xml                                                            [RFC5262]
 pidf+xml                                                                 application/pidf+xml                                                                 [RFC3863]
 pkcs10                                                                   application/pkcs10                                                                   [RFC5967]
-pkcs7-mime                                                               application/pkcs7-mime                                                               [RFC5751][RFC7114]
-pkcs7-signature                                                          application/pkcs7-signature                                                          [RFC5751]
+pkcs7-mime                                                               application/pkcs7-mime                                                               [RFC-ietf-lamps-rfc5751-bis-12][RFC7114]
+pkcs7-signature                                                          application/pkcs7-signature                                                          [RFC-ietf-lamps-rfc5751-bis-12]
 pkcs8                                                                    application/pkcs8                                                                    [RFC5958]
 pkcs8-encrypted                                                          application/pkcs8-encrypted                                                          [RFC8351]
 pkcs12                                                                   application/pkcs12                                                                   [IETF]
@@ -335,7 +343,7 @@ rdf+xml                                                                  applica
 route-apd+xml                                                            application/route-apd+xml                                                            [ATSC]
 route-s-tsid+xml                                                         application/route-s-tsid+xml                                                         [ATSC]
 route-usd+xml                                                            application/route-usd+xml                                                            [ATSC]
-qsig                                                                     application/qsig                                                                     [RFC3204]
+QSIG                                                                     application/QSIG                                                                     [RFC3204]
 raptorfec                                                                application/raptorfec                                                                [RFC6682]
 rdap+json                                                                application/rdap+json                                                                [RFC7483]
 reginfo+xml                                                              application/reginfo+xml                                                              [RFC3680]
@@ -367,14 +375,14 @@ scvp-vp-request                                                          applica
 scvp-vp-response                                                         application/scvp-vp-response                                                         [RFC5055]
 sdp                                                                      application/sdp                                                                      [RFC4566]
 secevent+jwt                                                             application/secevent+jwt                                                             [RFC8417]
-senml-exi                                                                application/senml-exi                                                                [RFC-ietf-core-senml-16]
-senml+cbor                                                               application/senml+cbor                                                               [RFC-ietf-core-senml-16]
-senml+json                                                               application/senml+json                                                               [RFC-ietf-core-senml-16]
-senml+xml                                                                application/senml+xml                                                                [RFC-ietf-core-senml-16]
-sensml-exi                                                               application/sensml-exi                                                               [RFC-ietf-core-senml-16]
-sensml+cbor                                                              application/sensml+cbor                                                              [RFC-ietf-core-senml-16]
-sensml+json                                                              application/sensml+json                                                              [RFC-ietf-core-senml-16]
-sensml+xml                                                               application/sensml+xml                                                               [RFC-ietf-core-senml-16]
+senml-exi                                                                application/senml-exi                                                                [RFC8428]
+senml+cbor                                                               application/senml+cbor                                                               [RFC8428]
+senml+json                                                               application/senml+json                                                               [RFC8428]
+senml+xml                                                                application/senml+xml                                                                [RFC8428]
+sensml-exi                                                               application/sensml-exi                                                               [RFC8428]
+sensml+cbor                                                              application/sensml+cbor                                                              [RFC8428]
+sensml+json                                                              application/sensml+json                                                              [RFC8428]
+sensml+xml                                                               application/sensml+xml                                                               [RFC8428]
 sep-exi                                                                  application/sep-exi                                                                  [Robby_Simpson][ZigBee]
 sep+xml                                                                  application/sep+xml                                                                  [Robby_Simpson][ZigBee]
 session-info                                                             application/session-info                                                             [_3GPP][Frederic_Firmin]
@@ -417,21 +425,24 @@ tamp-update                                                              applica
 tamp-update-confirm                                                      application/tamp-update-confirm                                                      [RFC5934]
 taxii+json                                                               application/taxii+json                                                               [OASIS][Chet_Ensign]
 tei+xml                                                                  application/tei+xml                                                                  [RFC6129]
+TETRA_ISI                                                                application/TETRA_ISI                                                                [ETSI][Miguel_Angel_Reina_Ortega]
 thraud+xml                                                               application/thraud+xml                                                               [RFC5941]
 timestamp-query                                                          application/timestamp-query                                                          [RFC3161]
 timestamp-reply                                                          application/timestamp-reply                                                          [RFC3161]
 timestamped-data                                                         application/timestamped-data                                                         [RFC5955]
-tlsrpt+gzip                                                              application/tlsrpt+gzip                                                              [RFC-ietf-uta-smtp-tlsrpt-23]
-tlsrpt+json                                                              application/tlsrpt+json                                                              [RFC-ietf-uta-smtp-tlsrpt-23]
+tlsrpt+gzip                                                              application/tlsrpt+gzip                                                              [RFC8460]
+tlsrpt+json                                                              application/tlsrpt+json                                                              [RFC8460]
 tnauthlist                                                               application/tnauthlist                                                               [RFC8226]
 trickle-ice-sdpfrag                                                      application/trickle-ice-sdpfrag                                                      [RFC-ietf-mmusic-trickle-ice-sip-18]
 trig                                                                     application/trig                                                                     [W3C][W3C_RDF_Working_Group]
 ttml+xml                                                                 application/ttml+xml                                                                 [W3C][W3C_Timed_Text_Working_Group]
 tve-trigger                                                              application/tve-trigger                                                              [Linda_Welsh]
+tzif                                                                     application/tzif                                                                     [RFC8536]
+tzif-leap                                                                application/tzif-leap                                                                [RFC8536]
 ulpfec                                                                   application/ulpfec                                                                   [RFC5109]
-urc-grpsheet+xml                                                         application/urc-grpsheet+xml                                                         [Gottfried_Zimmermann][ISO-IEC JTC1]
-urc-ressheet+xml                                                         application/urc-ressheet+xml                                                         [Gottfried_Zimmermann][ISO-IEC JTC1]
-urc-targetdesc+xml                                                       application/urc-targetdesc+xml                                                       [Gottfried_Zimmermann][ISO-IEC JTC1]
+urc-grpsheet+xml                                                         application/urc-grpsheet+xml                                                         [Gottfried_Zimmermann][ISO-IEC_JTC1]
+urc-ressheet+xml                                                         application/urc-ressheet+xml                                                         [Gottfried_Zimmermann][ISO-IEC_JTC1]
+urc-targetdesc+xml                                                       application/urc-targetdesc+xml                                                       [Gottfried_Zimmermann][ISO-IEC_JTC1]
 urc-uisocketdesc+xml                                                     application/urc-uisocketdesc+xml                                                     [Gottfried_Zimmermann]
 vcard+json                                                               application/vcard+json                                                               [RFC7095]
 vcard+xml                                                                application/vcard+xml                                                                [RFC6351]
@@ -440,14 +451,32 @@ vnd.1000minds.decision-model+xml                                         applica
 vnd.3gpp.access-transfer-events+xml                                      application/vnd.3gpp.access-transfer-events+xml                                      [Frederic_Firmin]
 vnd.3gpp.bsf+xml                                                         application/vnd.3gpp.bsf+xml                                                         [John_M_Meredith]
 vnd.3gpp.GMOP+xml                                                        application/vnd.3gpp.GMOP+xml                                                        [Frederic_Firmin]
+vnd.3gpp.mc-signalling-ear                                               application/vnd.3gpp.mc-signalling-ear                                               [Tim_Woodward]
+vnd.3gpp.mcdata-affiliation-command+xml                                  application/vnd.3gpp.mcdata-affiliation-command+xml                                  [Frederic_Firmin]
+vnd.3gpp.mcdata-info+xml                                                 application/vnd.3gpp.mcdata-info+xml                                                 [Frederic_Firmin]
 vnd.3gpp.mcdata-payload                                                  application/vnd.3gpp.mcdata-payload                                                  [Frederic_Firmin]
+vnd.3gpp.mcdata-service-config+xml                                       application/vnd.3gpp.mcdata-service-config+xml                                       [Frederic_Firmin]
 vnd.3gpp.mcdata-signalling                                               application/vnd.3gpp.mcdata-signalling                                               [Frederic_Firmin]
+vnd.3gpp.mcdata-ue-config+xml                                            application/vnd.3gpp.mcdata-ue-config+xml                                            [Frederic_Firmin]
+vnd.3gpp.mcdata-user-profile+xml                                         application/vnd.3gpp.mcdata-user-profile+xml                                         [Frederic_Firmin]
 vnd.3gpp.mcptt-affiliation-command+xml                                   application/vnd.3gpp.mcptt-affiliation-command+xml                                   [Frederic_Firmin]
 vnd.3gpp.mcptt-floor-request+xml                                         application/vnd.3gpp.mcptt-floor-request+xml                                         [Frederic_Firmin]
 vnd.3gpp.mcptt-info+xml                                                  application/vnd.3gpp.mcptt-info+xml                                                  [Frederic_Firmin]
 vnd.3gpp.mcptt-location-info+xml                                         application/vnd.3gpp.mcptt-location-info+xml                                         [Frederic_Firmin]
 vnd.3gpp.mcptt-mbms-usage-info+xml                                       application/vnd.3gpp.mcptt-mbms-usage-info+xml                                       [Frederic_Firmin]
+vnd.3gpp.mcptt-service-config+xml                                        application/vnd.3gpp.mcptt-service-config+xml                                        [Frederic_Firmin]
 vnd.3gpp.mcptt-signed+xml                                                application/vnd.3gpp.mcptt-signed+xml                                                [Frederic_Firmin]
+vnd.3gpp.mcptt-ue-config+xml                                             application/vnd.3gpp.mcptt-ue-config+xml                                             [Frederic_Firmin]
+vnd.3gpp.mcptt-ue-init-config+xml                                        application/vnd.3gpp.mcptt-ue-init-config+xml                                        [Frederic_Firmin]
+vnd.3gpp.mcptt-user-profile+xml                                          application/vnd.3gpp.mcptt-user-profile+xml                                          [Frederic_Firmin]
+vnd.3gpp.mcvideo-affiliation-command+xml                                 application/vnd.3gpp.mcvideo-affiliation-command+xml                                 [Frederic_Firmin]
+vnd.3gpp.mcvideo-affiliation-info+xml                                    application/vnd.3gpp.mcvideo-affiliation-info+xml                                    [Frederic_Firmin]
+vnd.3gpp.mcvideo-location-info+xml                                       application/vnd.3gpp.mcvideo-location-info+xml                                       [Frederic_Firmin]
+vnd.3gpp.mcvideo-mbms-usage-info+xml                                     application/vnd.3gpp.mcvideo-mbms-usage-info+xml                                     [Frederic_Firmin]
+vnd.3gpp.mcvideo-service-config+xml                                      application/vnd.3gpp.mcvideo-service-config+xml                                      [Frederic_Firmin]
+vnd.3gpp.mcvideo-transmission-request+xml                                application/vnd.3gpp.mcvideo-transmission-request+xml                                [Frederic_Firmin]
+vnd.3gpp.mcvideo-ue-config+xml                                           application/vnd.3gpp.mcvideo-ue-config+xml                                           [Frederic_Firmin]
+vnd.3gpp.mcvideo-user-profile+xml                                        application/vnd.3gpp.mcvideo-user-profile+xml                                        [Frederic_Firmin]
 vnd.3gpp.mid-call+xml                                                    application/vnd.3gpp.mid-call+xml                                                    [Frederic_Firmin]
 vnd.3gpp.pic-bw-large                                                    application/vnd.3gpp.pic-bw-large                                                    [John_M_Meredith]
 vnd.3gpp.pic-bw-small                                                    application/vnd.3gpp.pic-bw-small                                                    [John_M_Meredith]
@@ -496,8 +525,11 @@ vnd.apache.thrift.compact                                                applica
 vnd.apache.thrift.json                                                   application/vnd.apache.thrift.json                                                   [Roger_Meier]
 vnd.api+json                                                             application/vnd.api+json                                                             [Steve_Klabnik]
 vnd.apothekende.reservation+json                                         application/vnd.apothekende.reservation+json                                         [Adrian_Föder]
-vnd.apple.mpegurl                                                        application/vnd.apple.mpegurl                                                        [RFC8216]
 vnd.apple.installer+xml                                                  application/vnd.apple.installer+xml                                                  [Peter_Bierman]
+vnd.apple.keynote                                                        application/vnd.apple.keynote                                                        [Manichandra_Sajjanapu]
+vnd.apple.mpegurl                                                        application/vnd.apple.mpegurl                                                        [RFC8216]
+vnd.apple.numbers                                                        application/vnd.apple.numbers                                                        [Manichandra_Sajjanapu]
+vnd.apple.pages                                                          application/vnd.apple.pages                                                          [Manichandra_Sajjanapu]
 vnd.arastra.swi - OBSOLETED in favor of                                  application/vnd.arastra.swi                                                          [Bill_Fenner]
 application/vnd.aristanetworks.swi
 vnd.aristanetworks.swi                                                   application/vnd.aristanetworks.swi                                                   [Bill_Fenner]
@@ -669,6 +701,8 @@ vnd.evolv.ecig.profile                                                   applica
 vnd.evolv.ecig.settings                                                  application/vnd.evolv.ecig.settings                                                  [James_Bellinger]
 vnd.evolv.ecig.theme                                                     application/vnd.evolv.ecig.theme                                                     [James_Bellinger]
 vnd.eudora.data                                                          application/vnd.eudora.data                                                          [Pete_Resnick]
+vnd.exstream-empower+zip                                                 application/vnd.exstream-empower+zip                                                 [Bill_Kidwell]
+vnd.exstream-package                                                     application/vnd.exstream-package                                                     [Bill_Kidwell]
 vnd.ezpix-album                                                          application/vnd.ezpix-album                                                          [ElectronicZombieCorp]
 vnd.ezpix-package                                                        application/vnd.ezpix-package                                                        [ElectronicZombieCorp]
 vnd.f-secure.mobile                                                      application/vnd.f-secure.mobile                                                      [Samu_Sarivaara]
@@ -700,6 +734,8 @@ vnd.fujixerox.docuworks.binder                                           applica
 vnd.fujixerox.docuworks.container                                        application/vnd.fujixerox.docuworks.container                                        [Kiyoshi_Tashiro]
 vnd.fujixerox.HBPL                                                       application/vnd.fujixerox.HBPL                                                       [Fumio_Tanabe]
 vnd.fut-misnet                                                           application/vnd.fut-misnet                                                           [Jann_Pruulman]
+vnd.futoin+cbor                                                          application/vnd.futoin+cbor                                                          [Andrey_Galkin]
+vnd.futoin+json                                                          application/vnd.futoin+json                                                          [Andrey_Galkin]
 vnd.fuzzysheet                                                           application/vnd.fuzzysheet                                                           [Simon_Birtwistle]
 vnd.genomatix.tuxedo                                                     application/vnd.genomatix.tuxedo                                                     [Torben_Frey]
 vnd.geo+json (OBSOLETED by [RFC7946] in favor of application/geo+json)   application/vnd.geo+json                                                             [Sean_Gillies]
@@ -834,7 +870,6 @@ vnd.lotus-notes                                                          applica
 vnd.lotus-organizer                                                      application/vnd.lotus-organizer                                                      [Paul_Wattenberger]
 vnd.lotus-screencam                                                      application/vnd.lotus-screencam                                                      [Paul_Wattenberger]
 vnd.lotus-wordpro                                                        application/vnd.lotus-wordpro                                                        [Paul_Wattenberger]
-vnd.macports.portpkg                                                     application/vnd.macports.portpkg                                                     [James_Berry]
 vnd.macports.portpkg                                                     application/vnd.macports.portpkg                                                     [James_Berry]
 vnd.mapbox-vector-tile                                                   application/vnd.mapbox-vector-tile                                                   [Blake_Thompson]
 vnd.marlin.drm.actiontoken+xml                                           application/vnd.marlin.drm.actiontoken+xml                                           [Gary_Ellison]
@@ -1132,6 +1167,7 @@ vnd.palm                                                                 applica
 vnd.panoply                                                              application/vnd.panoply                                                              [Natarajan_Balasundara]
 vnd.paos.xml                                                             application/vnd.paos.xml                                                             [John_Kemp]
 vnd.patentdive                                                           application/vnd.patentdive                                                           [Christian_Trosclair]
+vnd.patientecommsdoc                                                     application/vnd.patientecommsdoc                                                     [Andrew_David_Kendall]
 vnd.pawaafile                                                            application/vnd.pawaafile                                                            [Prakash_Baskaran]
 vnd.pcos                                                                 application/vnd.pcos                                                                 [Slawomir_Lisznianski]
 vnd.pg.format                                                            application/vnd.pg.format                                                            [April_Gandert]
@@ -1280,6 +1316,7 @@ vnd.vd-study                                                             applica
 vnd.vectorworks                                                          application/vnd.vectorworks                                                          [Lyndsey_Ferguson][Biplab_Sarkar]
 vnd.vel+json                                                             application/vnd.vel+json                                                             [James_Wigger]
 vnd.verimatrix.vcas                                                      application/vnd.verimatrix.vcas                                                      [Petr_Peterka]
+vnd.veryant.thin                                                         application/vnd.veryant.thin                                                         [Massimo_Bertoli]
 vnd.vidsoft.vidconference                                                application/vnd.vidsoft.vidconference                                                [Robert_Hess]
 vnd.visio                                                                application/vnd.visio                                                                [Troy_Sandal]
 vnd.visionary                                                            application/vnd.visionary                                                            [Gayatri_Aravindakumar]
@@ -1373,7 +1410,7 @@ yang-patch+xml                                                           applica
 yin+xml                                                                  application/yin+xml                                                                  [RFC6020]
 zip                                                                      application/zip                                                                      [Paul_Lindner]
 zlib                                                                     application/zlib                                                                     [RFC6713]
-zstd                                                                     application/zstd                                                                     [RFC-kucherawy-dispatch-zstd-03]
+zstd                                                                     application/zstd                                                                     [RFC8478]
 
 audio
 
@@ -1381,7 +1418,7 @@ audio
            [IMG]
            CSV
 
-                        Name                                   Template                         Reference
+                        Name                                   Template                           Reference
    1d-interleaved-parityfec                       audio/1d-interleaved-parityfec      [RFC6015]
    32kadpcm                                       audio/32kadpcm                      [RFC3802][RFC2421]
    3gpp                                           audio/3gpp                          [RFC3839][RFC6381]
@@ -1485,6 +1522,7 @@ audio
    t140c                                          audio/t140c                         [RFC4351]
    t38                                            audio/t38                           [RFC4612]
    telephone-event                                audio/telephone-event               [RFC4733]
+   TETRA_ACELP                                    audio/TETRA_ACELP                   [ETSI][Miguel_Angel_Reina_Ortega]
    tone                                           audio/tone                          [RFC4733]
    UEMCLIP                                        audio/UEMCLIP                       [RFC5686]
    ulpfec                                         audio/ulpfec                        [RFC5109]
@@ -1513,6 +1551,7 @@ audio
    vnd.dra                                        audio/vnd.dra                       [Jiang_Tian]
    vnd.dts                                        audio/vnd.dts                       [William_Zou]
    vnd.dts.hd                                     audio/vnd.dts.hd                    [William_Zou]
+   vnd.dts.uhd                                    audio/vnd.dts.uhd                   [Phillip_Maness]
    vnd.dvb.file                                   audio/vnd.dvb.file                  [Peter_Siebert]
    vnd.everad.plj                                 audio/vnd.everad.plj                [Shay_Cicelsky]
    vnd.hns.audio                                  audio/vnd.hns.audio                 [Swaminathan]
@@ -1574,73 +1613,72 @@ image
            [IMG]
            CSV
 
-            Name                          Template              Description                                                Reference
-aces                         image/aces                                     [SMPTE][Howard_Lukk]
-bmp                          image/bmp                                      [RFC7903]
-                                                                Computer
-cgm                          image/cgm                          Graphics    [Alan_Francis]
-                                                                Metafile
-dicom-rle                    image/dicom-rle                                [DICOM_Standards_Committee][David_Clunie]
-emf                          image/emf                                      [RFC7903]
-example                      image/example                                  [RFC4735]
-fits                         image/fits                                     [RFC4047]
-g3fax                        image/g3fax                                    [RFC1494]
-gif                                                                         [RFC2045][RFC2046]
-                                                                Image
-ief                                                             Exchange    [RFC1314]
-                                                                Format
-jls                          image/jls                                      [DICOM_Standards_Committee][David_Clunie]
-jp2                          image/jp2                                      [RFC3745]
-jpeg                                                                        [RFC2045][RFC2046]
-jpm                          image/jpm                                      [RFC3745]
-jpx                          image/jpx                                      [RFC3745]
-ktx                                                                         [Khronos][Mark_Callow][http://www.khronos.org/opengles/sdk/tools/KTX/file_format_spec/#mimeregistration]
-naplps                       image/naplps                                   [Ilya_Ferber]
-png                          image/png                                      [Glenn_Randers-Pehrson]
-prs.btif                     image/prs.btif                                 [Ben_Simon]
-prs.pti                      image/prs.pti                                  [Juern_Laun]
-pwg-raster                   image/pwg-raster                               [Michael_Sweet]
-svg+xml                                                                     [W3C][http://www.w3.org/TR/SVG/mimereg.html]
-t38                          image/t38                                      [RFC3362]
-tiff                         image/tiff                         Tag Image   [RFC3302]
-                                                                File Format
-                                                                Tag Image
-tiff-fx                      image/tiff-fx                      File Format [RFC3950]
-                                                                Fax
-                                                                eXtended
-vnd.adobe.photoshop          image/vnd.adobe.photoshop                      [Kim_Scarborough]
-vnd.airzip.accelerator.azv   image/vnd.airzip.accelerator.azv               [Gary_Clueit]
-vnd.cns.inf2                 image/vnd.cns.inf2                             [Ann_McLaughlin]
-vnd.dece.graphic             image/vnd.dece.graphic                         [Michael_A_Dolan]
-vnd.djvu                     image/vnd.djvu                                 [Leon_Bottou]
-vnd.dwg                      image/vnd.dwg                                  [Jodi_Moline]
-vnd.dxf                      image/vnd.dxf                                  [Jodi_Moline]
-vnd.dvb.subtitle             image/vnd.dvb.subtitle                         [Peter_Siebert][Michael_Lagally]
-vnd.fastbidsheet             image/vnd.fastbidsheet                         [Scott_Becker]
-vnd.fpx                      image/vnd.fpx                                  [Marc_Douglas_Spencer]
-vnd.fst                      image/vnd.fst                                  [Arild_Fuldseth]
-vnd.fujixerox.edmics-mmr     image/vnd.fujixerox.edmics-mmr                 [Masanori_Onda]
-vnd.fujixerox.edmics-rlc     image/vnd.fujixerox.edmics-rlc                 [Masanori_Onda]
-vnd.globalgraphics.pgb       image/vnd.globalgraphics.pgb                   [Martin_Bailey]
-vnd.microsoft.icon           image/vnd.microsoft.icon                       [Simon_Butcher]
-vnd.mix                      image/vnd.mix                                  [Saveen_Reddy]
-vnd.ms-modi                  image/vnd.ms-modi                              [Gregory_Vaughan]
-vnd.mozilla.apng             image/vnd.mozilla.apng                         [Stuart_Parmenter]
-vnd.net-fpx                  image/vnd.net-fpx                              [Marc_Douglas_Spencer]
-vnd.radiance                 image/vnd.radiance                             [Randolph_Fritz][Greg_Ward]
-vnd.sealed.png               image/vnd.sealed.png                           [David_Petersen]
-vnd.sealedmedia.softseal.gif image/vnd.sealedmedia.softseal.gif             [David_Petersen]
-vnd.sealedmedia.softseal.jpg image/vnd.sealedmedia.softseal.jpg             [David_Petersen]
-vnd.svf                      image/vnd.svf                                  [Jodi_Moline]
-vnd.tencent.tap              image/vnd.tencent.tap                          [Ni_Hui]
-vnd.valve.source.texture     image/vnd.valve.source.texture                 [Henrik_Andersson]
-vnd.wap.wbmp                 image/vnd.wap.wbmp                             [Peter_Stark]
-vnd.xiff                     image/vnd.xiff                                 [Steven_Martin]
-vnd.zbrush.pcx               image/vnd.zbrush.pcx                           [Chris_Charabaruk]
-wmf                          image/wmf                                      [RFC7903]
-x-emf - DEPRECATED in favor  image/emf                                      [RFC7903]
+            Name                          Template                                                             Reference
+aces                         image/aces                         [SMPTE][Howard_Lukk]
+avci                         image/avci                         [ISO-IEC_JTC1][David_Singer]
+avcs                         image/avcs                         [ISO-IEC_JTC1][David_Singer]
+bmp                          image/bmp                          [RFC7903]
+cgm                          image/cgm                          [Alan_Francis]
+dicom-rle                    image/dicom-rle                    [DICOM_Standards_Committee][David_Clunie]
+emf                          image/emf                          [RFC7903]
+example                      image/example                      [RFC4735]
+fits                         image/fits                         [RFC4047]
+g3fax                        image/g3fax                        [RFC1494]
+gif                                                             [RFC2045][RFC2046]
+heic                         image/heic                         [ISO-IEC_JTC1][David_Singer]
+heic-sequence                image/heic-sequence                [ISO-IEC_JTC1][David_Singer]
+heif                         image/heif                         [ISO-IEC_JTC1][David_Singer]
+heif-sequence                image/heif-sequence                [ISO-IEC_JTC1][David_Singer]
+ief                                                             [RFC1314]
+jls                          image/jls                          [DICOM_Standards_Committee][David_Clunie]
+jp2                          image/jp2                          [RFC3745]
+jpeg                                                            [RFC2045][RFC2046]
+jpm                          image/jpm                          [RFC3745]
+jpx                          image/jpx                          [RFC3745]
+jxr                          image/jxr                          [ISO-IEC_JTC1][ITU-T]
+ktx                                                             [Khronos][Mark_Callow][http://www.khronos.org/opengles/sdk/tools/KTX/file_format_spec/#mimeregistration]
+naplps                       image/naplps                       [Ilya_Ferber]
+png                          image/png                          [Glenn_Randers-Pehrson]
+prs.btif                     image/prs.btif                     [Ben_Simon]
+prs.pti                      image/prs.pti                      [Juern_Laun]
+pwg-raster                   image/pwg-raster                   [Michael_Sweet]
+svg+xml                                                         [W3C][http://www.w3.org/TR/SVG/mimereg.html]
+t38                          image/t38                          [RFC3362]
+tiff                         image/tiff                         [RFC3302]
+tiff-fx                      image/tiff-fx                      [RFC3950]
+vnd.adobe.photoshop          image/vnd.adobe.photoshop          [Kim_Scarborough]
+vnd.airzip.accelerator.azv   image/vnd.airzip.accelerator.azv   [Gary_Clueit]
+vnd.cns.inf2                 image/vnd.cns.inf2                 [Ann_McLaughlin]
+vnd.dece.graphic             image/vnd.dece.graphic             [Michael_A_Dolan]
+vnd.djvu                     image/vnd.djvu                     [Leon_Bottou]
+vnd.dwg                      image/vnd.dwg                      [Jodi_Moline]
+vnd.dxf                      image/vnd.dxf                      [Jodi_Moline]
+vnd.dvb.subtitle             image/vnd.dvb.subtitle             [Peter_Siebert][Michael_Lagally]
+vnd.fastbidsheet             image/vnd.fastbidsheet             [Scott_Becker]
+vnd.fpx                      image/vnd.fpx                      [Marc_Douglas_Spencer]
+vnd.fst                      image/vnd.fst                      [Arild_Fuldseth]
+vnd.fujixerox.edmics-mmr     image/vnd.fujixerox.edmics-mmr     [Masanori_Onda]
+vnd.fujixerox.edmics-rlc     image/vnd.fujixerox.edmics-rlc     [Masanori_Onda]
+vnd.globalgraphics.pgb       image/vnd.globalgraphics.pgb       [Martin_Bailey]
+vnd.microsoft.icon           image/vnd.microsoft.icon           [Simon_Butcher]
+vnd.mix                      image/vnd.mix                      [Saveen_Reddy]
+vnd.ms-modi                  image/vnd.ms-modi                  [Gregory_Vaughan]
+vnd.mozilla.apng             image/vnd.mozilla.apng             [Stuart_Parmenter]
+vnd.net-fpx                  image/vnd.net-fpx                  [Marc_Douglas_Spencer]
+vnd.radiance                 image/vnd.radiance                 [Randolph_Fritz][Greg_Ward]
+vnd.sealed.png               image/vnd.sealed.png               [David_Petersen]
+vnd.sealedmedia.softseal.gif image/vnd.sealedmedia.softseal.gif [David_Petersen]
+vnd.sealedmedia.softseal.jpg image/vnd.sealedmedia.softseal.jpg [David_Petersen]
+vnd.svf                      image/vnd.svf                      [Jodi_Moline]
+vnd.tencent.tap              image/vnd.tencent.tap              [Ni_Hui]
+vnd.valve.source.texture     image/vnd.valve.source.texture     [Henrik_Andersson]
+vnd.wap.wbmp                 image/vnd.wap.wbmp                 [Peter_Stark]
+vnd.xiff                     image/vnd.xiff                     [Steven_Martin]
+vnd.zbrush.pcx               image/vnd.zbrush.pcx               [Chris_Charabaruk]
+wmf                          image/wmf                          [RFC7903]
+x-emf - DEPRECATED in favor  image/emf                          [RFC7903]
 of image/emf
-x-wmf - DEPRECATED in favor  image/wmf                                      [RFC7903]
+x-wmf - DEPRECATED in favor  image/wmf                          [RFC7903]
 of image/wmf
 
 message
@@ -1808,6 +1846,7 @@ text
    vnd.ms-mediapackage                                       text/vnd.ms-mediapackage              [Jan_Nelson]
    vnd.net2phone.commcenter.command                          text/vnd.net2phone.commcenter.command [Feiyu_Xie]
    vnd.radisys.msml-basic-layout                             text/vnd.radisys.msml-basic-layout    [RFC5707]
+   vnd.senx.warpscript                                       text/vnd.senx.warpscript              [Pierre_Papin]
    vnd.si.uricatalogue - OBSOLETED by request                text/vnd.si.uricatalogue              [Nicholas_Parks_Young]
    vnd.sun.j2me.app-descriptor                               text/vnd.sun.j2me.app-descriptor      [Gary_Adams]
    vnd.trolltech.linguist                                    text/vnd.trolltech.linguist           [David_Lee_Lambert]
@@ -1869,6 +1908,7 @@ video
    SMPTE292M                        video/SMPTE292M                        [RFC3497]
    ulpfec                           video/ulpfec                           [RFC5109]
    vc1                              video/vc1                              [RFC4425]
+   vc2                              video/vc2                              [RFC8450]
    vnd.CCTV                         video/vnd.CCTV                         [Frank_Rottmann]
    vnd.dece.hd                      video/vnd.dece.hd                      [Michael_A_Dolan]
    vnd.dece.mobile                  video/vnd.dece.mobile                  [Michael_A_Dolan]
@@ -1936,7 +1976,7 @@ video
                                                       and Air-Conditioning
                                                       Engineers (ASHRAE)
    [Peter_Astrand]                                    Peter Åstrand             mailto:astrand&cendio.se                               2007-06-12
-   [ATSC]                                             Advanced Television       mailto:jwhitaker&atsc.org                              2017-08-11
+   [ATSC]                                             Advanced Television       mailto:jwhitaker&atsc.org                              2019-03-07
                                                       Systems Committee
    [Steve_Aubrey]                                     Steve Aubrey              mailto:steve_aubrey&hp.com                             1998-07-19
    [Yüksel_Aydemir]                                   Yüksel Aydemir            mailto:yay&capasystems.com                             2017-05-03
@@ -1957,6 +1997,7 @@ video
    [Robin_Berjon]                                     Robin Berjon              mailto:robin&w3.org                                    2014-10-23
    [Gil_Bernabeu]                                     Gil Bernabeu              mailto:gil.bernabeu&globalglatform.org                 2009-09-01
    [James_Berry]                                      James Berry               mailto:jberry&macports.org                             2007-05-04
+   [Massimo_Bertoli]                                  Massimo Bertoli           mailto:massimo.bertoli&veryant.com                     2018-12-20
    [Saurabh_Bhatia]                                   Saurabh Bhatia            mailto:glTFIANA&microsoft.com                          2018-05-07
    [Peter_Bierman]                                    Peter Bierman             mailto:installer-mime&group.apple.com                  2005-11-20
    [Jason_Birch]                                      Jason Birch               mailto:jason.birch&osgeo.org                           2010-07-20
@@ -1992,6 +2033,7 @@ video
    [Robert_Byrnes]                                    Robert Byrnes             mailto:systems-vendor&curl.com                         2001-03-20
    [Mark_Callow]                                      Mark Callow               mailto:callow_mark&hicorp.co.jp                        2010-09-27
    [Larry_Campbell]                                   Larry Campbell            mailto:campbell&redsox.bsw.com
+   [CDISC]                                            CDISC                     https://www.cdisc.org/
    [Ravinder_Chandhok]                                Ravinder Chandhok         mailto:chandhok&within.com                             1998-12-19
    [Chris_Charabaruk]                                 Chris Charabaruk          mailto:chris&charabaruk.com                            2015-04-03
    [Brad_Chase]                                       Brad Chase                mailto:brad_chase&bitstream.com                        1996-05-19
@@ -2051,6 +2093,7 @@ video
    [Charles_Engelke]                                  Charles Engelke           mailto:charles.engelke&infotechfl.com                  2010-09-09
    [Chet_Ensign]                                      Chet Ensign               mailto:chet.ensign&oasis-open.org                      2018-07-11
    [Per_Ersson]                                       Per Ersson                mailto:per&ipunplugged.com                             2003-12-20
+   [ETSI]                                             ETSI
    [Casper_Joost_Eyckelhof]                           Casper Joost Eyckelhof    mailto:info&quarantainenet.nl                          2016-05-19
    [Joerg_Falkenberg]                                 Jörg Falkenberg           mailto:j.falkenberg&cabgmbh.com                        2007-01-18
    [Benja_Fallenstein]                                Benja Fallenstein         mailto:b.fallenstein&gmx.de                            2003-10-20
@@ -2063,7 +2106,7 @@ video
    [Javier_D._Fernández]                              Javier D. Fernández       mailto:javier.fernandez&wu.ac.at                       2016-01-07
    [Axel_Ferrazzini]                                  Axel Ferrazzini           mailto:aferrazzini&rim.com                             2012-03-27
    [James_Fields]                                     James Fields              mailto:jaime&d-vision.com                              2002-06-20
-   [Frederic_Firmin]                                  Frederic Firmin           mailto:Frederic.Firmin&etsi.org                        2018-06-19
+   [Frederic_Firmin]                                  Frederic Firmin           mailto:Frederic.Firmin&etsi.org                        2018-12-10
    [Tim_Fisher]                                       Tim Fisher                mailto:tim.fisher&indiepath.com                        2006-07-25
    [Eric_Fleischman]                                  Eric Fleischman           mailto:ericfl&MICROSOFT.com                            1997-04-19
    [Dick_Floersch]                                    Dick Floersch             mailto:floersch&echo.sound.net                         1997-03-19
@@ -2082,6 +2125,7 @@ video
    [David_Furbeck]                                    David Furbeck             mailto:dfurbeck&blackberry.com                         2013-09-06
    [Amir_Gaash]                                       Amir Gaash                mailto:amir.gaash&hp.com                               2006-04-25
    [Christopher_Gales]                                Christopher Gales         mailto:christopher.gales&informix.com                  2000-08-20
+   [Andrey_Galkin]                                    Andrey Galkin             mailto:andrey&futoin.org                               2018-09-10
    [April_Gandert]                                    April Gandert             mailto:gandert.am&pg.com                               1999-04-19
    [Cliff_Gauntlett]                                  Cliff Gauntlett           mailto:cliff&solenttec.net                             2006-04-25
    [GeoGebra]                                         GeoGebra                  mailto:office&geogebra.org                             2009-03-13
@@ -2146,6 +2190,7 @@ video
    [Glenn_Howes]                                      Glenn Howes               mailto:ghowes&cambridgesoft.com                        2007-06-25
    [Shicheng_Hu]                                      Shicheng Hu               mailto:shicheng.hu&etsi.org                            2009-09-15
    [Ni_Hui]                                           Ni Hui                    mailto:nihuini&tencent.com                             2014-09-10
+   [Sam_Hume]                                         Sam Hume                  mailto:shume&cdisc.org                                 2018-11-28
    [Kari_E._Hurtta]                                   Kari E. Hurtta            mailto:flexstor&ozone.FMI.FI
    [Justin_Hutchings]                                 Justin Hutchings          mailto:justhu at microsoft.com                         2016-01-27
    [Thomas_Huth]                                      Thomas Huth               mailto:huth&tuxfamily.org                              2015-03-02
@@ -2161,6 +2206,8 @@ video
                                                       Workgroup
    [ITS-IG-W3C]                                       Internationalization Tag  mailto:public-i18n-its-ig&w3.org                       2013-08-20
                                                       Set Interest Group (W3C)
+   [ITU-T]                                            ITU Telecommunication
+                                                      Standardization Sector
    [Katsuhiko_Ichinose]                               Katsuhiko Ichinose        mailto:xml-info&antenna.co.jp                          2010-11-17
    [Yukari_Ikeda]                                     Yukari Ikeda              mailto:ikeda&tokoyo.faith.co.jp                        2004-04-20
    [Philippe_Imoucha]                                 Philippe Imoucha          mailto:pimoucha&businessobjects.com                    1996-10-19
@@ -2187,9 +2234,11 @@ video
    [Sean_Kelley]                                      Sean Kelley               mailto:seankelley&motorola.com                         2006-09-14
    [Mike_Kelly]                                       Mike Kelly                mailto:mike&stateless.co                               2011-07-14
    [John_Kemp]                                        John Kemp                 mailto:john.kemp&earthlink.net                         2003-09-20
+   [Andrew_David_Kendall]                             Andrew David Kendall      mailto:andrew.kendall&atos.net                         2018-10-26
    [Matt_Kern]                                        Matt Kern                 mailto:matt.kern&cyantechnology.com                    2012-09-19
    [Keith_Kester]                                     Keith Kester              mailto:kkester&digitalriver.com                        2015-09-11
    [Khronos]                                          The Khronos Group         http://www.khronos.org
+   [Bill_Kidwell]                                     Bill Kidwell              mailto:bkidwell&opentext.com                           2018-10-23
    [Sybren_Kikstra]                                   Sybren Kikstra            mailto:skikstra&66.com                                 2008-05-13
    [Yokoyama_Kiyonobu]                                Yokoyama Kiyonobu         mailto:ngn&nihon-seigyo.co.jp                          2012-03-27
    [Thomas_Kjornes]                                   Thomas Kjørnes            mailto:thomas&ipv.no                                   2007-10-11
@@ -2242,6 +2291,7 @@ video
    [AC_Mahendran]                                     AC Mahendran              mailto:ac&qualcomm.com                                 2007-11-06
    [Shawn_Maloney]                                    Shawn Maloney             mailto:shawnmal&microsoft.com                          2014-04-11
    [Lucas_Maneos]                                     Lucas Maneos              mailto:iana&pragmaticomm.com                           2005-12-20
+   [Phillip_Maness]                                   Phillip Maness            mailto:phillip.maness&xperi.com                        2018-11-14
    [Dave_Manning]                                     Dave Manning              mailto:dmanning&uwi.com                                2014-01-01
    [Michael_Mansell]                                  Michael Mansell           mailto:mmansell&ca.ibm.com                             2009-02-18
    [Jerome_Marcon]                                    Jérôme Marcon             mailto:jerome.marcon&alcatel-lucent.com                2010-02-24
@@ -2306,7 +2356,7 @@ video
    [OASIS_Security_Services_Technical_Committee_SSTC] Technical Committee                                                              2004-12
                                                       (SSTC), see registration
                                                       template for e-mail
-   [OGC]                                              Open Geospatial
+   [OGC]                                              Open Geospatial           http://www.opengeospatial.org
                                                       Consortium (OGC)
    [OMA]                                              Open Mobile Alliance      mailto:technical-comments&openmobilealliance.org       2010-07-20
    [OMA-DM_Work_Group]                                OMA-DM Work Group         mailto:technical-comments&openmobilealliance.org       2012-06-15
@@ -2330,7 +2380,7 @@ video
                                                       Authority (OMNA)
    [Open_Mobile_Alliance_BAC_DLDRM_Working_Group]     Open Mobile Alliance's    mailto:technical-comments&mail.openmobilealliance.org  2006-03-23
                                                       BAC DLDRM Working Group
-   [Miguel_Angel_Reina_Ortega]                        Miguel Angel Reina Ortega mailto:MiguelAngel.ReinaOrtega&etsi.org                2013-10-15
+   [Miguel_Angel_Reina_Ortega]                        Miguel Angel Reina Ortega mailto:MiguelAngel.ReinaOrtega&etsi.org                2019-01-08
    [Tapani_Otala]                                     Tapani Otala              mailto:otala&adobe.com                                 2009-07-28
    [Mark_Otaris]                                      Mark Otaris               mailto:mark.otaris&openmailbox.org                     2015-08-28
    [Ozgur_Oyman]                                      Ozgur Oyman               mailto:ozgur.oyman&intel.com                           2014-04-16
@@ -2338,6 +2388,7 @@ video
    [Jörg_Palmer]                                      Jörg Palmer               mailto:Joerg.Palmer&compart.com                        2018-05-01
    [John_Palmieri]                                    John Palmieri             mailto:johnp&redhat.com                                2007-06-07
    [Jorge_Pando]                                      Jorge Pando               mailto:jpan&pocketlearn.com                            2006-03-23
+   [Pierre_Papin]                                     Pierre Papin              mailto:pierre.papin&senx.io                            2018-11-21
    [Parasolid]                                        Parasolid                 mailto:ps-mimetype&ugs.com                             2000-10-20
    [David_Parker]                                     David Parker              mailto:davidparker&davidparker.com                     1999-08-19
    [Curtis_Parks]                                     Curtis Parks              mailto:parks&eeel.nist.gov                             1995-04-19
@@ -2394,6 +2445,7 @@ video
    [Delton_Rowe]                                      Delton Rowe               mailto:cadman&gte.net                                  2002-01-20
    [Khemchart_Rungchavalnont]                         Khemchart Rungchavalnont  mailto:khemcr&cpu.cp.eng.chula.ac.th                   1997-07-19
    [Rick_Rupp]                                        Rick Rupp                 mailto:onesource-mediatype&tr.com                      2016-09-27
+   [Manichandra_Sajjanapu]                            Manichandra Sajjanapu     mailto:mcnc33&gmail.com                                2018-08-09
    [Matti_Salmi]                                      Matti Salmi               mailto:matti.salmi&nokia.com                           2003-03-20
    [Troy_Sandal]                                      Troy Sandal               mailto:troys&visio.com                                 1997-11-19
    [Anders_Sandholm]                                  Anders Sandholm           mailto:sandholm&google.com                             2011-12-14
@@ -2424,13 +2476,13 @@ video
    [Keiichi_Shinoda]                                  Keiichi Shinoda           mailto:shino-k&post.yamaha.co.jp                       2003-07-20
    [Alex_Sibilev]                                     Alex Sibilev              mailto:alex.sibilev&tmd.tv                             2014-11-06
    [Peter_Siebert]                                    Peter Siebert             mailto:siebert&dvb.org                                 2011-06-08
-   [Scott_Simmons]                                    Scott Simmons             mailto:ssimmons&opengeospatial.org                     2017-07-18
+   [Scott_Simmons]                                    Scott Simmons             mailto:ssimmons&opengeospatial.org                     2018-08-10
    [Ben_Simon]                                        Ben Simon                 mailto:BenS&crt.com                                    1998-09-19
    [Steven_Simonoff]                                  Steven Simonoff           mailto:scs&triscape.com                                1999-08-19
    [Ray_Simpson]                                      Ray Simpson               mailto:ray&cnation.com                                 1998-01-19
    [Robby_Simpson]                                    Robby Simpson             mailto:rsimpson&gmail.com                              2012-11-27
    [Daniel_Sims]                                      Daniel Sims               mailto:danielgarthsims&gmail.com                       2015-06-01
-   [David_Singer]                                     David Singer              mailto:singer&apple.com                                2014-01-29
+   [David_Singer]                                     David Singer              mailto:singer&apple.com                                2018-07-30
    [SIS]                                              Swedish Standards         http://www.sis.se/                                     2014-07-09
                                                       Institute (SIS)
    [Fu_Siyuan]                                        Fu Siyuan                 mailto:siyuan.fu&intel.com                             2017-01-30
@@ -2544,6 +2596,7 @@ video
    [John_Wolfe]                                       John Wolfe                mailto:John_Wolfe.VIVO&vivo.com                        1996-04-19
    [Wolfram]                                          Wolfram Research          mailto:info&wolfram.com                                2009-10-15
    [Laura_Wood]                                       Laura Wood                mailto:ytb-external&google.com                         2017-12-15
+   [Tim_Woodward]                                     Tim Woodward              mailto:tim.woodward&motorolasolutions.com              2018-07-30
    [Don_Wright]                                       Don Wright                mailto:don&lexmark.com                                 2001-08-20
    [XENC_Working_Group]                               XENC Working Group        mailto:xml-encryption&w3.org                           2006-03-21
    [Feiyu_Xie]                                        Feiyu Xie                 mailto:xie&net2phone.com                               2002-01-20
