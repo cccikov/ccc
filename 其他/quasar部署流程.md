@@ -14,6 +14,14 @@
 
 `PATH=$PATH:$ANDROID_HOME/tools; PATH=$PATH:$ANDROID_HOME/platform-tools`
 
+设置环境变量
+
+Cordova的CLI工具需要设置一些环境变量才能正常运行。CLI将尝试为您设置这些变量，但在某些情况下，您可能需要手动设置它们。应更新以下变量：
+
+1. 将JAVA_HOME环境变量设置为JDK安装的位置
+2. 将ANDROID_HOME环境变量设置为Android SDK安装的位置
+3. 此外，还建议你添加了Android SDK的tools，tools/bin和platform-tools目录到您的PATH
+
 `quasar mode -a cordova` 开始出错
 
 ``` bash
@@ -62,6 +70,8 @@ npm ERR!     C:\Users\Administrator\AppData\Roaming\npm-cache\_logs\2018-09-17T0
 `cordova platform` 可知道可以添加的平台
 
 `cordova platform add android`
+
+`cordova platform add android@7`
 
 
 ### 在quasar_mszm项目中尝试
@@ -436,7 +446,7 @@ xcode项目目录`Resurces/config/xxxinfo.plist` 设置权限 其实在打包好
 总打包流程
 1. 在quasar项目中执行 `quasar build -m cordova -T ios` 进行打包
 2. 在`⁨quasar_mszm⁩ ▸ ⁨src-cordova⁩ ▸ ⁨platforms⁩ ▸ ⁨ios⁩` 目录中找到 `.xcodeproj` 文件
-3. 打开后，点击该项目可以配置信息，可以配置名字，Bundle identifier，版本号。打包前一定要配置Bundle identifier
+3. 打开后，点击该项目可以配置信息，可以配置名字，Bundle identifier，版本号。打包前一定要配置Bundle identifier （原项目的package.json中的`cordovaId`）
 4. 测试（Development）和发布（Distribution）都需要 Provisioning Profiles , 好容易申请，可以下载
 5. 在xcode最上面的顶栏那里，有一个可以选择设备的，测试时选择链接macbook的设备；打包时选择Generic iOS Device 通用设备
 6. 在菜单栏 Product -> Archive 进行打包成 `.ipa` 苹果安装包
@@ -507,3 +517,66 @@ Store被导入（如果在src/store中使用Vuex存储）
 8.（如果在Cordova模式下）收听“deviceready”事件，然后继续执行以下步骤
 9.（如果应用程序Boot插件存在）执行应用程序Boot插件
 10.（如果不存在应用程序Boot插件）使用根组件实例化Vue并附加到DOM
+
+
+### Cordova - 设置iOS下默认语言为中文（防止某些插件、界面显示英文）
+
+xcode项目目录 - Resources - xxxx-info.plist - Localization native development region 设置为 china
+
+
+### cordova Config.xml 详解
+
+https://cordova.apache.org/docs/en/latest/config_ref/index.html
+
+```
+allow-navigation
+
+该URL的webView控件本身可以浏览到。仅适用于顶级导航。
+
+属性(类型) href(string)
+描述 Required 定义组的WebView允许导航到外部域的
+
+例子:
+
+<!-- Allow links to example.com -->
+<allow-navigation href="http://example.com/*" />
+
+<!-- Wildcards are allowed for the protocol, as a prefix to the host, or as a suffix to the path -->
+<allow-navigation href="*://*.example.com/*" />
+```
+
+
+```
+allow-intent
+
+允许通过系统应用打开这个url
+
+属性(类型) href(string)
+描述 允许通过系统应用打开这个链接
+
+例子:
+
+<!-- Allow links to web pages to open in a browser -->
+<allow-intent href="http://*/*" />
+<allow-intent href="https://*/*" />
+
+<!-- Allow links to example.com to open in a browser -->
+<allow-intent href="http://example.com/*" />
+
+<!-- Wildcards are allowed for the protocol, as a prefix
+     to the host, or as a suffix to the path -->
+<allow-intent href="*://*.example.com/*" />
+
+<!-- Allow SMS links to open messaging app -->
+<allow-intent href="sms:*" />
+
+<!-- Allow tel: links to open the dialer -->
+<allow-intent href="tel:*" />
+
+<!-- Allow geo: links to open maps -->
+<allow-intent href="geo:*" />
+
+<!-- Allow all unrecognized URLs to open installed apps
+     *NOT RECOMMENDED* -->
+<allow-intent href="*" />
+```
