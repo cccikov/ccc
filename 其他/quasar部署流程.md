@@ -580,3 +580,10 @@ allow-intent
      *NOT RECOMMENDED* -->
 <allow-intent href="*" />
 ```
+
+
+## the connection to the server was unsuccessful 报错
+
+在 config.xml 配置
+
+<preference name="loadUrlTimeoutValue" value="700000"/>
