@@ -587,3 +587,14 @@ allow-intent
 在 config.xml 配置
 
 <preference name="loadUrlTimeoutValue" value="700000"/>
+
+
+## mac
+  
+  凭证存储位置 应用程序----实用工具-----钥匙串访问
+
+  去往一些底层的文件夹，首页-菜单栏-前往-个人 ； 还可以通过 "前往文件夹" 去更底层，如果 "/"根目录，"/User/"用户。也可以在任意目录 按着 `command`+`↑`向上级访问。
+
+  显示隐藏文件夹，终端输入（终端可以在"实用工具"打开） `defaults write com.apple.finder AppleShowAllFiles -bool true` ，执行后，要强制退出才可以会有效
+
+  git的.ssh 在 "/用户/个人/.ssh/id_rsa.pub" 目录里面，需要显示隐藏文件夹
