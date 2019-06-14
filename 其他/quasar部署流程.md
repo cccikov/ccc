@@ -598,3 +598,52 @@ allow-intent
   显示隐藏文件夹，终端输入（终端可以在"实用工具"打开） `defaults write com.apple.finder AppleShowAllFiles -bool true` ，执行后，要强制退出才可以会有效
 
   git的.ssh 在 "/用户/个人/.ssh/id_rsa.pub" 目录里面，需要显示隐藏文件夹
+
+
+## 退出app
+
+路由在 `*/#/` 点后退按钮会退出 
+
+或者
+
+``` javascript
+document.addEventListener("backbutton", exitApp(), false);
+
+function exitApp() {
+    var timer = null;
+    var ready = false;
+    return function () {
+        if (ready) {
+            navigator.app.exitApp();
+        } else {
+            window._router.app.showTips("再按一次退出", 1000);
+            ready = true;
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                ready = false;
+            }, 1000);
+        }
+    }
+}
+```
+
+pause ;//应用程序被置于后台，触发事件
+
+resume ;//程序从后台返回，触发事件
+
+deviceReady ;//cordova加载完成后触发事件
+
+backbutton ;//后退按钮事件
+
+menubutton ;//菜单按钮事件
+
+searchbutton ;//Android平台搜索按钮触发事件
+
+startcallbutton ;//开始呼叫按钮触发事件
+
+volumedownbutton ;//音量减小触发事件
+
+volumeupbutton ;//音量增大触发事件
+
+
+[事件文档](https://cordova.apache.org/docs/en/9.x/cordova/events/events.html)
