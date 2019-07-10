@@ -647,3 +647,35 @@ volumeupbutton ;//音量增大触发事件
 
 
 [事件文档](https://cordova.apache.org/docs/en/9.x/cordova/events/events.html)
+
+
+##修改支持混合
+
+http图片不显示情况
+
+你的网页是https协议，你加载了http的图片
+
+原因
+
+Android5.0上 WebView不支持Http和Https混合模式
+
+修改办法（设置支持混合）
+
+文件修改位置
+
+\apptest\platforms\android\CordovaLib\src\org\apache\cordova\engine\SystemWebViewEngine.java
+
+修改方法
+
+需要设置setMixedContentMode（有三种值）
+`MIXED_CONTENT_ALWAYS_ALLOW`：允许从任何来源加载内容，即使起源是不安全的；
+`MIXED_CONTENT_NEVER_ALLOW`：不允许Https加载Http的内容，即不允许从安全的起源去加载一个不安全的资源；
+`MIXED_CONTENT_COMPATIBILITY_MODE`：当涉及到混合式内容时，WebView 会尝试去兼容最新Web浏览器的风格。
+``` java
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+     webView.getSettings().setMixedContentMode(MIXED_CONTENT_COMPATIBILITY_MODE);
+}
+//或者直接：
+webView.getSettings().setMixedContentMode(MIXED_CONTENT_COMPATIBILITY_MODE);
+```
+在 initWebViewSettings 方法里
