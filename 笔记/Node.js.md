@@ -217,3 +217,12 @@ https://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-EventTarget
 
 addEventListener("click",fn,false)
 注册监听器的时候指明是什么事件的监听器(参数一),事件发生时要调用的方法(参数2),监听器对象里面包含了这个回调函数.调用监听器的时候,就会调用这个方法,调用监听器和直接调用函数没有什么区别.
+
+
+### package-lock.json
+
+原来`package.json`文件只能锁定大版本，也就是版本号的第一位，并不能锁定后面的小版本，你每次`npm install`都是拉取的该大版本下的最新的版本，为了稳定性考虑我们几乎是不敢随意升级依赖包的，这将导致多出来很多工作量，测试/适配等，所以`package-lock.json`文件出来了，当你每次安装一个依赖的时候就锁定在你安装的这个版本。
+
+那如果我们安装时的包有bug，后面需要更新怎么办？
+
+在以前可能就是直接改`package.json`里面的版本，然后再`npm install`了，但是5版本后就不支持这样做了，因为版本已经锁定在`package-lock.json`里了，所以我们只能`npm install xxx@x.x.x`  这样去更新我们的依赖，然后`package-lock.json`也能随之更新。
