@@ -446,7 +446,7 @@ xcode项目目录`Resurces/config/xxxinfo.plist` 设置权限 其实在打包好
 总打包流程
 1. 在quasar项目中执行 `quasar build -m cordova -T ios` 进行打包
 2. 在`⁨quasar_mszm⁩ ▸ ⁨src-cordova⁩ ▸ ⁨platforms⁩ ▸ ⁨ios⁩` 目录中找到 `.xcodeproj` 文件
-3. 打开后，点击该项目可以配置信息，可以配置名字，Bundle identifier，版本号。打包前一定要配置Bundle identifier （原项目的package.json中的`cordovaId`）
+3. 打开后，点击该项目可以配置信息（TARGETS > General），可以配置名字，Bundle identifier，版本号。打包前一定要配置Bundle identifier （原项目的package.json中的`cordovaId`）
 4. 测试（Development）和发布（Distribution）都需要 Provisioning Profiles , 好容易申请，可以下载
 5. 在xcode最上面的顶栏那里，有一个可以选择设备的，测试时选择链接macbook的设备；打包时选择Generic iOS Device 通用设备
 6. 在菜单栏 Product -> Archive 进行打包成 `.ipa` 苹果安装包

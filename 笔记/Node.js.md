@@ -225,4 +225,13 @@ addEventListener("click",fn,false)
 
 那如果我们安装时的包有bug，后面需要更新怎么办？
 
-在以前可能就是直接改`package.json`里面的版本，然后再`npm install`了，但是5版本后就不支持这样做了，因为版本已经锁定在`package-lock.json`里了，所以我们只能`npm install xxx@x.x.x`  这样去更新我们的依赖，然后`package-lock.json`也能随之更新。
+在以前可能就是直接改`package.json`里面的版本，然后再`npm install`了，但是node 5.x.x版本后就不支持这样做了，因为版本已经锁定在`package-lock.json`里了，所以我们只能`npm install xxx@x.x.x`  这样去更新我们的依赖，然后`package-lock.json`也能随之更新。
+
+`npm i` 与 `cnpm i` 生成出来的 package-lock.json 文件是不一样的，如果  `cnpm i` 生成的  package-lock.json ，之后用 `npm i` 命令，好大机会会出错。这时，可以删除  package-lock.json ，然后使用 `npm i` 命令安装，重新记录依赖的包的来源及版本
+
+
+### npm i
+
+有些时候 `npm i` 失败，有可能是 `node_modules` 里面存在目录了，无法删除导致的，所以可以将整个 `node_modules` 删除再运行 `npm i` 命令。 
+
+要是再不行，就用取得“管理员”权限的 cmd 或者 Windows PowerShell 运行 `npm i` 命令
