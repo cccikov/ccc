@@ -26,6 +26,14 @@
 
 * webassembly
 * 拖动事件
+    - drag
+    - dragstart
+    - dragend
+    - dragover
+    - dragenter
+    - dragleave
+    - dragexit
+    - drop
 * webpack
 * node 中转服务器 实例
 * typeScript
