@@ -34,10 +34,13 @@
     - dragleave
     - dragexit
     - drop
+
+    - https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
 * webpack
 * node 中转服务器 实例
 * typeScript
 * flutter
+* 优雅的深拷贝 https://www.jianshu.com/p/f2b1b982dc5a
 
 ##### 可选
 * WebSocket
@@ -50,3 +53,12 @@
 1. js设计模式
 2. 观察者模式(自定义事件)
 3. 模块化编程
+
+
+## 解决问题
+
+* vue 手机浏览器切换页面，遮住顶部
+* 上传图片组件
+* 拆单组件（数量判断，pc后台管理系统）
+* 8角拖拽
+* 拖动drag排序

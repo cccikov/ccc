@@ -15,6 +15,10 @@ node命令
 
     node -v
 
+显示node安装目录
+
+    where node
+
 显示npm版本
 
     npm -v
@@ -168,11 +172,10 @@ ps :  推荐用`git bash`去运行node命令 , 因为
     `node script文件`
     `node` 进入nodejs运行环境
 
-2. npm 运行 与node package有关的安装以及package.json里面的“script”属性 
+2. npm 运行 与node package有关的安装以及package.json里面的“script”属性
     npm run 属性名
     如果属性名为 start restart test
-    可以简写为 `npm start`  `npm restart`  `npm test` 
+    可以简写为 `npm start`  `npm restart`  `npm test`
 
 3. gulp gulp构造工具有关
-    `gulp` 等于 `gulp default` 
-    
+    `gulp` 等于 `gulp default`
