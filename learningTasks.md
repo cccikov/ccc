@@ -41,6 +41,12 @@
 * typeScript
 * flutter
 * 优雅的深拷贝 https://www.jianshu.com/p/f2b1b982dc5a
+* pwa
+* 微信小程序
+* vue
+    1. SSR服务器渲染；
+    2. 静态化 Nuxt.js；
+    3. 预渲染prerender-spa-plugin；
 
 ##### 可选
 * WebSocket
