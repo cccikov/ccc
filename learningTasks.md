@@ -47,6 +47,7 @@
     1. SSR服务器渲染；
     2. 静态化 Nuxt.js；
     3. 预渲染prerender-spa-plugin；
+    4. 异步组件 https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6
 
 ##### 可选
 * WebSocket
