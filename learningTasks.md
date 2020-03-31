@@ -40,7 +40,7 @@
 * node 中转服务器 实例
 * typeScript
 * flutter
-* 优雅的深拷贝 https://www.jianshu.com/p/f2b1b982dc5a
+* [优雅的深拷贝](https://www.jianshu.com/p/f2b1b982dc5a)
 * pwa
 * 微信小程序
 * vue
@@ -49,12 +49,14 @@
     3. 预渲染prerender-spa-plugin；
     4. 异步组件 https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6
 
+
 ##### 可选
 * WebSocket
 * socket.io
 * Ajax(http请求)
 * shadow dom
 * Dynamics.js 物理运动动画效果
+* [webRTC](https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API)
 
 ##### 其他
 1. js设计模式
