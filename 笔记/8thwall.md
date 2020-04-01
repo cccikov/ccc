@@ -35,7 +35,12 @@
 
     * Safari
 
-        注意：getUserMedia仅在Safari中支持，在UIWebView或WKWebView不支持。（app webView）
+        注意：getUserMedia仅在Safari中支持，在UIWebView（已弃用）或WKWebView不支持。（app webView）
+
+    在ios系统中，除了Safari使用了内核，其他浏览器均是使用 WKWebView 引擎，包括ios版的chrome和firefox
+
+    [chrome for ios v48已经使用WKWebview替代UIWebview了。](https://www.zhihu.com/question/21020281)
+    [UIWebView/WKWebview 介绍](https://blog.csdn.net/u011467458/article/details/50494547)
 
 * android：
 
