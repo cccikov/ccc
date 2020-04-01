@@ -159,8 +159,13 @@
 
     * [github](https://github.com/videojs/video.js)
     * [官网](https://videojs.com/)
+    * [videojs用到的插件](https://videojs.com/plugins)
 
     - 即使没有本地支持，也可以使用video.js播放HLS。
+
+    * node_modules\video.js\dist\video.min.js
+    * node_modules\video.js\dist\video.cjs.js  commonjs 规范
+    * node_modules\video.js\dist\video.es.js es6 规范
 
 ## 直播源
 
@@ -227,6 +232,8 @@
         * https://videojs.com/
 
             > HLS supported everywhere. DASH supported everywhere but iOS Safari.
+
+        * [videojs+hls+rtmp流媒体播放](https://www.cnblogs.com/FHC1994/p/9981440.html)
 
     2. hls.js
 

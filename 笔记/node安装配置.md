@@ -177,5 +177,12 @@ ps :  推荐用`git bash`去运行node命令 , 因为
     如果属性名为 start restart test
     可以简写为 `npm start`  `npm restart`  `npm test`
 
+    一般 `https://www.npmjs.com/` 的仓库一般是`github`，项目里面基本都会有 `package.json` ， 就能看到他们的 `build` 命令，就可以自己打包出来
+
+    [package.json](https://docs.npmjs.com/creating-a-package-json-file)
+    [node cli 命令](https://docs.npmjs.com/cli-documentation/)
+    [npm start](https://docs.npmjs.com/cli-commands/start.html)
+    [npm run xxx](https://docs.npmjs.com/cli-commands/run-script.html)
+
 3. gulp gulp构造工具有关
     `gulp` 等于 `gulp default`

@@ -64,6 +64,7 @@
 3. 模块化编程
 4. krpano 全景图生成工具、krpano功能化
 5. 标准方程 轨迹方程 参数方程
+6. canvas-nest / vue-particles  canvas 离子运动
 
 
 ## 解决问题
