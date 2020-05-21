@@ -138,6 +138,7 @@
 
 * [直播中前端技术](https://www.jianshu.com/p/25da0d497f48)
 * socket.io
+* [video.js 结合 flv.js播放flv视频](https://blog.csdn.net/boyit0/article/details/84395347)
 
 ## 框架
 

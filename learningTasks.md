@@ -1,4 +1,4 @@
-# Learning Tasks
+  # Learning Tasks
 
 #### vue学习计划
 
@@ -34,8 +34,8 @@
     - dragleave
     - dragexit
     - drop
-
-    - https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
+    - `https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API`
+    
 * webpack
 * node 中转服务器 实例
 * typeScript
@@ -48,10 +48,28 @@
     2. 静态化 Nuxt.js；
     3. 预渲染prerender-spa-plugin；
     4. 异步组件 https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6
+* picker 动画效果
+    - https://www.jianshu.com/p/5ef68a29a000
+    - https://github.com/mrxu0/nativePhoneUI
 
+* node package - open 使用 文档
+* node package - vue-cli4 使用 文档
+* vue 
+    - 记住位置，返回回到位置
+    - keep-alive（判断哪些keep-alive，哪些不keep）
+    - 前进刷新getData，后退keep-alive
+    - 怎么判断前进后退（方法，浏览器后退前进，手动输入以及再后退，刷新以及再后退）
+    - 改写push，back，forward，go
+* vue 倒计时
+    ```
+    setInterval(() => {
+        this.now = Date.now();
+    }, 1000);
+    ```
 
 ##### 可选
-* WebSocket
+* WebSocket / 心跳机制，重连 , 心跳机制 ping/pong  客户端(服务端)发送ping，服务端(客户端)返回pong，表明链接是通的。
+    - [心跳机制](https://www.cnblogs.com/tugenhua0707/p/8648044.html)
 * socket.io
 * Ajax(http请求)
 * shadow dom
@@ -60,7 +78,7 @@
 
 ##### 其他
 1. js设计模式
-2. 观察者模式(自定义事件)
+2. 观察者模式 、 发布-订阅模式
 3. 模块化编程
 4. krpano 全景图生成工具、krpano功能化
 5. 标准方程 轨迹方程 参数方程
@@ -74,3 +92,12 @@
 * 拆单组件（数量判断，pc后台管理系统）
 * 8角拖拽
 * 拖动drag排序
+* 周选择器（日期选择器）
+
+
+## 微信开发
+
+* [官方文档](https://developers.weixin.qq.com/doc/)
+* [微信公众平台](https://mp.weixin.qq.com/)
+* [微信开放平台](https://open.weixin.qq.com/)
+
