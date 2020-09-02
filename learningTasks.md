@@ -35,7 +35,7 @@
     - dragexit
     - drop
     - `https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API`
-    
+
 * webpack
 * node 中转服务器 实例
 * typeScript
@@ -54,7 +54,7 @@
 
 * node package - open 使用 文档
 * node package - vue-cli4 使用 文档
-* vue 
+* vue
     - 记住位置，返回回到位置
     - keep-alive（判断哪些keep-alive，哪些不keep）
     - 前进刷新getData，后退keep-alive
@@ -78,11 +78,25 @@
 
 ##### 其他
 1. js设计模式
-2. 观察者模式 、 发布-订阅模式
+2. 观察者模式 、 发布-订阅模式、javascript设计模式
 3. 模块化编程
 4. krpano 全景图生成工具、krpano功能化
 5. 标准方程 轨迹方程 参数方程
 6. canvas-nest / vue-particles  canvas 离子运动
+7. Fetch
+8. d3js
+9. vue 组件间嵌套组合使用，cell-group与cell直接组合
+10. formdata
+    - append()
+    - delete()
+    - entries()
+    - get()
+    - getAll()
+    - has()
+    - keys()
+    - set()
+    - values()
+11. v-lazy
 
 
 ## 解决问题
@@ -93,6 +107,8 @@
 * 8角拖拽
 * 拖动drag排序
 * 周选择器（日期选择器）
+* 周时间段选择
+
 
 
 ## 微信开发
