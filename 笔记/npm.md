@@ -4,6 +4,8 @@
 * npm cli 命令行界面 (CLI) (Command-line Interface)
     - 命令行界面 (CLI)、终端 (Terminal)、Shell
 
+https://docs.npmjs.com/cli-documentation/
+    
 package.json
 
 npm list
@@ -41,6 +43,7 @@ npm ls [packageName] -g // 查看本机全局版本
 
 npm install [packageName] //安装模块
 npm install [packageName]@xxx.xx //安装模块的指定版本
+npm install [packageName]@latest //安装模块的最新的一个版本 @latest是一个tag标签
 npm install [packageName]  -g //全局安装模块
 npm install [packageName] --save 安装好后写入package.json的dependencies中（生产环境依赖）
 npm install [packageName] --save-dev 安装好后写入package.json的devDepencies中（开发环境依赖）
@@ -50,3 +53,4 @@ npm uninstall [packageName] -g //卸载全局模块
 npm uninstall [packageName] --save  // 删除模块，同时删除模块留在package.json中dependencies下的对应信息
 npm uninstall [packageName] --save-dev  // 删除模块，同时删除模块留在package.json中devDependencies下的对应信
 ```
+

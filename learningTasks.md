@@ -84,8 +84,13 @@
 5. 标准方程 轨迹方程 参数方程
 6. canvas-nest / vue-particles  canvas 离子运动
 7. Fetch
-8. d3js
-9. vue 组件间嵌套组合使用，cell-group与cell直接组合
+8. 大数据可视化看板
+    * echarts https://echarts.apache.org/zh/index.html
+    * DataV 阿里 https://github.com/DataV-Team/DataV
+    * antv https://antv.vision/zh 阿里 蚂蚁金服
+    * d3.js https://observablehq.com/@d3/gallery
+    * highcharts https://www.highcharts.com.cn/demo/highcharts/
+9. vue 组件间嵌套组合使用，cell-group与cell直接组合，应该是用到依赖注入
 10. formdata
     - append()
     - delete()
@@ -108,6 +113,7 @@
 * 拖动drag排序
 * 周选择器（日期选择器）
 * 周时间段选择
+* 中心缩放
 
 
 
