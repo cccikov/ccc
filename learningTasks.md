@@ -102,6 +102,8 @@
     - set()
     - values()
 11. v-lazy
+12. Restful delete 请求
+13. 组件v-model 还是最好不要直接修改prop
 
 
 ## 解决问题
@@ -123,3 +125,50 @@
 * [微信公众平台](https://mp.weixin.qq.com/)
 * [微信开放平台](https://open.weixin.qq.com/)
 
+## 除了基本html,js,css 会的
+
+* jq
+* node express 
+    - 基本的 get post 请求（原生的，jq的，axios的），接收上传文件
+* webpack
+    - 最熟悉的就是反向代理了
+* cordova
+    - 基本打包
+    - 安装插件
+    - ios打包，发布
+* vue
+    - vue
+    - vue-router
+    - vuex
+    - vue-cli4
+
+
+## 项目
+
+之前的前端项目是没有框架的概念
+
+* quasar两个项目
+    - 熟悉vue
+    - 熟悉cordova
+    - 打包，ios打包发布
+* iview-admin 项目
+    - 熟悉vue，熟悉iview
+    - 组件间联系 props
+* vue-cli4 从0开始
+    - 项目搭建
+    - vuex
+        + vuex持久化
+    - 请求接口的模块化管理
+    - vue-cli4 打包，构建配置
+    - 微信
+        + 微信的网页授权
+        + 注入权限 ，使用微信JS-SDK
+        + 利用发布/订阅模式，确保在才做微信jssdk之前已经授权了
+    - websocket 原生
+        + 改造为发布/订阅模式
+    - 直播
+        + video.js 基本配置
+    - 更加熟悉flex布局
+* eladmin
+    - 动态路由
+    
