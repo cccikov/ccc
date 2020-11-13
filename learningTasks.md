@@ -40,7 +40,9 @@
 * node 中转服务器 实例
 * typeScript
 * flutter
+* electron
 * [优雅的深拷贝](https://www.jianshu.com/p/f2b1b982dc5a)
+    - 循环对象 深拷贝
 * pwa
 * 微信小程序
 * vue
@@ -104,6 +106,13 @@
 11. v-lazy
 12. Restful delete 请求
 13. 组件v-model 还是最好不要直接修改prop
+14. GitHub Pages 功能 github 静态页面
+15. Gitee Pages 服务 - 一个支持Jekyll、Hugo、Hexo静态网站的服务
+    - 【服务】 - 【Gitee Pages】
+16. 模块js ，cmd ，amd，commonJS兼容写法
+17. es6 循环加载 模块问题
+18. axios 取消请求 live项目D:\ccc_code\live\src\axios\index.js
+19. fabric.js canvas绘图
 
 
 ## 解决问题
@@ -141,6 +150,12 @@
     - vue-router
     - vuex
     - vue-cli4
+* URL FileReader 
+    - 回显图片
+    - 下载文件
+    - 上传转化后的图片
+* formData 
+    - 上传文件
 
 
 ## 项目
