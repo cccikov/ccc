@@ -12,8 +12,8 @@
 * vuex
 * 尝试使用别的脚手架来构建vue框架，或者使用webpack搭建自己的脚手架 Yeoman
 
-
 #### 学习任务
+
 * 微信小程序
 * ECMAScript6
 * nodeJs
@@ -113,6 +113,30 @@
 17. es6 循环加载 模块问题
 18. axios 取消请求 live项目D:\ccc_code\live\src\axios\index.js
 19. fabric.js canvas绘图
+20. URL  new URL
+21. URLSearchParams    new URLSearchParams 
+    - append()
+    - delete()
+    - entries()
+    - get()
+    - getAll()
+    - has()
+    - keys()
+    - set()
+    - sort()
+    - values()
+    - https://developer.mozilla.org/zh-CN/docs/Web/API/URL/URL
+    - http://nodejs.cn/api/url.html
+    - https://nodejs.org/dist/latest-v14.x/docs/api/url.html
+22. 上传进度、下载进度
+    - https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest
+    - https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
+    - https://blog.csdn.net/hahahhahahahha123456/article/details/80608568
+    - https://www.cnblogs.com/wolf-sun/p/6693367.html
+    - http://www.axios-js.com/zh-cn/docs/ onUploadProgress onDownloadProgress
+23. vconsole
+    因为手机或者平板之类的客户端软件并没有控制台，前端开发想看log日志比较麻烦，如果一直弹窗alert方法实在太挫了。所以腾讯开发了这个 js 插件
+    https://blog.csdn.net/xuyanquan/article/details/105530615
 
 
 ## 解决问题
@@ -125,8 +149,7 @@
 * 周选择器（日期选择器）
 * 周时间段选择
 * 中心缩放
-
-
+* LeetCode
 
 ## 微信开发
 
@@ -186,4 +209,3 @@
     - 更加熟悉flex布局
 * eladmin
     - 动态路由
-    
