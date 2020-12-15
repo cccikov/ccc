@@ -1,4 +1,4 @@
-  # Learning Tasks
+   # Learning Tasks
 
 #### vue学习计划
 
@@ -68,6 +68,8 @@
         this.now = Date.now();
     }, 1000);
     ```
+* 笛卡尔积
+
 
 ##### 可选
 * WebSocket / 心跳机制，重连 , 心跳机制 ping/pong  客户端(服务端)发送ping，服务端(客户端)返回pong，表明链接是通的。
@@ -137,6 +139,8 @@
 23. vconsole
     因为手机或者平板之类的客户端软件并没有控制台，前端开发想看log日志比较麻烦，如果一直弹窗alert方法实在太挫了。所以腾讯开发了这个 js 插件
     https://blog.csdn.net/xuyanquan/article/details/105530615
+24. eslint 配合 git  （husky）
+    https://www.cnblogs.com/zzd0916/p/10254893.html
 
 
 ## 解决问题

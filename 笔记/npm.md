@@ -6,7 +6,9 @@
 
 https://docs.npmjs.com/cli-documentation/
     
-package.json
+### package.json
+
+https://docs.npmjs.com/cli/v6/configuring-npm/package-json
 
 npm list
 
@@ -14,6 +16,8 @@ npm list
 
 
 ### package-lock.json
+
+https://docs.npmjs.com/cli/v6/configuring-npm/package-lock-json
 
 原来`package.json`文件只能锁定大版本，也就是版本号的第一位，并不能锁定后面的小版本，你每次`npm install`都是拉取的该大版本下的最新的版本，为了稳定性考虑我们几乎是不敢随意升级依赖包的，这将导致多出来很多工作量，测试/适配等，所以`package-lock.json`文件出来了，当你每次安装一个依赖的时候就锁定在你安装的这个版本。
 

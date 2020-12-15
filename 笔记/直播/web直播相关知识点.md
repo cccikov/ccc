@@ -246,3 +246,7 @@
     |:------:|:------:|:-------|:----------:|
     | flv.js | flv.js | flv.js |   flv.js   |
 
+
+* 坑
+    1. 拉流地址一定要要是**证书未过期**的https请求
+    2. ios可以，android不可以 https://blog.csdn.net/wangjingkaibear/article/details/53762656
