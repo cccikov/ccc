@@ -9,3 +9,20 @@ vue-cli 脚手架工具
 增加less-loader好像不需要另外配置什么 只需要安装less 和less-loader就可以了 
 
 `npm install -D sass-loader node-sass`
+
+vue inspect >output.js  --mode production
+
+``` bash
+Usage: inspect [options] [paths...]
+
+inspect the webpack config in a project with vue-cli-service
+
+Options:
+  --mode <mode>          
+  --rule <ruleName>      inspect a specific module rule
+  --plugin <pluginName>  inspect a specific plugin
+  --rules                list all module rule names
+  --plugins              list all plugin names
+  -v --verbose           Show full function definitions in output
+  -h, --help             output usage information
+```

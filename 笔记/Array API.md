@@ -107,6 +107,39 @@
         // 排序颠倒
     ```
 
+    例子
+
+    ``` javascript
+        var items = [
+            { name: 'Edward', value: 21 },
+            { name: 'Sharpe', value: 37 },
+            { name: 'And', value: 45 },
+            { name: 'The', value: -12 },
+            { name: 'Magnetic' },
+            { name: 'Zeros', value: 37 }
+        ];
+
+        // sort by value 数字类型可以直接减
+        items.sort(function (a, b) {
+            return (a.value - b.value)
+        });
+
+        // sort by name 如果是字符类型只能先比较 如果两个值都是字符串，则根据它们包含的Unicode代码点的值将它们作为字符串进行比较。
+        items.sort(function(a, b) {
+            var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+            var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+    
+                // names must be equal
+            return 0;
+        });
+    ```
+
 * arr.reverse
 
     将数组中元素的位置颠倒(会修改原数组)
