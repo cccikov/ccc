@@ -141,6 +141,8 @@
     https://blog.csdn.net/xuyanquan/article/details/105530615
 24. eslint 配合 git  （husky）
     https://www.cnblogs.com/zzd0916/p/10254893.html
+25. object-fit
+    fill | contain | cover | none | scale-down
 
 
 ## 解决问题
