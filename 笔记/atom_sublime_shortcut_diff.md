@@ -14,3 +14,13 @@
 |  ctrl+b            |  快速选择已经打开的文件          | bulid                                                        |         无        |
 |  ctrl+shift+b      |  打开git status                  | bulid                                                        |         无        |
 |  ctrl+shift+g      |  快速打开git 操作菜单            | bulid                                                        |         无        |
+
+# 命令
+
+* 定位编辑的文件
+    - 在侧边栏显示活动文件
+        + sublime `locate`
+        + vscode `reveal`
+    - 在文件资源管理器显示文件
+        + sublime `reveal`
+        + sublime `reveal`
