@@ -23,4 +23,4 @@
         + vscode `reveal`
     - 在文件资源管理器显示文件
         + sublime `reveal`
-        + sublime `reveal`
+        + vscode `reveal`
