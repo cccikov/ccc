@@ -144,6 +144,7 @@
 25. object-fit
     fill | contain | cover | none | scale-down
 26. webpack require.context
+27. 好好理清楚 yshop 里面的crud.js 里面的依赖注入，涉及源码 initInjections initProvide _provided
 
 
 ## 解决问题
@@ -216,3 +217,18 @@
     - 更加熟悉flex布局
 * eladmin
     - 动态路由
+
+
+
+
+
+
+
+
+
+* 微信h5支付
+    - 微信内部浏览器打开
+        + JSAPI https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_1
+        + JS-SDK https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#58
+    - 微信以外手机浏览器
+        + H5跳转页面支付 https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1
