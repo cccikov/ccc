@@ -7,6 +7,7 @@
 - [构造函数对象的方法](#构造函数对象的方法)
 
 ``` javascript
+
     // 合并数组
     arr.concat([value1[, value2[, ...[, valueN]]]]);
 

@@ -325,6 +325,16 @@
         })
         ```
 
+        只能采用这种形式
+
+        ``` javascript
+        ...mapState({
+            stateInModule1: state => state.moduleA.module2.stateInModule, // this.stateInModule1
+        }),
+        ```
+
+
+
     - 有 namespaced 命名空间
 
         有无 namespaced ，对于读取state是没区别的，因为模块内的状态(state)已经是嵌套的了，使用 `namespaced` 属性不会对其产生影响
