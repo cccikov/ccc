@@ -3,6 +3,7 @@
 - [复制操作](#复制)
 
 ``` javascript
+
     // 提取字符串(可负)
     str.slice([beginSlice[, endSlice]])
 
@@ -18,7 +19,7 @@
     // 返回索引字符
     str.charAt(index = 0)
 
-    // 返回索引字符的Unicode码
+    // 返回索引字符的Unicode码值
     str.charCodeAt(index = 0)
 
     // 检索
@@ -41,6 +42,11 @@
 
     // 去除两端空格
     str.trim()
+
+    /* es6 */
+
+    // 加强版 charCodeAt 返回索引字符的Unicode码值
+    str.codePointAt(index = 0) //
 ```
 
 ## String
@@ -110,7 +116,7 @@
     ``` javascript
         str.split([separator[, limit]])
 
-        str.split("") // 返回一个只有由整个字符串组成的元素的数组
+        str.split() // 返回一个只有由整个字符串组成的元素的数组
 
         str.split("") // 每个字符之间分割
     ```
@@ -136,7 +142,7 @@
 
 * str.charCodeAt
 
-    返回指定位置的字符的 Unicode 编码 (0到65535之间的整数)
+    返回指定位置的字符的 Unicode 编码值 (0到65535之间的整数)
 
     返回值是一表示给定索引处（String中index索引处）字符的 UTF-16 代码单元值的数字；如果索引超出范围，则返回 NaN。
 
@@ -218,7 +224,19 @@
         str.trim()
     ```
 
-#### 构造函数对象的方法
+##### es6 新增方法
+
+* str.codePointAt
+
+    方法返回 一个 Unicode 编码点值的非负整数。能处理4个字节的字符（大于0xFFFF的码点的字符）
+
+    对应 es5 的 `str.charCodeAt`，只能处理2个字节的字符（0xFFFF以内的字符），所以建议用`str.codePointAt`
+
+    ``` javascript
+        str.codePointAt(index = 0)
+    ```
+
+#### 静态方法（构造函数对象的方法）
 
 * String.fromCharCode
 
@@ -231,3 +249,54 @@
     * num1, ..., numN
 
         一组序列数字，表示 Unicode 值。
+
+* String.fromCodePoint
+
+    返回使用指定的Unicode值序列创建的字符串。能识别大于 0xFFFF 的码点值。
+
+    对应 es5 的 `String.fromCharCode` ，只能识别小于等于0xFFFF的码点，所以建议使用 `String.fromCodePoint`
+
+    ``` javascript
+        String.fromCodePoint(num1[, ..., numN])
+    ```
+
+    * num1, ..., numN
+
+        一组序列数字，表示 Unicode 值。
+
+##### es6 新增的方法
+
+* charCodeAt
+
+## 长字符串（未完成）
+
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String
+https://javascript.ruanyifeng.com/grammar/string.html
+
+## 模板字面量
+
+## 从字符串中获取单个字符
+
+## 转义字符
+
+通过 `\` 转义，如果没有对应的转义，则忽略 `\` 直接输出
+
+* `\0`  空字符
+* `\'`  单引号
+* `\"`  双引号
+* `\\`  反斜杠
+* `\n`  换行
+* `\r`  回车
+* `\v`  垂直制表符
+* `\t`  水平制表符
+* `\b`  退格
+* `\f`  换页
+* `\n ... \nnn`  以八进制代码nn表示的一个字符 `"\172"` 表示 `"z"`，但是在es6字符串模板里面不允许使用，会报错 Octal escape sequences are not allowed in template strings
+* `\xnn`    以十六进制代码nn表示的一个字符 `"\x41"` 表示 `"A"`
+* `\unnnn`  unicode 码 以十六进制代码nnnn表示的一个字符
+* `\u{n} ... \u{nnnnnn}`    unicode codepoint es6 , 相当于`\unnnn` 扩展
+
+
+* 参考
+    - https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String
+    - https://es6.ruanyifeng.com/#docs/string-methods#%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%EF%BC%9AcodePointAt
