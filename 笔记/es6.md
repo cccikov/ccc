@@ -219,19 +219,22 @@ JavaScript内部，字符以UTF-16的格式储存
     }
     ```
 
+* str.normalize() 方法会按照指定的一种 Unicode 正规形式将当前字符串正规化
+* str.includes(), str.startsWith(), str.endsWith()
+* str.repeat()
+* str.padStart()，padEnd()
+* str.trimStart()，trimEnd()
+* str.matchAll()
+* str.replaceAll()
+
+
 * String.fromCodePoint()
 
     `String.fromCodePoint()` 能处理大于 0xFFFF 的码点，返回字符串
     `String.fromCharCode()` 只能识别小于等于0xFFFF的码点，返回对应字符串
 
 * String.raw()
-* str.normalize()
-* str.includes(), startsWith(), endsWith()
-* str.repeat()
-* str.padStart()，padEnd()
-* str.trimStart()，trimEnd()
-* str.matchAll()
-* str.replaceAll()
+
 
 ## 6.数组的扩展
 

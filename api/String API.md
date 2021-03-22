@@ -63,11 +63,11 @@
         str.slice([beginSlice[, endSlice]])
     ```
 
-    * beginSlice
+    - beginSlice
 
         可选，默认值为0。从该索引（以 0 为基数）处开始提取原字符串中的字符。如果值为负数，会被当做 sourceLength + beginSlice 看待，这里的sourceLength 是字符串的长度 (例如， 如果beginSlice 是 -3 则看作是: sourceLength - 3)
 
-    * endSlice
+    - endSlice
 
         可选，默认值为str.length。在该索引（以 0 为基数）处结束提取字符串(不包括endSlice)。如果省略该参数，slice会一直提取到字符串末尾。如果该参数为负数，则被看作是 sourceLength + endSlice，这里的 sourceLength 就是字符串的长度(例如，如果 endSlice 是 -3，则是, sourceLength - 3)。
 
@@ -79,11 +79,11 @@
         str.substring([indexStart[, indexEnd]])
     ```
 
-    * indexStart
+    - indexStart
 
         可选，默认值为0。一个 0 到字符串长度之间的整数。
 
-    * indexEnd
+    - indexEnd
 
         可选，默认值为str.length。一个 0 到字符串长度之间的整数。
 
@@ -121,11 +121,11 @@
         str.split("") // 每个字符之间分割
     ```
 
-    * separator 可选
+    - separator 可选
 
         指定表示每个拆分应发生的点的字符串。separator 可以是一个字符串或正则表达式。 如果纯文本分隔符包含多个字符，则必须找到整个字符串来表示分割点。如果在str中省略或不出现分隔符，则返回的数组包含一个由整个字符串组成的元素。如果分隔符为空字符串，则将str原字符串中每个字符的数组形式返回。
 
-    * limit 可选
+    - limit 可选
 
         一个整数，限定返回的分割片段数量。当提供此参数时，split 方法会在指定分隔符的每次出现时分割该字符串，但在限制条目已放入数组时停止。如果在达到指定限制之前达到字符串的末尾，它可能仍然包含少于限制的条目。新数组中不返回剩下的文本。
 
@@ -144,7 +144,7 @@
 
     返回指定位置的字符的 Unicode 编码值 (0到65535之间的整数)
 
-    返回值是一表示给定索引处（String中index索引处）字符的 UTF-16 代码单元值的数字；如果索引超出范围，则返回 NaN。
+    返回值是一表示指定索引处（String中index索引处）字符的 UTF-16 代码单元值的数字；如果索引超出范围，则返回 NaN。
 
     ``` javascript
         str.charCodeAt(index = 0)
@@ -190,19 +190,19 @@
         str.replace(regexp|substr, newSubStr|function)
     ```
 
-    * regexp (pattern)
+    - regexp (pattern)
 
         一个RegExp 对象或者其字面量。该正则所匹配的内容会被第二个参数的返回值替换掉。
 
-    * substr (pattern)
+    - substr (pattern)
 
     一个要被 newSubStr 替换的字符串。其被视为一整个字符串，而不是一个正则表达式。仅仅是第一个匹配会被替换。
 
-    * newSubStr (replacement)
+    - newSubStr (replacement)
 
         用于替换掉第一个参数在原字符串中的匹配部分的字符串。该字符串中可以内插一些特殊的变量名。
 
-    * function (replacement)
+    - function (replacement)
 
         一个用来创建新子字符串的函数，该函数的返回值将替换掉第一个参数匹配到的结果。
 
@@ -236,6 +236,67 @@
         str.codePointAt(index = 0)
     ```
 
+* str.normalize
+
+    方法会按照指定的一种 Unicode 正规形式将当前字符串正规化。
+
+    ``` javascript
+        str.normalize([form])
+    ```
+
+    - form 可选 ，默认值为 "NFC"
+        - NFC，默认参数，表示“标准等价合成”（Normalization Form Canonical Composition），返回多个简单字符的合成字符。所谓“标准等价”指的是视觉和语义上的等价。
+        - NFD，表示“标准等价分解”（Normalization Form Canonical Decomposition），即在标准等价的前提下，返回合成字符分解的多个简单字符。
+        - NFKC，表示“兼容等价合成”（Normalization Form Compatibility Composition），返回合成字符。所谓“兼容等价”指的是语义上存在等价，但视觉上不等价，比如“囍”和“喜喜”。（这只是用来举例，normalize方法不能识别中文。）
+        - NFKD，表示“兼容等价分解”（Normalization Form Compatibility Decomposition），即在兼容等价的前提下，返回合成字符分解的多个简单字符。
+
+* str.includes
+
+    如果当前字符串包含被搜寻的字符串，就返回 true；否则返回 false。
+
+    ``` javascript
+    str.includes(searchString[, position])
+    ```
+
+    - searchString
+
+        要在此字符串中搜索的字符串。
+
+    - position 可选
+
+        从当前字符串的哪个索引位置开始搜寻子字符串，默认值为 0。
+
+
+* str.startsWith
+
+    如果参数字符串在原字符串的头部则返回true；否则返回false。
+
+    - searchString
+
+        要在此字符串中搜索的字符串。
+
+    - position 可选
+
+        从当前字符串的哪个索引位置开始搜寻子字符串，默认值为 0。
+
+* str.endsWith
+
+    如果参数字符串在原字符串的尾部则返回true；否则返回false。
+
+    - searchString
+
+        要在此字符串中搜索的字符串。
+
+    - position 可选
+
+        从当前字符串的哪个索引位置开始搜寻子字符串，默认值为 0。
+
+* str.repeat
+* str.padStart
+* str.trimStart
+* str.matchAll
+* str.replaceAll
+
 #### 静态方法（构造函数对象的方法）
 
 * String.fromCharCode
@@ -246,9 +307,11 @@
         String.fromCharCode(num1[, ..., numN])
     ```
 
-    * num1, ..., numN
+    - num1, ..., numN
 
         一组序列数字，表示 Unicode 值。
+
+##### es6 新增静态方法
 
 * String.fromCodePoint
 
@@ -260,13 +323,42 @@
         String.fromCodePoint(num1[, ..., numN])
     ```
 
-    * num1, ..., numN
+    - num1, ..., numN
 
         一组序列数字，表示 Unicode 值。
 
-##### es6 新增的方法
+* String.raw()
 
-* charCodeAt
+    是一个模板字符串的标签函数，是用来获取一个模板字符串的原始字符串的，比如说，占位符（例如 ${foo}）会被处理为它所代表的其他字符串，而转义字符（例如 \n）不会。
+
+    往往用于模板字符串的处理方法
+
+    ``` javascript
+    String.raw(callSite, ...substitutions)
+
+    String.raw`templateString`
+    ```
+
+    - callSite
+
+        一个模板字符串的“调用点对象”。类似{ raw: ['foo', 'bar', 'baz'] }。
+
+    - ...substitutions
+
+        任意个可选的参数，表示任意个内插表达式对应的值。
+
+    - templateString
+
+        模板字符串，可包含占位符（${...}）。
+
+    返回指定模板字符串的原始字符串。
+
+    eg:
+
+    ``` javascript
+    String.raw`Hi\n${2+3}!`
+    // 实际返回 "Hi\\n5!"，显示的是转义后的结果 "Hi\n5!"
+    ```
 
 ## 长字符串（未完成）
 
