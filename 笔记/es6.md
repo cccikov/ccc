@@ -195,6 +195,8 @@ JavaScript内部，字符以UTF-16的格式储存
     `${x} + ${y} = ${x + y}`
     ```
 
+    https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Template_literals
+
 * 标签模板（不懂）
 
 * 模板字符串的限制（和 标签模板 相关）
