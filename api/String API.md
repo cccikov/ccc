@@ -292,8 +292,72 @@
         从当前字符串的哪个索引位置开始搜寻子字符串，默认值为 0。
 
 * str.repeat
+    
+    返回一个新字符串，表示将原字符串重复count次。
+    
+    ``` javascript
+        str.repeat(count)
+    ```
+
+    - count
+
+        介于 0 和 +Infinity 之间的整数。表示在新构造的字符串中重复了多少遍原字符串。
+
 * str.padStart
+    
+    在原字符串开头填充指定的填充字符串（如果需要的话，会重复多次）直到目标长度所形成的新字符串。
+
+    ``` javascript
+        str.padStart(targetLength [, padString])
+    ```
+
+    - targetLength
+
+        当前字符串需要填充到的目标长度。如果这个数值小于当前字符串的长度，则返回当前字符串本身。
+
+    - padString 可选
+
+        填充字符串。如果字符串太长，使填充后的字符串长度超过了目标长度，则只保留最左侧的部分，其他部分会被截断。此参数的默认值为 " "（U+0020）(空格)。
+
+
+* str.padEnd
+    
+    在原字符串末尾填充指定的填充字符串（如果需要的话，会重复多次）直到目标长度所形成的新字符串。
+
+    ``` javascript
+        str.padEnd(targetLength [, padString])
+    ```
+
+    - targetLength
+
+        当前字符串需要填充到的目标长度。如果这个数值小于当前字符串的长度，则返回当前字符串本身。
+
+    - padString 可选
+
+        填充字符串。如果字符串太长，使填充后的字符串长度超过了目标长度，则只保留最左侧的部分，其他部分会被截断。此参数的缺省值为 " "（U+0020）。
+
 * str.trimStart
+
+    trimStart() 方法从字符串的开头（左端）删除空格。trimLeft() 是此方法的别名。
+    
+    trimStart() / trimLeft() 方法移除原字符串左端的连续空白符并返回一个新字符串，并不会直接修改原字符串本身。
+
+    ``` javascript
+        str.trimStart();
+        str.trimLeft();
+    ```
+
+* str.trimEnd
+    
+    trimEnd() 方法从一个字符串的末端（右端端）移除空白字符。trimRight() 是这个方法的别名。
+
+    trimEnd() / trimRight()方法移除原字符串右端的连续空白符并返回，trimEnd() / trimRight()方法并不会直接修改原字符串本身
+
+    ``` javascript
+        str.trimEnd();
+        str.trimRight();
+    ```
+
 * str.matchAll
 * str.replaceAll
 
@@ -366,6 +430,10 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects
 https://javascript.ruanyifeng.com/grammar/string.html
 
 ## 模板字面量
+
+## 模板字符串
+
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Template_literals    
 
 ## 从字符串中获取单个字符
 
