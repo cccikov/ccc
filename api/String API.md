@@ -47,6 +47,53 @@
 
     // 加强版 charCodeAt 返回索引字符的Unicode码值
     str.codePointAt(index = 0) //
+
+    // 字符串正规化。
+    str.normalize()
+
+    // 是否包含指定字符串
+     str.includes(searchString[, position])
+
+    // 是否以x开头
+    str.startsWith(searchString[, position])
+
+    // 是否以x结尾
+    str.endsWith(searchString[, length])
+
+    // 重复某个字符串n次
+    str.repeat(n)
+
+    // 在字符串开头填充
+    str.padStart(targetLength [, padString])
+
+    // 在字符串结尾填充
+    str.padEnd(targetLength [, padString])
+
+    // 删除开头空格
+    str.trimStart()
+    str.trimLeft()
+
+    // 删除结尾空格
+    str.trimEnd()
+    str.trimRight()
+
+    // 返回匹配结果的迭代器
+    str.matchAll(regexp)
+
+    // 替换全部
+    str.replaceAll(regexp|substr, newSubstr|function)
+```
+
+``` javascript
+
+    // 返回使用指定的Unicode值序列创建的字符串
+    String.fromCharCode(num1[, ..., numN])
+
+    // 加强版 fromCharCode 返回使用指定的Unicode值序列创建的字符串
+    String.fromCodePoint(num1[, ..., numN])
+
+    // 获得字符串的原始字符串
+    String.raw()
 ```
 
 ## String
@@ -196,7 +243,7 @@
 
     - substr (pattern)
 
-    一个要被 newSubStr 替换的字符串。其被视为一整个字符串，而不是一个正则表达式。仅仅是第一个匹配会被替换。
+        一个要被 newSubStr 替换的字符串。其被视为一整个字符串，而不是一个正则表达式。仅仅是第一个匹配会被替换。
 
     - newSubStr (replacement)
 
@@ -269,6 +316,10 @@
 
 * str.startsWith
 
+    ``` javascript
+        str.startsWith(searchString[, position])
+    ```
+
     如果参数字符串在原字符串的头部则返回true；否则返回false。
 
     - searchString
@@ -281,15 +332,19 @@
 
 * str.endsWith
 
+    ``` javascript
+        str.endsWith(searchString[, length])
+    ```
+
     如果参数字符串在原字符串的尾部则返回true；否则返回false。
 
     - searchString
 
         要在此字符串中搜索的字符串。
 
-    - position 可选
+    - length 可选
 
-        从当前字符串的哪个索引位置开始搜寻子字符串，默认值为 0。
+        作为 str 的长度。默认值为 str.length。
 
 * str.repeat
     
@@ -359,7 +414,32 @@
     ```
 
 * str.matchAll
+    
+    返回一个包含所有匹配正则表达式的结果及分组捕获组的迭代器。
+
+    ``` javascript
+        str.matchAll(regexp)
+    ```
+
+    - regexp
+
+        正则表达式对象。如果所传参数不是一个正则表达式对象，则会隐式地使用 new RegExp(obj) 将其转换为一个 RegExp 。
+
+        RegExp必须是设置了全局模式g的形式，否则会抛出异常TypeError。
+
 * str.replaceAll
+
+    方法返回一个新字符串，新字符串所有满足 pattern 的部分都已被replacement 替换。pattern可以是一个字符串或一个 RegExp， replacement可以是一个字符串或一个在每次匹配被调用的函数。
+
+    ``` javascript
+        const newStr = str.replaceAll(regexp|substr, newSubstr|function)    
+    ```
+
+    - regexp
+
+        RegExp必须是设置了全局模式g的形式，否则会抛出异常TypeError。
+
+    es5 字符串的实例方法`replace()`只能替换第一个匹配，如果要替换所有的匹配，不得不使用正则表达式的g修饰符
 
 #### 静态方法（构造函数对象的方法）
 
