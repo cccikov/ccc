@@ -237,6 +237,8 @@ JavaScript内部，字符以UTF-16的格式储存
 
 * String.raw()
 
+## 7
+
 
 ## 6.数组的扩展
 
