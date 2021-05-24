@@ -1,4 +1,4 @@
-   # Learning Tasks
+# Learning Tasks
 
 #### vue学习计划
 
@@ -84,7 +84,7 @@
 1. js设计模式
 2. 观察者模式 、 发布-订阅模式、javascript设计模式
 3. 模块化编程
-4. krpano 全景图生成工具、krpano功能化
+4. krpano 全景图生成工具、krpano功能化,pannellum全景图
 5. 标准方程 轨迹方程 参数方程
 6. canvas-nest / vue-particles  canvas 离子运动
 7. Fetch
