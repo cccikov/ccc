@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    a {
+        margin: 10px;
+    }
+
+    textarea {
+        display: block;
+        width: 90%;
+        height: 40px;
+        margin: 10px;
+    }
+
+    .D {
+        margin: 0 !important;
+    }
+    </style>
+    <script type="text/javascript" src='jquery.min.js'></script>
+    <script type="text/javascript">
+    $(function() {
+        var html = ""
+        $("a").each(function() {
+            var that = $(this);
+            var href = that.attr("href");
+            if (href != undefined) {
+                html += href + "<br>";
+            }
+        });
+        $("<p>" + html + "</p>").appendTo("body");
+        $("textarea").on("focus",function(){
+            $(this).select();
+        });
+    });
+    </script>
+</head>
+
+<body>
+
+
+    <textarea>【2016-12-29】武圣 ByuN 人族第一视角</textarea>
+
+
+
+
+
+
+
+
+
+
+    <div class="D" style="margin-top: -141.5px;">
+            <a href="http://ws.acgvideo.com/a/a1/12896203-1.flv?wsTime=1483965906&amp;wsSecret2=fdd01d3a74b61b5831417be09c1f3573&amp;oi=993486129&amp;rate=170" target="_blank">分段1</a><a href="http://ws.acgvideo.com/a/a1/12896203-2.flv?wsTime=1483965906&amp;wsSecret2=26744eed959b32c255075ffb4c215867&amp;oi=993486129&amp;rate=170" target="_blank">分段2</a><a href="http://ws.acgvideo.com/a/a1/12896203-3.flv?wsTime=1483965906&amp;wsSecret2=53720ed42468500cb2a384b9378275b4&amp;oi=993486129&amp;rate=170" target="_blank">分段3</a><a href="http://ws.acgvideo.com/a/a1/12896203-4.flv?wsTime=1483965906&amp;wsSecret2=84669dc1d8b4f1a3ec2cccdf2e6747c6&amp;oi=993486129&amp;rate=170" target="_blank">分段4</a><a href="http://ws.acgvideo.com/a/a1/12896203-5.flv?wsTime=1483965906&amp;wsSecret2=3b250188e6bf3229305a98b0b4164b78&amp;oi=993486129&amp;rate=170" target="_blank">分段5</a><a href="http://ws.acgvideo.com/a/a1/12896203-6.flv?wsTime=1483965906&amp;wsSecret2=7e0540e9447ec8f4cc75560fe41a5e0b&amp;oi=993486129&amp;rate=170" target="_blank">分段6</a><a href="http://ws.acgvideo.com/a/a1/12896203-7.flv?wsTime=1483965906&amp;wsSecret2=f5056572489d78bd304f4e9ae5378275&amp;oi=993486129&amp;rate=170" target="_blank">分段7</a>
+            <a style="
+        font-size: 12px;
+        padding: 15px 15px 0 15px;
+    ">当前FLV格式为分段视频，需要每个分段下载完成过后才能完全播放(一个分段代表一部分内容),视频是否会被分段和唧唧本身无关系，唧唧只是对数据进行解析，如果想要下载单个文件，请尝试下载MP4格式（下载页面中选择MP4/MP3选项卡），然后创建MP4格式的视频文件，等待服务器处理完毕过后即可下载。</a>
+        </div>
+</body>
+
+</html>

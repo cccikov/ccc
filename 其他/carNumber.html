@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>车牌号</title>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    ul,
+    li {
+        list-style: none;
+        color: #333;
+        font-size: 30px;
+    }
+
+    ul {
+        overflow: hidden;
+    }
+
+    li {
+        box-sizing: border-box;
+        float: left;
+        width: 50%;
+        text-align: center;
+        line-height: 2;
+        border-bottom: 1px solid #ddd;
+    }
+
+    li:nth-of-type(2n+1) {
+        border-right: 1px solid #ddd;
+    }
+    </style>
+    <script type="text/javascript">
+    function random(max, min) {
+        return parseInt(Math.random() * (max - min + 1) + min)
+    }
+
+    function num() {
+        return random(0, 9);
+    }
+
+    function en() {
+        return String.fromCharCode(random(65, 90));
+    }
+    window.onload = function() {
+        for (let i = 0; i < 100; i++) {
+            wrap.innerHTML += "<li>" + en() + en() + num() + num() + num() + "</li>"
+            wrap.innerHTML += "<li>" + num() + en() + num() + num() + num() + "</li>"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <ul id="wrap">
+        <li>CC381</li>
+        <li>BL618</li>
+        <li>IG836</li>
+        <li>CC616</li>
+    </ul>
+</body>
+
+</html>
