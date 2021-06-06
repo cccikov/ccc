@@ -1,7 +1,5 @@
 # ccc
 
-ccc的个人内容，个人的哦
-
 * [API](笔记/API)
 * [easyui](笔记/easyui)
 * [egret学习](egret/egret)
